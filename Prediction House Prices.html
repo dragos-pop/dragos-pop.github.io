@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Prediction House Prices</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+					<a href="https://vuweb.vu.nl/en/education/master/business-analytics">MSc Business Analytics</a> student <br />
+					Vrije University Amsterdam</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Comparison of 3 Machine Learning models on predicting house prices<br />
+							</h1>
+						</header>
+						<h3>Mar 2020 ~ BSc Course "Machine Learning"<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2mo (at 0.25 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Math, Matplotlib, seaborn, scikit-learn, LightGBM)<br /><br />
+
+							<b>Data: </b> &nbsp; 3000 instances split in half for training and testing sets, each with 76
+							explanatory variables, describing various details of a property in Ames, Iowa, ranging from
+							the size of the living area in square feet to the type of street that accesses the estate <br /><br />
+
+							<b>Problem description: </b><br />
+							Build, train, tune, and test three Machine Learning models, namely Linear Regression,
+							Random Forest, and Gradient Boosting, comparing their prediction power (RMSLE) on the house prices<br /><br />
+
+							<b>Approach & Results: </b><br />
+							 &nbsp;&nbsp; - The Linear Regression model was trained using the log transformation of the top 9
+							features with the highest correlation with the sale price and scored an RMSLE of 0.1652 on
+							the test data  <br />
+							 &nbsp;&nbsp; - The Random Forest model was built on complete data. Its hyperparameters were tunned
+							using Random Search and validated following a 10-fold Cross-Validation. It resulted in an
+							RMSLE of 0.1632 on the test data  <br />
+							 &nbsp;&nbsp; - Lastly, the Random Search technique was used again to tune the Gradient Boosting
+							hyperparameters, validating the results with the help of 10-fold Cross-Validation.
+							Accordingly, the RMSLE of the Gradient Boosting on the test data was 0.1675<br /><br />
+
+						</p>
+						<ul class="actions">
+							<li><a href="Segmentation Algorithm.html" class="button">Previous project</a>
+							<a href="BAP Port of Amsterdam.html" class="button">Next project</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragosP0P" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://stackoverflow.com/users/14544680/dragos-p" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>
+<!--						<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Prediction Kickstarter Funding</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+					<a href="https://vuweb.vu.nl/en/education/master/business-analytics">MSc Business Analytics</a> student <br />
+					Vrije University Amsterdam</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Predicting if a Kickstarter project will be funded<br />
+							</h1>
+						</header>
+						<h3>Oct 2019 ~ Minor Course "Introduction to Data Science"<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1mo (at 0.20 FTE) <br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, seaborn, scikit-learn)<br /><br />
+
+							<b>Data: </b> &nbsp;370 000 Kickstarter projects, each with 15 variables, such as the
+							category of the project, a short description, the fundraising goal, and the deadline for
+							crowdfunding <br /><br />
+
+							<b>Problem description: </b><br />
+							Train a Machine Learning model to determine if an unseen project will receive enough funds
+							to meet its goal<br /><br />
+
+							<b>Approach & Results: </b><br />
+							After data was explored, multiple additional attributes were derived, such as the time left
+							to raise funds or the number of words in the name of the project. Then, the One-Hot Encoding
+							technique was applied to the multi-categorical variables. Next, two Machine Learning classification
+							models were trained and validated (using 10-fold Cross Validation), namely Logistic Regression
+							(using Recursive Feature Elimination in the Feature Engineering phase) and Random Forest (using
+							Grid Search to tune the hyperparameters). Consequently, it was found that the accuracy of the
+							models on the test dataset is 63% for the Logistic Regression model and 74% for the Random
+							Forest one.
+						</p>
+<!--						<img src="images/Fig5.jpg" alt="Feature importance"><br /><br /><br />-->
+						<ul class="actions">
+							<li><a href="Properties Sales Trends.html" class="button">Previous project</a>
+							<a href="Football Leagues Comparison.html" class="button">Next project</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragosP0P" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://stackoverflow.com/users/14544680/dragos-p" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>
+<!--						<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

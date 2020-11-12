@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Simulation Hospital Wards</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+					<a href="https://vuweb.vu.nl/en/education/master/business-analytics">MSc Business Analytics</a> student <br />
+					Vrije University Amsterdam</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Determining the optimal number of beds for hospital wards with the help of simulations<br />
+							</h1>
+						</header>
+						<h3>Jun 2018 ~ BSc Course "Project Business Analytics 2"<br /><br /></h3>
+						<p align="justify"><b>Length: </b>1mo (at 0.5 FTE) <br /><br />
+
+							<b>Software: </b> &nbsp; Microsoft Excel (Crystal Ball add-in) <br /><br />
+
+							<b>Data: </b> &nbsp;Number of arrivals, the average length of stay, and the number of
+								admissions recorded per period<br /><br />
+
+							<b>Problem description: </b><br />
+							The number of beds available on a ward can be regarded as a maximum level for the number of patients.
+							On the one hand, if beds are removed, money is saved, but the rejection rate increases as fewer
+							places are available. On the other hand, more beds imply higher costs. However, this also
+							means that it is more likely that patients in need of medical help will not be declined due
+							to lack of space<br />
+
+							<img src="images/Fig8.jpg" alt="Process scheme"><br />
+
+							<b>Approach: </b><br />
+							Created a model that can simulate the number of patients in the ward after a certain number
+							of periods, based on the arrival rate and the discharging probability, which were modeled as
+							Poisson and Binomial distributions, respectively. Then, Crystal Ball was used to simulate the
+							entire scenario a large number of times, computing the average occupation and blocking rates.
+							Moreover, it was implemented an admission scheme for elective patients and an option that allows a different
+							number of beds per day to further enhance the outcome of the model.  <br /><br />
+
+							<b>Results: </b><br />
+							The number of beds per ward that satisfies the requirements of the hospital when it comes to
+							the occupation and blocking rates has been estimated through trial and error using the simulation model.
+							Furthermore, the improvement strategies have materialized in saving 10.5% of the yearly costs.<br />
+						</p>
+						<ul class="actions">
+							<li><a href="Optimal Working Schedule.html" class="button">Previous project</a>
+							<a href="Optimal Vaccination Strategy.html" class="button">Next project</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragosP0P" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://stackoverflow.com/users/14544680/dragos-p" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>
+<!--						<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
