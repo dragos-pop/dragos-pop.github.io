@@ -1,6 +1,6 @@
 My portfolio website.
 
-Includes a briefly introduction of myself, followed by the most important projects I worked on, and some contact options.
+Includes a brief introduction of myself, followed by the most important projects I worked on, and some contact options.
 
 
 The template is credited to HTML5 UP:
