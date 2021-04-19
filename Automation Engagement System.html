@@ -48,9 +48,19 @@
 							their account in the last week or the ones who have not completed their blood pressure
 							measurements, and targeting them with email reminders<br /><br />
 
-							<b>	<span style="color:#FF0000">Waiting for sharing approval from OMRON Healthcare to present
-							the approach and results</span>
 
+							<img src="images/Fig18.jpg" alt="AWS Architecture"><br />
+
+							<b>Approach & Results: </b><br />
+							Initially, the SQL queries that retrieve the desired groups of patients were written using
+							the information provided in the database design. Next, a Python script that connects to the
+							database, performs a query, and outputs the result in the demanded format was prepared.
+							The code was later transposed into an AWS Lambda function, connecting and retrieving
+							information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
+							Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
+							frequency of the query. For instance, some are executed daily, while others are triggered
+							every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
+							manually perform the repetitive queries and eliminates the afferent chance of human error.
 						</p>
 						<ul class="actions">
 							<li><a href="BAP Port of Amsterdam.html" class="button">Previous project</a>
