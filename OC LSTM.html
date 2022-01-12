@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>OC LSTM</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 					<a href="https://www.uva.nl/en/programmes/masters/information-studies-data-science/data-science.html?cb"
+					   target="_blank">MSc Data Science</a> student @ UvA<br />Data Science Intern @ FedEx Express</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Machine Learning time series forecasting (LSTM) on OMRON connect data<br />
+							</h1>
+						</header>
+						<h3>May 2021 ~ Internship at OMRON Healthcare Europe<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 0.5 mo (at 1.0 FTE)<br /><br />
+
+							<b>Programming languages: </b> &nbsp;&nbsp; Python (Pandas, time, datetime, Math, Matplotlib,
+							NumPy, scikit-learn, TensorFlow)<br /><br />
+
+							<b>Data: </b> &nbsp;Over 4 million blood pressure measurements registered via OMRON connect by
+							approximately 35 000 users, containing the recorded systolic, the device used, the time and date
+							of each measurement <br /><br />
+
+							<b>Problem description: </b><br />
+							Build a multivariate, multistep, single-output LSTM that predicts the following two weekly averages
+							of systolic measurements of active OMRON connect users<br /><br />
+
+							<b>Approach: </b><br />
+							On top of the pre-processing done in the previous project (see the first paragraph from Approach and
+							Results on <a href="OC Big Data Analysis.html" target="_blank">Big Data Analysis with PySpark
+								on OMRON connect data</a>), the predictor features which will not be known ex-post were removed,
+							such as the diastolic and pulse. However, it was assumed that the users would perform measurements
+							with the same device because about 1% of the users changed their devices while using the app.
+							Hence, the device-related variables were kept. Then, the measurements of each user were aggregated
+							per week and structured relatively to their start date to allow modeling for multiple users.
+							Afterward, the categorical features were one-hot encoded, and the continuous ones were standardized
+							or normalized.
+
+							<br /><br />
+
+							Prior to modeling, the data was reshaped as tensors. Then, a sliding window function for creating
+							lags and the validation dataset was designed. Subsequently, the sequential model was built to
+							have four hidden  layers, namely two pairs of one LSTM layer with 100 units followed by a
+							dropout layer to prevent overfitting. The simplified architecture of the neural network is
+							visible below.<br /><br />
+
+							<img src="images/Fig24.jpg" alt="LSTM Neural Network Architecture" width="700" height="420">
+
+							<br /><br />
+
+							Finally, the main hyperparameters of the model, namely learning rate, optimizer, number of batches,
+							epochs, and steps per epoch, were tuned using the Grid Search method with time-series
+							cross-validation.<br /><br />
+
+							<b>Results: </b><br />
+							Before the predictions could be compared against the withhold test set, they were scaled back to
+							their original magnitude. Consequently, a baseline that naively estimates the next two weekly
+							averages of each user as the last one registered was implemented. Its RMSE score with the
+							test data was 7.31, while the LSTM model scored an RMSE of 4,97. Therefore, the LSTM network
+							performed 47% better than the naive baseline.
+
+						</p>
+						<ul class="actions">
+							<li><a href="OC Big Data Analysis.html" class="button">Previous project</a>
+<!--							<a href="Next Project Level.html" class="button">Next project</a></li>-->
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://stackoverflow.com/users/14544680/dragos-p" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>
+<!--						<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
