@@ -52,21 +52,38 @@
 							Enhance the feature space for fire effect modeling through web scraping and design a
 							dashboard to visualize the results<br /><br />
 
-							<b>Approach: </b><br />
-							A
-
-							<br /><br />
+							<b>Approach & Results: </b><br />
+							The municipality of Amsterdam is responsible for setting up fire safety inspections for the
+							buildings in Amsterdam. However, because there are over 500.000 buildings in the city, the
+							municipality created a ranking that sorts all the properties in descending order based on the
+							risk score, defined as <i>chance x effect</i>. During one of the meetings with Gemeente Amsterdam,
+							a gap in the effect score was noticed. Hence, the proposed solution is based on the idea that there
+							is unstructured information publicly available online that can positively contribute to a
+							more accurate effect score. <br /><br />
 
 							<img src="images/Fig29.jpg" alt="Diagram Infrastructure" width="700" height="420"><br /><br />
 
+							The infrastructure of the proposed system can be seen above. The system is composed of two
+							main parts, namely the scraping and visualizing. The first one starts by extracting names of public
+							assets within Amsterdam from Wikipedia that will play as the rows of the first dataset.  Since
+							the constructions are communal, it was assumed that their online popularity reflects their
+							true real-world popularity. Thus, extra features from Wikipedia, Tripadvisor, Google, and
+							Flickr were scraped using Beautiful Soup to represent the interest in the respective objects.
+							The described process is depicted in the upper branch of the diagram, following the black
+							arrows into the Monuments (POI) dataset.
 
-							<b>Results: </b><br />
-							A
+							<br /><br />
+							On the other hand, since other non-public buildings are also important, their addresses were taken
+							from the BAG dataset, and the value of each feature was computed considering the public assets
+							in the vicinity and aggregating their respective variables. One can see this in the diagram
+							following the blue arrows. Finally, the two derived datasets are visualized in a Tableau dashboard that allows the user
+							to apply various filters and give specific attributes more importance if wanted.
 
 							<br /><br />
 
-<!--							<img src="images/Fig28.jpg" alt="Results Table" width="450" height="340">-->
-
+							The final dashboard can be accessed at:<br />
+							<a href="https://public.tableau.com/app/profile/fabian4248/viz/GroupD1_16439031396800/DOCUMENTATION?publish=yes"
+					   		target="_blank">https://public.tableau.com/app/profile/fabian4248/viz/GroupD1_16439031396800/DOCUMENTATION?publish=yes</a>
 
 						</p>
 						<ul class="actions">
