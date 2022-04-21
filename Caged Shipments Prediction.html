@@ -34,59 +34,39 @@
 						</header>
 
 						<h3>Jan 2022 ~ Internship at FedEx Express<br /><br /></h3>
-						<p align="justify"><b>Length: </b> &nbsp; 2w (at 0.5 FTE)<br /><br />
+						<p align="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
 
-<!--							<b>Programming language: </b> &nbsp; R (fpp2, fpp3, ggplot2, tsibble, ggfortify, zoo, fable.prophet) <br /><br />-->
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
 
-<!--							<b>Data: </b> <br /> &nbsp;&nbsp; - calendar data, containing information about the dates on which products were sold-->
-<!--							(e.g. holidays, day of the week)<br />-->
-<!--							&nbsp;&nbsp; - sales data, which contains the historical daily unit sales data per product<br />-->
-<!--							&nbsp;&nbsp; - price data, that has information about the price of the products sold<br /><br />-->
+							<b>Data: </b> &nbsp; over 600.000 shipped parcels having 742 features, including the
+							target variable - whether the parcel was caged<br /><br />
 
-<!--							<b>Problem description: </b><br />-->
-<!--							Forecast daily sales for 28 days in the future of 823 products sold in a Walmart store<br /><br />-->
+							<b>Problem description: </b><br />
+							Develop a LightGBM model for classifying  whether a shipment will be caged (secured until
+							the correct information is obtained)<br /><br />
 
-<!--							<b>Approach: </b><br />-->
-<!--							Initially, the datasets were explored, merged, and split into train and test sets. In-->
-<!--							the picture below, one can see the aggregated sales of all the products over time. It is clear-->
-<!--							from this image that the sales have a yearly seasonality with a slightly upper trend. Moreover,-->
-<!--							there is a drastic drop at the end of each year, which might be because the store was closed.<br /><br />-->
-
-<!--							<img src="images/Fig26.jpg" alt="Aggregated sales over time" width="450" height="340">-->
-
-<!--							<br /><br />-->
-
-<!--							Although the total number of units sold per day follows a slightly upwards trend,-->
-<!--							the upcoming figure shows that the average number of sales per product decline every year.-->
-<!--							This implies that other products are introduced over time, and their sales cannibalize the old ones.-->
-
-<!--							<br /><br />-->
-
-<!--							<img src="images/Fig27.jpg" alt="Average sales per product" width="450" height="340">-->
-
-<!--							<br /><br />-->
-
-<!--							In order to assess the performance of the forecasting algorithms, three models were designed-->
-<!--							as a baseline, namely a mean, a naive, and a seasonal naive model. Then the following models-->
-<!--							were implemented: Exponential Smoothing, ARIMA, Linear Time Series Regression Model (TSLM),-->
-<!--							Dynamic Regression, Croston, Prophet, NNETAR (feed-forward Neural Network with one hidden-->
-<!--							layer that takes lagged training data as input), and Bagging Exponential Smoothing. Later,-->
-<!--							the forecasts of multiple models were combined because different models capture distinct-->
-<!--							aspects of the data. However, the complicated models were omitted from these combinations as-->
-<!--							they are too computationally expensive.<br /><br />-->
+							<b>Approach: </b><br />
+							Since the data was cleaned previously, the first step involved slicing it into train and test sets.
+							Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
+							The options in the grid were selected according to the official documentation and considering
+							the balance between overfitting, performance, and training speed. Afterward, the best parameters
+							obtained from the Random Search were put in a new grid next to other values in their close vicinity.
+							The respective grid was used to optimize the hyperparameters one more time through Grid Search.
+							Using the best hyperparameters followed from Grid Search, the model was fitted another time until
+							the learning curve of the validation data reached a plateau to see after how many
+							iterations the loss converges. Finally, the model was fitted on both the train and validation data.
+							<br /><br />
 
 
-<!--							<b>Results: </b><br />-->
-<!--							In the table below, one can see the MAE and RMSE of the models measured on the test data. The-->
-<!--							best scores were registered by ARIMA, despite being a univariate model that ignores most of-->
-<!--							the variation of the seasonality. As expected, the baseline models performed the worst, with-->
-<!--							MAE over 1,5 and RMSE over 3. On the other hand, the complex models, Prophet, NNETAR, and-->
-<!--							Bagging, did not meet the expectations in terms of performance and produced results just over-->
-<!--							the baseline but under the other models and combinations of models.-->
+							<b>Results: </b><br />
+							An accuracy of 81% was observed after evaluating the predictions on the test data. However,
+							the company uses a custom, greater-is-better score for this problem called the clearance score.
+							The LightGBM achieved a clearance score of 2.08, outperforming the
+							deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 42 seconds,
+							while the Neural Network took just 21 minutes. Accordingly, the former was 29 times
+							faster.<br /><br />
 
-<!--							<br /><br />-->
-
-<!--							<img src="images/Fig28.jpg" alt="Results Table" width="450" height="340">-->
+							<img src="images/Fig30.jpg" alt="Benchmark Table" width="430" height="105">
 
 
 						</p>
