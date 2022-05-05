@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>BAP Port of Amsterdam</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 					<a href="https://www.uva.nl/en/programmes/masters/information-studies-data-science/data-science.html?cb"
+					   target="_blank">MSc Data Science</a> student @ UvA<br />Data Science Intern @ FedEx Express</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Berth Allocation Problem within Port of Amsterdam<br />
+							<ul class="icons"><a href="https://github.com/dragos-pop/BSc-Business-Analytics/tree/main/Bachelor%20Project%20-%20Business%20Case" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+								<ul />
+							</h1>
+						</header>
+						<h3>Jun 2020 ~ BSc Thesis Internship at Port of Amsterdam<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2mo (at 0.25 FTE) + 1mo (at 1.0 FTE) <br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Math, GeoPandas, Matplotlib, seaborn,
+							Plotly, datetime, pytz, random, scikit-learn, LightGBM, requests, Beautiful Soup, PuLP, Flask) <br /><br />
+
+							<b>Data: </b> <br /> &nbsp;&nbsp; - AIS data (signals sent by ships at various times containing
+							their location, speed, orientation, type, size, etc)<br />
+							&nbsp;&nbsp; - BAOR data (size requirements of the berths)<br />
+							&nbsp;&nbsp; - Terminal Operations data (more detailed information about the operations,
+							such as the quantity of the cargo and its type, the pump start and end times, etc) <br /><br />
+
+							<b>Problem description: </b><br />
+							Port of Amsterdam demanded to know if giving up the current First Come, First Served
+									strategy of assigning vessels to berths would produce any benefits, especially after
+									the new sea lock will be ready and (more) larger ships will be allowed to moor in
+									the harbor<br /><br />
+
+							<b>Approach: </b><br />
+							To answer the research question, four linear programming models were designed, namely optimal
+							FCFS, no FCFS with fixed arrival times, 48-hour arrival time relaxation, and complete arrival
+							time relaxation. Then, they were transposed to Python via the PuLP package. The comparison of
+							the model types was done using a rolling time window (of each day within the time frame, a
+							schedule was created for the following two weeks, after which the objective value was
+							calculated).<br />
+
+							<img src="images/Fig17.jpg" alt="Dashboard"><br /><br />
+
+							<b>Results: </b><br />
+							After comparing the averages of all completion times, it was found that the Optimal FCFS model
+							already shows an improvement compared to the historical situation. Between the Optimal FCFS and the
+							No FCFS model, there is no considerable difference because the vessels are constrained to be
+							scheduled after their arrival time at the port. When relaxation is allowed, a significant
+							efficiency gain is possible, although this case is less reasonable. Lastly, the entire analysis was performed again, this time with
+							a proportion of vessels enlarged. The results pointed out that there are improvements of up
+							to 3% on the completion time (depending on the percentage of boats enlarged) from the Optimal
+							FCFS to No FCFS, and up to 42% comparing the Optimal FCFS and the unrealistic Complete
+							Relaxation.
+						</p>
+						<img src="images/Fig1.jpg" alt="Dashboard"><br /><br />
+						<ul class="actions">
+<!--							<li><a href=".html" class="button">Previous project</a>-->
+							<li><a href="Automation Engagement System F.html" class="button">Next project</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+<!--					<li><a href="https://stackoverflow.com/users/14544680/dragos-p" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>-->
+<!--					<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

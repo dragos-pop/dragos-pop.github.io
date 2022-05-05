@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Simulation Hospital Wards</title>
+		<title>Automation Engagement System</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -29,41 +29,42 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>Determining the optimal number of beds for hospital wards with the help of simulations<br />
+							<h1>Automation of engagement system<br />
 							</h1>
 						</header>
-						<h3>Jun 2018 ~ BSc Course "Project Business Analytics 2"<br /><br /></h3>
-						<p align="justify"><b>Length: </b>1mo (at 0.5 FTE) <br /><br />
+						<h3>Jan 2021 ~ Internship at OMRON Healthcare Europe<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1mo (at 1.0 FTE) <br /><br />
 
-							<b>Software: </b> &nbsp; Microsoft Excel (Crystal Ball add-in) <br /><br />
+							<b>Software: </b>   &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
 
-							<b>Data: </b> &nbsp;Number of arrivals, the average length of stay, and the number of
-								admissions recorded per period<br /><br />
+                            <b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (PyMySQL, Pandas, boto3, datetime, logging)<br />
+							&nbsp;&nbsp; - SQL<br /><br />
+
+							<b>Data: </b>  &nbsp;Database design consisting of tables with feature names and types <br /><br />
 
 							<b>Problem description: </b><br />
-							The number of beds available on a ward can be regarded as a maximum level for the number of patients.
-							On the one hand, if beds are removed, money is saved, but the rejection rate increases as fewer
-							places are available. On the other hand, more beds imply higher costs. However, this also
-							means that it is more likely that patients in need of medical help will not be declined due
-							to lack of space<br />
+							With the release of the Hypertension Plus app, OMRON Healthcare wanted to raise the engagement among
+							users by keeping track of specific groups of patients, such as the ones who have not accessed
+							their account in the last week or the ones who have not completed their blood pressure
+							measurements, and targeting them with email reminders<br /><br />
 
-							<img src="images/Fig8.jpg" alt="Process scheme"><br />
 
-							<b>Approach: </b><br />
-							Created a model that can simulate the number of patients in the ward after a certain number
-							of periods, based on the arrival rate and the discharging probability, which were modeled as
-							Poisson and Binomial distributions, respectively. Then, Crystal Ball was used to simulate the
-							entire scenario a large number of times, computing the average occupation and blocking rates.
-							Moreover, it was implemented an admission scheme for elective patients and an option that allows a different
-							number of beds per day to further enhance the outcome of the model.  <br /><br />
+							<img src="images/Fig18.jpg" alt="AWS Architecture"><br />
 
-							<b>Results: </b><br />
-							The number of beds per ward that satisfies the requirements of the hospital when it comes to
-							the occupation and blocking rates has been estimated through trial and error using the simulation model.
-							Furthermore, the improvement strategies have materialized in saving 10.5% of the yearly costs.<br />
+							<b>Approach & Results: </b><br />
+							Initially, the SQL queries that retrieve the desired groups of patients were written using
+							the information provided in the database design. Next, a Python script that connects to the
+							database, performs a query, and outputs the result in the demanded format was prepared.
+							The code was later transposed into an AWS Lambda function, connecting and retrieving
+							information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
+							Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
+							frequency of the query. For instance, some are executed daily, while others are triggered
+							every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
+							manually perform the repetitive queries and eliminates the afferent chance of human error.
 						</p>
 						<ul class="actions">
-							<li><a href="Optimal Vaccination Strategy.html" class="button">Next project</a></li>
+							<li><a href="BAP Port of Amsterdam F.html" class="button">Previous project</a>
+							<a href="OC LSTM F.html" class="button">Next project</a></li>
 						</ul>
 						<ul class="actions">
 							<li><a href="index.html" class="button">Home</a></li>
@@ -92,8 +93,8 @@
 						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-<!--						<li><a href="https://stackoverflow.com/users/14544680/dragos-p" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>-->
-<!--						<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
+<!--					<li><a href="https://stackoverflow.com/users/14544680/dragos-p" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">Stack-overflow</span></a></li>-->
+<!--					<li><a href="link_medium" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>-->
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Dragos Pop</li>

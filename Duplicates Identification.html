@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Simulation Hospital Wards</title>
+		<title>Duplicates identification</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -29,41 +29,50 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>Determining the optimal number of beds for hospital wards with the help of simulations<br />
+							<h1>Duplicates identification
+								<ul class="icons"><a href="https://github.com/dragos-pop/MSc-Data-Science/tree/main/Big%20Data%20/Final_Project" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+								<ul />
 							</h1>
 						</header>
-						<h3>Jun 2018 ~ BSc Course "Project Business Analytics 2"<br /><br /></h3>
-						<p align="justify"><b>Length: </b>1mo (at 0.5 FTE) <br /><br />
 
-							<b>Software: </b> &nbsp; Microsoft Excel (Crystal Ball add-in) <br /><br />
+						<h3>Mar 2022 ~ MSc Course "Big Data"<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2w (at 0.25 FTE)<br /><br />
 
-							<b>Data: </b> &nbsp;Number of arrivals, the average length of stay, and the number of
-								admissions recorded per period<br /><br />
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, PySpark SQL, PySpark ML, RE, NLTK,
+							os, Matplotlib) <br /><br />
+
+							<b>Data: </b> <br /> &nbsp;&nbsp; - "dblp-*" files containing bibliographic data about research
+							papers, such as the author(s), publication year, and publisher<br />
+							&nbsp;&nbsp; - json files pointing to additional features for the book title, journal, and type of the paper<br />
+							&nbsp;&nbsp; - train, validation, and test sets composed of the keys of the compared papers, and, for the
+							train set only, the label variable denoting whether the respective papers are duplicates
+							<br /><br />
 
 							<b>Problem description: </b><br />
-							The number of beds available on a ward can be regarded as a maximum level for the number of patients.
-							On the one hand, if beds are removed, money is saved, but the rejection rate increases as fewer
-							places are available. On the other hand, more beds imply higher costs. However, this also
-							means that it is more likely that patients in need of medical help will not be declined due
-							to lack of space<br />
+							 Design and implement a scalable Machine Learning pipeline that identifies duplicate entries in a
+							bibliography<br /><br />
 
-							<img src="images/Fig8.jpg" alt="Process scheme"><br />
+							<b>Approach & Results: </b><br />
+							Initially, the data files were inspected individually to notice error patterns. Then, checks
+							addressing missing values, features, and their types were implemented to improve the reusability
+							of the pipelines and allow them to respond or recover from errors when other data sets are
+							used. Next, the feeds were designed using PySpark, as one can see in the image below with
+							dark blue. Afterward, they were merged, and additional features were derived, such as
+							the difference in years or the overlap score of authors of two documents. Finally, the
+							categorical features were one-hot encoded and fed together with the numerical ones to a
+							Gradient Boosted Trees model, scoring an 82% accuracy on the test data.
 
-							<b>Approach: </b><br />
-							Created a model that can simulate the number of patients in the ward after a certain number
-							of periods, based on the arrival rate and the discharging probability, which were modeled as
-							Poisson and Binomial distributions, respectively. Then, Crystal Ball was used to simulate the
-							entire scenario a large number of times, computing the average occupation and blocking rates.
-							Moreover, it was implemented an admission scheme for elective patients and an option that allows a different
-							number of beds per day to further enhance the outcome of the model.  <br /><br />
+							<br /><br />
 
-							<b>Results: </b><br />
-							The number of beds per ward that satisfies the requirements of the hospital when it comes to
-							the occupation and blocking rates has been estimated through trial and error using the simulation model.
-							Furthermore, the improvement strategies have materialized in saving 10.5% of the yearly costs.<br />
+							<img src="images/Fig31.jpg" alt="Project Poster" width="750" height="420">
+
+							<br /><br />
+
 						</p>
 						<ul class="actions">
-							<li><a href="Optimal Vaccination Strategy.html" class="button">Next project</a></li>
+							<li><a href="Enhancing Feature Space.html" class="button">Previous project</a>
+<!--							<a href=".html" class="button">Next project</a></li>-->
 						</ul>
 						<ul class="actions">
 							<li><a href="index.html" class="button">Home</a></li>
