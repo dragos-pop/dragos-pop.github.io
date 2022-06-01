@@ -43,57 +43,53 @@
 
 							<b>Programming language: </b> &nbsp; Python (Pandas,  time, datetime, scikit-learn, LightGBM) <br /><br />
 
-							<b>Data: </b> &nbsp; calendar data, containing information about<br /><br />
+<!--							<b>Data: </b> &nbsp; calendar data, containing information about<br /><br />-->
 
-							<b>Problem description: </b><br />
-							Forecast daily sales for 28 days in the future of 823 products sold in a Walmart store<br /><br />
+<!--							<b>Problem description: </b><br />-->
+<!--							Forecast daily sales for 28 days in the future of 823 products sold in a Walmart store<br /><br />-->
 
-							<b>Approach: </b><br />
-							Initially, the datasets were explored, merged, and split into train and test sets. In
-							the picture below, one can see the aggregated sales of all the products over time. It is clear
-							from this image that the sales have a yearly seasonality with a slightly upper trend. Moreover,
-							there is a drastic drop at the end of each year, which might be because the store was closed.<br /><br />
+<!--							<b>Approach: </b><br />-->
+<!--							Initially, the datasets were explored, merged, and split into train and test sets. In-->
+<!--							the picture below, one can see the aggregated sales of all the products over time. It is clear-->
+<!--							from this image that the sales have a yearly seasonality with a slightly upper trend. Moreover,-->
+<!--							there is a drastic drop at the end of each year, which might be because the store was closed.<br /><br />-->
 
-							<img src="images/Fig26.jpg" alt="Aggregated sales over time" width="450" height="340">
+<!--							<img src="images/Fig26.jpg" alt="Aggregated sales over time" width="450" height="340">-->
 
-							<br /><br />
+<!--							<br /><br />-->
 
-							Although the total number of units sold per day follows a slightly upwards trend,
-							the upcoming figure shows that the average number of sales per product decline every year.
-							This implies that other products are introduced over time, and their sales cannibalize the old ones.
+<!--							Although the total number of units sold per day follows a slightly upwards trend,-->
+<!--							the upcoming figure shows that the average number of sales per product decline every year.-->
+<!--							This implies that other products are introduced over time, and their sales cannibalize the old ones.-->
 
-							<br /><br />
+<!--							<br /><br />-->
 
-							<img src="images/Fig27.jpg" alt="Average sales per product" width="450" height="340">
+<!--							<img src="images/Fig27.jpg" alt="Average sales per product" width="450" height="340">-->
 
-							<br /><br />
+<!--							<br /><br />-->
 
-							In order to assess the performance of the forecasting algorithms, three models were designed
-							as a baseline, namely a mean, a naive, and a seasonal naive model. Then the following models
-							were implemented: Exponential Smoothing, ARIMA, Linear Time Series Regression Model (TSLM),
-							Dynamic Regression, Croston, Prophet, NNETAR (feed-forward Neural Network with one hidden
-							layer that takes lagged training data as input), and Bagging Exponential Smoothing. Later,
-							the forecasts of multiple models were combined because different models capture distinct
-							aspects of the data. However, the complicated models were omitted from these combinations as
-							they are too computationally expensive.<br /><br />
+<!--							In order to assess the performance of the forecasting algorithms, three models were designed-->
+<!--							as a baseline, namely a mean, a naive, and a seasonal naive model. Then the following models-->
+<!--							were implemented: Exponential Smoothing, ARIMA, Linear Time Series Regression Model (TSLM),-->
+<!--							Dynamic Regression, Croston, Prophet, NNETAR (feed-forward Neural Network with one hidden-->
+<!--							layer that takes lagged training data as input), and Bagging Exponential Smoothing. Later,-->
+<!--							the forecasts of multiple models were combined because different models capture distinct-->
+<!--							aspects of the data. However, the complicated models were omitted from these combinations as-->
+<!--							they are too computationally expensive.<br /><br />-->
 
 
-							<b>Results: </b><br />
-							In the table below, one can see the MAE and RMSE of the models measured on the test data. The
-							best scores were registered by ARIMA, despite being a univariate model that ignores most of
-							the variation of the seasonality. As expected, the baseline models performed the worst, with
-							MAE over 1,5 and RMSE over 3. On the other hand, the complex models, Prophet, NNETAR, and
-							Bagging, did not meet the expectations in terms of performance and produced results just over
-							the baseline but under the other models and combinations of models.
-
-							<br /><br />
-
-							<img src="images/Fig28.jpg" alt="Results Table" width="450" height="340">
-
+<!--							<b>Results: </b><br />-->
+<!--							In the table below, one can see the MAE and RMSE of the models measured on the test data. The-->
+<!--							best scores were registered by ARIMA, despite being a univariate model that ignores most of-->
+<!--							the variation of the seasonality. As expected, the baseline models performed the worst, with-->
+<!--							MAE over 1,5 and RMSE over 3. On the other hand, the complex models, Prophet, NNETAR, and-->
+<!--							Bagging, did not meet the expectations in terms of performance and produced results just over-->
+<!--							the baseline but under the other models and combinations of models.-->
+<!--							-->
 
 						</p>
 						<ul class="actions">
-							<li><a href="OC LSTM F.html" class="button">Previous project</a></li>
+							<li><a href="Duplicates Identification.html" class="button">Previous project</a></li>
 <!--							<a href="Caged Shipments Prediction.html" class="button">Next project</a></li>-->
 						</ul>
 						<ul class="actions">
