@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Whale Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 					MSc Data Science graduate from the University of Amsterdam
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Whale Analysis of Bitcoin, Dogecoin, and Ethereum
+								<ul class="icons"><a href="https://github.com/dragos-pop/Crypto/tree/main/Whale-Analysis-BTC-DOGE-ETH_FULL" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+								<ul />
+							</h1>
+						</header>
+
+						<h3>Jul 2022 ~ Individual project<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2m (at 0.5 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, requests, Beautiful Soup, RE, datetime,
+							Matplotlib, seaborn) <br /><br />
+
+							<b>Data: </b> <br /> &nbsp;&nbsp; - circulating supply of BTC, DOGE, and ETH, on 12.07.2022<br />
+							&nbsp;&nbsp; - genesis date of Bitcoin, Dogecoin, and Ethereum (when the first block was processed and
+							validated on each blockchain) <br />
+							&nbsp;&nbsp; - top 100 richest BTC, DOGE, and ETH addresses (on 12.07.2022), including their current balance, whether
+							they are an address owned by a centralized exchange (CEX), their number of transactions,
+							and the dates when they performed their first and last transactions. <br /><br />
+
+							<b>Problem description: </b><br />
+							Investigate the decentralization degree and trading patterns of the richest BTC, DOGE, and
+							ETH holders<br /><br />
+
+							<b>Approach: </b><br />
+
+							The first step involved acquiring the appropriate data. The figure below displays the sources
+							where the data was gathered. Accordingly, after the collection of the top 100 richest holders,
+							the total amount sent and the total amount received by each address were scraped from a block
+							explorer.
+
+							<br /><br />
+							<img src="images/Fig33.jpg" alt="Data Collection" width="450" height="340">
+							<br /><br />
+
+							Afterward, the data was processed for analysis by converting the available variables to the
+							appropriate types, plotting variables to seek outliers, and extracting additional features,
+							such as the accumulation and offloading intervals and the number of days from genesis to the
+							first transaction. Lastly, various checks were performed to ensure the validity of the data,
+							which resulted in some addresses being deleted. For instance, every address needs to have at
+							least the same amount sent out as the total amount received since it is impossible to spend
+							an unavailable quantity of a cryptocurrency. However, three Ethereum addresses did not comply
+							with this. Another check verified if the date of the first transaction is always the date of
+							the first in-transaction because an address first needs to receive in order to spend. Again,
+							three other Ethereum addresses failed this inspection.
+							<br /><br />
+
+
+							<b>Results: </b><br />
+							In the table below, one can see the numerical aggregations concerning the decentralization
+							measures of the three cryptocurrencies. Looking at the percentage of the current supply, one
+							can observe a considerable centralization degree in the case of Dogecoin, where the top 100
+							addresses hold roughly 70% of the total supply of DOGE. This number decreases to 33% for
+							Ethereum and 16% for Bitcoin. Furthermore, in the case of Dogecoin, the centralization is
+							even more pronounced taking into account that 44% of the total supply belongs to CEXs, which
+							are known to be government-liable entities, whereas, for Bitcoin and Dogecoin, the non-exchanges
+							hold the larger proportion.
+							<br /><br />
+
+							Next, the average number of days from genesis to the first transaction suggests the most
+							early adopters for Ethereum, followed by Dogecoin and Bitcoin. This is also the opposite
+							order in which the three were deployed. Hence, one possible explanation is that, as the
+							crypto field increased in popularity, the richest accounts started investing faster.
+							<br /><br />
+
+							<img src="images/Fig34.jpg" alt="Decentralization Resutls" width="730" height="70">
+
+							<br /><br />
+							The following table displays the numerical aggregations generated to provide valuable information
+							for comparing transactional patterns. When it comes to the values expressed in days, these were
+							rounded down, whereas, for the amounts in crypto, the entries were converted to a percentage
+							after being divided by the circulating supply of the respective coin, such that a comparison
+							inter-blockchain is viable.
+
+							<br /><br />
+
+							<img src="images/Fig35.jpg" alt="Trading Patterns Resutls" width="730" height="200">
+
+							<br /><br />
+
+							Among the most important findings are the significant proportions of non-exchanges used solely
+							for accumulating BTC and DOGE in contrast to ETH, where the difference is not as substantial.
+							Then, one can notice the average number of transactions being very low for the richest,
+							non-exchanges holders of BTC, supporting that these accounts were mainly for accumulation
+							rather than trading. Nevertheless, this does not hold for Dogecoin, whose non-exchanges
+							were more active than the exchanges.
+
+							<br /><br />
+							Additionally, one can observe a higher average of days from first in- to first out-transaction
+							for non-exchanges across the three cryptocurrencies. As expected, Ethereum has the lowest
+							intervals, probably due to its fastest transaction speed. Ultimately, Bitcoin holders had,
+							on average, a lengthier accumulation period, which was anticipated given the blockchain is
+							also the oldest among the three.
+
+						</p>
+<!--						<ul class="actions">-->
+<!--							<li><a href="PREVIOUS.html" class="button">Previous project</a>-->
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
+<!--						</ul>-->
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://medium.com/@dragos-pop"  target="_blank" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
