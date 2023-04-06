@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rating Prediction</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 					MSc Data Science graduate from the University of Amsterdam
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Goodreads book rating prediction
+								<ul class="icons"><a href="https://github.com/dragos-pop/Kaggle/tree/main/Goodreads%20Books%20Reviews" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+									 &nbsp; <a href="https://www.kaggle.com/competitions/goodreads-books-reviews-290312" target="_blank" class="icon brands alt fa-kaggle">
+									<span class="label">Kaggle</span></a>
+									 &nbsp;  <a href="https://wandb.ai/d-a-pop/Goodreads%20Books%20Reviews" target="_blank">
+									<span class="label">W&B</span></a>
+								<ul />
+							</h1>
+						</header>
+
+						<h3>Apr 2023 ~ Kaggle competition<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1w (at 0.25 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, datetime, Matplotlib, seaborn,
+							scikit-learn, NLTK, W&B, argparse, LightGBM, CatBoost) <br /><br />
+
+							<b>Data: </b> &nbsp; approximately 0.9M book reviews, containing the book, the author, the review
+							text, and its stats <br /><br />
+
+							<b>Problem description: </b><br />
+							Predict the review ratings of books on Goodreads<br /><br />
+
+							<b>Approach: </b><br />
+							First, the data was split into the train, validation, and test sets. In order to validate the data
+							partitioning, the distributions of multiple features were compared across the sets, including
+							the target feature "rating", which can be seen in the picture below. Concerning data leakage,
+							two controversial features are "book_id" and "user_id". Depending on the goal of the project,
+							these may need to be removed because the model would not perform well on new users and books. However, given that the objective is to reach the best
+							F1 score in the competition, these variables were kept.
+
+							<br />
+							<img src="images/Fig36.jpg" alt="Rating Histograms Train vs Val" width="730" height="300">
+							<br /><br />
+
+							Next, the train set was explored and cleaned by filling in missing values, converting features
+							to the right type, dropping useless columns, and deriving additional variables, such as the
+							reading duration, the review length, and whether this is a spoiler or not. Afterward, the
+							same cleaning methods were applied to the other two sets.
+							<br /><br />
+
+							Finally, two tree models were designed, namely a LightGBM and a CatBoost classifier, and tuned to achieve
+							the best F1 score on the validation data.
+							<br /><br />
+
+							<b>Results: </b><br />
+							Since the rating 4 is the most common one, the naïve baseline was computed by setting all
+							ratings of the validation reviews to 4. Accordingly, this resulted in an F1 score of 0.08.
+							<br /><br />
+
+							The best model turned out to be a LightGBM classifier, which reached a score of 0.4, a result
+							five times better than the naïve baseline. On the test data, the model scored 0.38, implying
+							no significant overfitting on the validation set.
+							<br /><br />
+
+							The confusion matrix below shows that the model does not make big mistakes, with most
+							of the predictions close to the true values of the ratings, as expressed by the lighter shades
+							on the main diagonal. Generally, when the model fails to predict the rating correctly,
+							it misses the value by 1-2 points.
+
+							<br />
+							<img src="images/Fig37.jpg" alt="Confusion Matrix" width="400" height="370">
+							<br /><br />
+
+							Not surprisingly, the two ID features reached the highest importance among all the features,
+							with a significant distance to the third most important feature.
+
+							<br />
+							<img src="images/Fig38.jpg" alt="Feature Importance" width="730" height="270">
+							<br /><br />
+
+						</p>
+<!--						<ul class="actions">-->
+<!--							<li><a href="PREVIOUS.html" class="button">Previous project</a>-->
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
+<!--						</ul>-->
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://medium.com/@dragos-pop"  target="_blank" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						<li><a href="https://wandb.ai/d-a-pop" target="_blank"><span class="label">W&B</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
