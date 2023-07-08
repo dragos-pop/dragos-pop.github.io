@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Posture Classification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 					MSc Data Science graduate <br> of the University of Amsterdam </h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Body posture classification using smartphone sensors
+<!--								<ul class="icons"><a href="https://github.com/dragos-pop/" target="_blank" class="icon brands alt fa-github">-->
+<!--									<span class="label">GitHub</span></a>-->
+								<ul />
+							</h1>
+						</header>
+
+						<h3>Jun 2023<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2w (at 0.5 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, datetime, RE, seaborn, Matplotlib,
+							pykalman, random, scikit-learn) <br /><br />
+
+							<b>Data: </b> <br />&nbsp;&nbsp; - measurements from smartphone sensors  (Accelerometer, Linear Accelerometer, Gyroscope,
+							Location (GPS), Magnetometer, Pressure, Proximity) collected over one and a half hours while
+							the user transitioned between sitting, laying, and standing<br />
+							&nbsp;&nbsp; - time spent in each posture, information that will be turned into the target variable of the study <br /><br />
+
+							<b>Problem description: </b><br />
+							Collect sensory data, remove noise, engineer new features, and apply classical Machine Learning
+							techniques to the resulting dataset<br /><br />
+
+							<b>Approach: </b><br />
+							After the data was collected and exported from the smartphone, the time series from each sensor
+							were merged together into a single table, using a timespan of half a second between
+							measurements. In other words, there are two records for each second of the experiment.
+							The features tracked by the sensors at a larger frequency were aggregated over the
+							values recorded in each half-second of the experiment. This was done using each of the
+							four aggregation functions individually, namely the mean, standard deviation, minimum, and
+							maximum, resulting in four times as many variables.<br /><br />
+
+							Next, the location, proximity, and pressure measurements were removed due
+							to privacy reasons and because the variables have more than half of their entries missing, respectively.<br /><br />
+
+							The distributions of the remained features were then analyzed. First, it was observed that
+							the target variable is balanced. Secondly, it was noticed that the distributions of some features
+							divided by label do not overlap, suggesting the respective variables will have a greater
+							predictive power compared to the ones that do not present this pattern. One example can be
+							seen in the image below, where the "standing" distribution hardly overlaps the other two.<br /><br />
+
+							<img src="images/Fig39.jpg" alt="Histogram of accelerometer by label" width="300" height="220">
+							<br /><br />
+
+							In order to detect outliers resulted from technical errors, a number of checks were performed
+							on the range of measurements to see if these were in line with the possible values according
+							to the laws of physics. However, no value that contradicts the domain knowledge was found.
+							When it comes to the detection and replacement of variability outliers, the Kalman filter was
+							used.<br /><br />
+
+							At this point, several additional features were derived from the remaining variables,
+							including the sign of each column, the gravitational acceleration, a sliding window,
+							and the 10-simple moving average of every variable, excluding the label.<br /><br />
+
+							Before modeling, the dataset was divided into the train and test sets using a 70-30% temporal-based
+							partitioning, maintaining the equal proportions of the label classes and ensuring
+							no leakage in the test set from the sliding window and simple moving average.<br /><br />
+
+							Then, four Machine Learning techniques were applied, namely Naïve Bayes, Decision
+							Trees, Random Forrest, and Feedforward Neural Network, first in the default configuration and
+							then using the hyperparameters resulting in the best precision on the validation data after
+							20 iterations of random search with 5-Cross Validation. Lastly, we refitted the model obtaining
+							the best score on the validation data on both the train and validation datasets, and used
+							it to predict the labels for the test set.<br /><br />
+
+							When it comes to the Neural Network, the parameters were tuned starting with the
+							learning rate, as this is the most important one, followed, one-by-one, by the hidden layer size,
+							activation function, and solver. In order to assess which value led to the best results,
+							the validation losses were plotted, and the value of the hyperparameter whose Neural
+							Network resulted in the steepest and lowest-reaching loss curve was selected.<br /><br />
+
+							Considering that most models use a seed and their results vary accordingly,
+							we repeated the fitting process three times and reported the 95% Confidence Interval of the
+							three precision scores instead of a single value, which allowed for a fair comparison of the
+							models. Then, we computed a 95% confidence interval for the random baseline, calculated
+							after randomly sampling the labels for each instance.<br /><br />
+
+							<b>Results: </b><br />
+							The presented table suggests that the models perform twice as well compared
+							to the random baseline, with the Random Forest model outperforming the Feedforward
+							Neural Network by upwards of 3% by scoring a mean precision of 0.792 with 95% confidence
+							on the hold out-set.<br /><br />
+
+							<img src="images/Fig40.jpg" alt="Results table" width="460" height="180">
+							<br /><br />
+
+							During the error analysis phase, we generated the confusion matrix for the best model. In the image below,
+							we observe that the Random Forest algorithm often confuses laying with sitting, with 509
+							instances where it predicted the user was sitting when he/she was laying. Outside this, the model
+							is remarkably well at classifying the other postures. Lastly, one may notice from the feature
+							importance table that the model mainly relies on the data measured by the accelerometer sensor.<br /><br />
+
+							<img src="images/Fig41.jpg" alt="Confusion Matrix Random Forest" width="500" height="250">
+							<br /><br />
+
+
+						</p>
+<!--						<ul class="actions">-->
+<!--							<li><a href="PREVIOUS.html" class="button">Previous project</a>-->
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
+<!--						</ul>-->
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, Netherlands<br />
+									</li>
+								</ul>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://medium.com/@dragos-pop"  target="_blank" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						<li><a href="https://wandb.ai/d-a-pop" target="_blank"><span class="label">W&B</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
