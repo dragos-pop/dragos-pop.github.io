@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Text-to-Event</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 						Data Science & Engineering</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Text-to-Event LLM App
+								<ul class="icons"><a href="https://github.com/dragos-pop/text-to-event" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+								<ul />
+							</h1>
+						</header>
+
+						<h3>Jun 2023<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1w (at 0.5 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (datetime, ics, LangChain, OpenAI, Arrow, Streamlit)
+							<br /><br />
+
+							<b>Data: </b> &nbsp; raw text or a text file containing details about an event<br /><br />
+
+							<b>Problem description: </b><br />
+							Engineer a web application that reads text and outputs an event in .ics format, using Streamlit,
+							LangChain, and OpenAI API<br /><br />
+
+							<b>Approach & Results: </b><br />
+							The application backend was assembled by prompt engineering OpenAI API to extract the details
+							of an event from text, including its location, description, and starting timestamp. Additionally,
+							the LLM was instructed to use, by default, the year 2023 and the event duration of one hour
+							when they were not mentioned. Then, LangChain's prompt template and output
+							parser were used to format the prompt to incorporate the user's input and output the LLM answer
+							in a structured way, respectively. Lastly, the result is converted into an ics file after
+							the timestamp is adjusted based on the timezone and the temporal deictic expressions
+							included.<br /><br />
+
+							For the frontend, Streamlit was used to design the app interface and deploy it in the cloud.
+							Among the functionalities included in the web app, there are a timezone selection slider, an
+							alternative to provide the input as a file instead of raw text, and a generated event summary, which
+							indicates the most important details of the event before downloading and importing the .ics
+							file in a calendar application.
+
+							<br /><br />
+
+							App accessible at: <a href="https://text-to-event.streamlit.app" target="_blank">
+								https://text-to-event.streamlit.app</a>
+							<br />
+							(when inactive, the app enters sleep mode, and it takes a couple of minutes to restart)
+							<br /><br />
+							<img src="images/Fig46.jpg" alt="App UI" width="680" height="380">
+							<br />
+
+						</p>
+						<ul class="actions">
+							<li><a href="MIDIGPT.html" class="button">Previous project</a>
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Singapore<br />
+									</li>
+								</ul>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://medium.com/@dragos-pop"  target="_blank" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						<li><a href="https://wandb.ai/d-a-pop" target="_blank"><span class="label">W&B</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
