@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Text-to-Event</title>
+		<title>FX Ingestion Pipeline</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -29,55 +29,46 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>Text-to-Event LLM App
-								<ul class="icons"><a href="https://github.com/dragos-pop/text-to-event" target="_blank" class="icon brands alt fa-github">
-									<span class="label">GitHub</span></a>
-								<ul />
-							</h1>
+							<h1>Exchange Rates Ingestion Pipeline</h1>
 						</header>
 
-						<h3>Jun 2023<br /><br /></h3>
-						<p align="justify"><b>Length: </b> &nbsp; 1w (at 0.5 FTE)<br /><br />
+						<h3>Jan 2024 ~ Flo Energy<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1mo (at 0.5 FTE)<br /><br />
 
-							<b>Programming language: </b> &nbsp; Python (datetime, ics, LangChain, OpenAI, Arrow, Streamlit)
+							<b>Programming language: </b> &nbsp; Python (os, datetime, pytz, snowflake-connector-python, Pandas,
+							urllib3, Dagster)
 							<br /><br />
 
-							<b>Data: </b> &nbsp; Raw text or a text file containing details about an event<br /><br />
+							<b>Data: </b> &nbsp; Daily SGD exchange rates provided by the Monetary Authority of Singapore
+							(MAS) <br /><br />
 
 							<b>Problem description: </b><br />
-							Engineer a web application that reads text and outputs an event in .ics format, using Streamlit,
-							LangChain, and OpenAI API<br /><br />
+							Orchestrate a pipeline that retrieves the latest exchange rates through an API, loads them
+							first into an Amazon S3 bucket and then into a Snowflake table<br /><br />
 
 							<b>Approach & Results: </b><br />
-							The application backend was assembled by prompt engineering OpenAI API to extract the details
-							of an event from text, including its location, description, and starting timestamp. Additionally,
-							the LLM was instructed to use, by default, the year 2023 and the event duration of one hour
-							when they were not mentioned. Then, LangChain's prompt template and output
-							parser were used to format the prompt to incorporate the user's input and output the LLM answer
-							in a structured way, respectively. Lastly, the result is converted into an ics file after
-							the timestamp is adjusted based on the timezone and the temporal deictic expressions
-							included.<br /><br />
+							In the image below, one can observe the architecture of the ingestion pipeline. First, a Python
+							connector queries the raw Snowflake table for the last date with an exchange rate. Then, this
+							date is used together with the code execution date to create the date range for which the latest
+							SGD exchange rates will be retrieved using the MAS API. After the rates are fetched in a
+							Pandas dataframe, they are exported as a .csv file to the Amazon S3 bucket that serves as a
+							data lake and later copied into the raw Snowflake table.<br /><br />
 
-							For the frontend, Streamlit was used to design the app interface and deploy it in the cloud.
-							Among the functionalities included in the web app, there are a timezone selection slider, an
-							alternative to provide the input as a file instead of raw text, and a generated event summary, which
-							indicates the most important details of the event before downloading and importing the .ics
-							file in a calendar application.
+							Taking into account a potential erroneous API response, a retry policy was implemented to
+							repeat a failing op up to three times, with a delay of ten minutes between the runs.
+							Finally, each pipeline step was programmed into a Dagster Software-defined asset and
+							linked in a Dagster job. This job was scheduled to run every working day shortly after the
+							exchange rates are published by MAS. Therefore, the latest exchange rates are automatically
+							retrieved  and ingested into the data warehouse with minimum human supervision.
 
 							<br /><br />
-
-							App accessible at: <a href="https://text-to-event.streamlit.app" target="_blank">
-								https://text-to-event.streamlit.app</a>
-							<br />
-							(when inactive, the app enters sleep mode, and it takes a couple of minutes to restart)
-							<br /><br />
-							<img src="images/Fig46.jpg" alt="App UI" width="680" height="380">
+							<img src="images/Fig47.jpg" alt="FX Rates Ingestion Diagram" width="800" height="200">
 							<br />
 
 						</p>
 						<ul class="actions">
-							<li><a href="MIDIGPT.html" class="button">Previous project</a>
-							<a href="FX Rates Ingestion.html" class="button">Next project</a></li>
+							<li><a href="Text-to-Event.html" class="button">Previous project</a>
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
 						</ul>
 						<ul class="actions">
 							<li><a href="index.html" class="button">Home</a></li>
