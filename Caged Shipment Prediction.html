@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Software Toolkit</title>
+		<title>Caged Shipment Prediction</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -29,65 +29,51 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h1>Software Toolkit<br />
+							<h1>Caged Shipment Prediction
 							</h1>
 						</header>
-							<ul>
-								<h3>Programming Languages:</h3>
-									<li>Python</li>
-									<li>SQL</li>
-									<li>R</li>
-									<li>Java</li>
-									<li>C++</li>
+
+						<h3>Jan 2022 ~ FedEx Express<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
+
+							<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
+							target variable - whether the parcel was caged<br /><br />
+
+							<b>Problem description: </b><br />
+							Develop a LightGBM model for classifying  whether a shipment will be caged (secured until
+							the correct information is obtained)<br /><br />
+
+							<b>Approach: </b><br />
+							Since the data was cleaned previously, the first step involved slicing it into train and test sets.
+							Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
+							The options in the grid were selected according to the official documentation and considering
+							the balance between overfitting, performance, and training speed. Afterward, the best parameters
+							obtained from the Random Search were put in a new grid next to other values in their close vicinity.
+							The respective grid was used to optimize the hyperparameters one more time through Grid Search.
+							Using the best hyperparameters followed from Grid Search, the model was fitted another time until
+							the learning curve of the validation data reached a plateau to see after how many
+							iterations the loss converges. Finally, the model was fitted on both the train and validation data.
 							<br /><br />
-								<h3>Main Python Libraries:</h3>
-									<li>Pandas</li>
-									<li>scikit-learn</li>
-									<li>PySpark</li>
-									<li>TensorFlow</li>
-									<li>PyTorch (Lightning)</li>
-									<li>WandB</li>
-									<li>Dagster</li>
-									<li>Streamlit</li>
-							<br /><br />
-								<h3>Platforms:</h3>
-								<b>BI:</b>
-									<li>Holistics</li>
-									<li>Tableau</li>
-									<li>Amazon QuickSight</li>
-									<li>Microsoft Power BI</li>
-								<b>Data Engineering:</b>
-									<li>dbt</li>
-									<li>Stitch</li>
-									<li>Airbyte</li>
-									<li>MapReduce</li>
-									<li>Spark (PySpark)</li>
-									<li>Apache Hadoop</li>
-								<b>Relational Database:</b>
-									<li>Microsoft SQL Server</li>
-									<li>PostgreSQL</li>
-									<li>MySQL</li>
-								<b>Non-Relational Database:</b>
-									<li>MongoDB (PyMongo)</li>
-									<li>Amazon DynamoDB</li>
-								<b>Data Warehouse:</b>
-									<li>Snowflake</li>
-									<li>Google BigQuery</li>
-								<b>Version Control:</b>
-									<li>GitHub</li>
-									<li>Bitbucket</li>
-								<b>Cloud:</b>
-									<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
-									<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
-								<b>Other:</b>
-									<li>Terraform</li>
-									<li>GitHub Actions (CI/CD)</li>
-									<li>Dataiku</li>
-									<li>IBM SPSS Modeler</li>
-									<li>IBM Watson Analytics</li>
-									<li>IBM CPLEX Optimizer</li>
-									<li>Docker</li>
-							</ul>
+
+
+							<b>Results: </b><br />
+							An accuracy of 81% was observed after evaluating the predictions on the test data. However,
+							the company uses a custom, greater-is-better score for this problem called the clearance score.
+							The LightGBM achieved a clearance score of 2.08, outperforming the
+							deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
+							while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
+							faster.<br /><br />
+
+							<img src="images/Fig30.jpg" alt="Benchmark Table" width="430" height="105">
+
+
+						</p>
+						<ul class="actions">
+							<li><a href="Sales Forecasting.html" class="button">Previous project</a>
+							<a href="Enhancing Feature Space.html" class="button">Next project</a></li>
+						</ul>
 						<ul class="actions">
 							<li><a href="index.html" class="button">Home</a></li>
 						</ul>
@@ -104,6 +90,7 @@
 								</ul>
 							</div>
 					</section>
+
 			</div>
 
 		<!-- Footer -->
