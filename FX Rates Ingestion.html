@@ -44,7 +44,7 @@
 
 							<b>Problem description: </b><br />
 							Orchestrate a pipeline that retrieves the latest exchange rates through an API, loads them
-							first into an Amazon S3 bucket and then into a Snowflake table<br /><br />
+							into Snowflake via Amazon S3, and then materializes the downstream dbt models<br /><br />
 
 							<b>Approach & Results: </b><br />
 							In the image below, one can observe the architecture of the ingestion pipeline. First, a Python
@@ -52,17 +52,18 @@
 							date is used together with the code execution date to create the date range for which the latest
 							SGD exchange rates will be retrieved using the MAS API. After the rates are fetched in a
 							Pandas dataframe, they are exported as a .csv file to the Amazon S3 bucket that serves as a
-							data lake and later copied into the raw Snowflake table.<br /><br />
+							data lake and later copied into the raw Snowflake table. Finally, the dbt models downstream
+							are materialized.<br /><br />
 
 							Taking into account a potential erroneous API response, a retry policy was implemented to
-							repeat a failing op up to three times, with a delay of ten minutes between the runs.
-							Finally, each pipeline step was programmed into a Dagster Software-defined asset and
+							repeat a failing operation up to three times, with a delay of ten minutes between the runs.
+							Furthermore, each pipeline step was programmed into a Dagster Software-defined asset and
 							linked in a Dagster job. This job was scheduled to run every working day shortly after the
 							exchange rates are published by MAS. Therefore, the latest exchange rates are automatically
-							retrieved  and ingested into the data warehouse with minimum human supervision.
+							retrieved and ingested into the data warehouse with minimum human supervision.
 
 							<br /><br />
-							<img src="images/Fig47.jpg" alt="FX Rates Ingestion Diagram" width="800" height="200">
+							<img src="images/Fig47.jpg" alt="FX Rates Ingestion Diagram" width="840" height="70">
 							<br />
 
 						</p>
