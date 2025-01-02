@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Selective CL Deployment</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 						Data Science & Engineering</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Selective Dagster Code Location Deployment with GitHub Actions</h1>
+						</header>
+
+						<h3>Aug 2024 ~ Flo Energy<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 2w (at 1.0 FTE)<br /><br />
+
+							<b>Programming language: </b> &nbsp; Bash
+							<br /><br />
+
+							<b>Data: </b> &nbsp; GitHub pull request (PR) label names <br /><br />
+
+							<b>Problem description: </b><br />
+							Expedite Dagster branch deployment CI through a GitHub Actions job which dynamically selects
+							code locations for rollout based on PR labels<br /><br />
+
+							<b>Approach: </b><br />
+							The original Dagster CI workflow consisted of two parts: checking for changes in the Dagster
+							folder and provisioning all code locations to Dagster branch deployment if at least one
+							change is detected. A new job that allows for the selective deployment of individual code
+							locations was added to the CI because rolling out all code locations can be time-consuming
+							and redundant, especially since most PRs typically modify at most a few. This new job
+							executes when at least one PR label has the prefix <code>CL-</code>. If this condition is met,
+							the job retrieves all such labels, parses the code location names by removing the prefix,
+							generates a YAML configuration file containing the specified names, and publishes them to
+							Dagster cloud.
+							<br /><br />
+
+							<b>Results: </b><br />
+							According to GitHub Actions insights, the new job runs twice as fast as the job deploying
+							all code locations, saving an average of 5 minutes per run. Additionally, the failure rate
+							is significantly lower (5% vs 11%). Assuming the selective deployment job did not exist, the
+							job deploying all code locations would have been used 69 extra times in the past 30 days, as
+							the "Actions Usage Metrics" screenshot shows. Multiplying this number by the average run time
+							difference of the two jobs (approximately 5 minutes) implies nearly 6 hours of saved compute
+							and developer downtime per month.
+
+							<br /><br />
+							<img src="images/Fig49.jpg" alt="GHA Performance Metrics" width="740" height="450">
+							<img src="images/Fig48.jpg" alt="GHA Usage Metrics" width="740" height="420">
+							<br />
+
+
+						</p>
+						<ul class="actions">
+							<li><a href="MIDIGPT F.html" class="button">Previous project</a>
+<!--							<a href="NEXT.html" class="button">Next project</a></li>-->
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, the Netherlands<br />
+									</li>
+								</ul>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+						<li><a href="https://medium.com/@dragos-pop"  target="_blank" class="icon brands alt fa-medium"><span class="label">Medium</span></a></li>
+						<li><a href="https://wandb.ai/d-a-pop" target="_blank"><img src="images/wandb_logo.svg" alt="WandB" style="width: 24px; height: 24px;"><span class="label"></span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
