@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Grid Capacity Pipeline</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 						Data Science & Engineering</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Grid Capacity Pipeline</h1>
+						</header>
+
+						<h3>Aug 2025 ~ Flo Energy<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1mo (at 0.75 FTE)<br /><br />
+
+							<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (requests, base64, BytesIO, pdfplumber, 
+							Pandas, datetime, pytz, re, Dagster)<br />
+							&nbsp;&nbsp; - SQL (dbt)<br /><br />
+
+							<b>Data: </b> &nbsp; Daily byte-endcoded PDF reports from Electricity Market Company (EMC)
+							containing a table about planned and unplanned outages, alongside grid capacity tables
+							tracking supply and demand metrics at 30-minute intervals for the next two weeks <br />
+
+							<br />
+							<img src="images/Fig51.jpg" alt="Report Composition" width="840" height="260">
+							<br /><br />
+
+							<b>Problem description: </b><br />
+							Automate a pipeline that fetches a byte-endcoded PDF report via API, parses multiple tables, 
+							loads them into Snowflake via Amazon S3, and refreshes dbt models powering a Holistics 
+							dashboard <br /><br />
+
+							<b>Approach & Results: </b><br />
+							
+							The architecture of the pipeline is shown in the diagram below. A Dagster job with daily 
+							asset partitions orchestrates the workflow, starting with a configurable Dagster resource 
+							for the EMC API. This resource requests the byte-encoded PDF report via OAuth using a JWT 
+							token. Next, the raw PDF is uploaded to Amazon S3 for archival, while at the same time the 
+							15-page file is parsed with <code>pdfplumber</code> to extract multiple tables.
+							<br /><br />
+
+							<span style="color:#FF0000">DISCLAIMER: </span> Asset names have been modified to be more 
+							generic to comply with company confidentiality requirements. <br />
+
+							<br />
+							<img src="images/Fig50.jpg" alt="Grid Capacity Pipeline Diagram" width="840" height="330">
+							<br /><br />
+
+							The three tables processed from the report are the 14-day grid capacity data at 30-minute 
+							intervals, planned outages of equipment, and unplanned outages. In parallel, each table is 
+							converted to a dataframe, with new features derived such as dates extracted from text 
+							columns using regular expressions. Enforced checks ensure correct processing before the 
+							dataframes are exported as JSON to Amazon S3 and loaded into raw Snowflake tables. These 
+							tables feed downstream dbt models which refresh the Holistics dashboard powering grid analytics.
+							<br /><br />
+
+							<span style="color:#FF0000">DISCLAIMER: </span> Numerical values in the Holistics 
+							charts have been redacted to comply with company confidentiality requirements. <br />
+
+							<br />
+							<img src="images/Fig52.jpg" alt="Grid Capacity Dashboard" width="840" height="780">
+							<br /><br />
+
+							A Dagster retry policy was implemented to handle API timeouts and parsing errors with 
+							up to two retries with one-minute delays between runs. The pipeline executes daily through 
+							Dagster's built-in scheduler with no manual intervention, delivering reliable grid 
+							capacity data needed for energy trading.
+
+						</p>
+						<ul class="actions">
+							<li><a href="Selective CL Deployment.html" class="button">Previous project</a>
+							<!-- <a href="NEXT" class="button">Next project</a></li> -->
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, the Netherlands<br />
+									</li>
+								</ul>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
