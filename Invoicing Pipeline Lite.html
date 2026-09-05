@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Invoicing Pipeline Lite</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<h1><strong>Dragos Pop</strong><br />
+ 						Data Science & Engineering</h1>
+				</div>
+			</header>
+
+
+		<!-- Main -->
+			<div id="main">
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Invoicing Pipeline Lite
+								<ul class="icons"><a href="https://github.com/dragos-pop/dg-invoicing-lite" target="_blank" class="icon brands alt fa-github">
+									<span class="label">GitHub</span></a>
+								</ul>
+							</h1>
+						</header>
+
+						<h3>Aug 2026<br /><br /></h3>
+						<p align="justify"><b>Length: </b> &nbsp; 1w (at 1.0 FTE)<br /><br />
+
+							<b>Programming languages: </b> &nbsp; Python (Dagster, openpyxl, Pandas, ReportLab, 
+							smtplib)<br /><br />
+
+							<b>Data: </b> &nbsp; An Excel workbook with a sheet listing monthly service
+							hours (month, service, hours, and amount) and a sheet tracking invoice history <br /><br />
+
+							<b>Problem description: </b><br />
+							Build a Dagster pipeline that reads monthly contractor hours from
+							an Excel workbook, generates a branded PDF invoice, and emails it directly to
+							the client<br /><br />
+
+							<b>Approach & Results: </b><br />
+
+							The pipeline is built as a Dagster lineage with monthly asset partitions, so one run
+							corresponds to one billing month, as shown in the asset graph below:
+							<br /><br />
+							<img src="images/Fig53.jpg" alt="Invoicing Pipeline Lite Asset Lineage" width="840" height="296">
+							<br /><br />
+
+							The invoice history sheet is read first to retrieve the last issued invoice number,
+							falling back to the previous year if the current one has none yet. If needed, the
+							invoice number can also be overridden manually via a runtime config. In parallel, 
+							the hours sheet is read and filtered to the partition's month, returning the services
+							to bill.
+							<br /><br />
+
+							The two assets above are then combined into the next invoice summary, deriving all
+							the invoice metadata alongside the total hours and amount. A blocking asset
+							check computes the expected working hours in the respective month
+							and compares them against the total hours logged, failing the run if the two do not
+							match, before any PDF or email is produced.<br /><br />
+
+							Once validated, the invoice summary is rendered into a branded PDF using
+							<code>ReportLab</code>. This contains a header with company and client details, an
+							itemized services table with a total row, a payment summary block, and a
+							contact box. The summary data is then rendered into a styled HTML email with the
+							company logo embedded inline. The email is sent over SMTP with the PDF
+							attached, to the client and any Cc addresses included, as shown below with
+							mock data:
+							<br />
+							<div style="display: flex; align-items: flex-start; gap: 20px;">
+								<img src="images/Fig54.jpg" alt="Invoicing Pipeline Lite Email Example" width="840" height="503" style="border: 3px solid #000; height: 340px; width: auto;">
+								<img src="images/Fig55.jpg" alt="Invoicing Pipeline Lite PDF Invoice" width="460" height="651" style="height: 340px; width: auto;">
+							</div>
+							<br />
+
+							A Dagster schedule runs the job automatically on the 1st of every month for
+							the previous month's data, replacing a manual task with an automated
+							workflow that only sends an invoice once the details have been validated. The
+							invoice and email content, styling, and logo can all be customized via
+							environment variables and constants to fit a different company and client.
+							<br /><br />
+
+						</p>
+						<ul class="actions">
+							<li><a href="Grid Capacity Pipeline.html" class="button">Previous project</a>
+							<!-- <a href="NEXT" class="button">Next project</a></li> -->
+						</ul>
+						<ul class="actions">
+							<li><a href="index.html" class="button">Home</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										Amsterdam, the Netherlands<br />
+									</li>
+								</ul>
+							</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Dragos Pop</li>
+					</ul>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
