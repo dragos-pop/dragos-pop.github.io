@@ -6,11 +6,12 @@
 -->
 <html lang="en">
 	<head>
-		<title>Dashoard - Internal sheet</title>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+		<title>Dashboard - Internal sheet</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Hypertension Plus dashboard - internal sheet" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Dashoard - Internal sheet" />
+		<meta property="og:title" content="Dashboard - Internal sheet" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
 		<meta property="og:description" content="Hypertension Plus dashboard - internal sheet" />
 		<meta property="og:type" content="website" />
@@ -26,15 +27,17 @@
 	</head>
 	<body class="is-preload">
 
-    <img src="assets/images/Fig20 Full.jpg" alt="Dashboard - External sheet"><br />
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
+
+		<img src="assets/images/Fig20 Full.jpg" alt="Dashboard - External sheet" /><br />
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/darkmode.js"></script>
 
 	</body>
 </html>

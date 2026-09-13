@@ -6,6 +6,7 @@
 -->
 <html lang="en">
 	<head>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
 		<title>Caged Shipment Prediction</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Classifying caged shipments" />
@@ -21,7 +22,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 		<script type="application/ld+json">
@@ -42,107 +42,107 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
-					<h1><strong>Dragos Pop</strong><br />
- 						Data Science & Engineering</h1>
-				</div>
-			</header>
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
 
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
+				<h1><strong>Dragos Pop</strong><br />
+				Data Science & Engineering</h1>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h1>Caged Shipment Prediction
-							</h1>
-						</header>
+		<div id="main">
+			<!-- One -->
+			<section id="one">
+				<header class="major">
+					<h1>Caged Shipment Prediction
+					</h1>
+				</header>
 
-						<h3>Jan 2022 ~ FedEx Express<br /><br /></h3>
-						<p align="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
+				<h3>Jan 2022 ~ FedEx Express<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
 
-							<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
+					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
 
-							<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
-							target variable - whether the parcel was caged<br /><br />
+					<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
+					target variable - whether the parcel was caged<br /><br />
 
-							<b>Problem description: </b><br />
-							Develop a LightGBM model for classifying  whether a shipment will be caged (secured until
-							the correct information is obtained)<br /><br />
+					<b>Problem description: </b><br />
+					Develop a LightGBM model for classifying  whether a shipment will be caged (secured until
+					the correct information is obtained)<br /><br />
 
-							<b>Approach: </b><br />
-							Since the data was cleaned previously, the first step involved slicing it into train and test sets.
-							Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
-							The options in the grid were selected according to the official documentation and considering
-							the balance between overfitting, performance, and training speed. Afterward, the best parameters
-							obtained from the Random Search were put in a new grid next to other values in their close vicinity.
-							The respective grid was used to optimize the hyperparameters one more time through Grid Search.
-							Using the best hyperparameters followed from Grid Search, the model was fitted another time until
-							the learning curve of the validation data reached a plateau to see after how many
-							iterations the loss converges. Finally, the model was fitted on both the train and validation data.
-							<br /><br />
+					<b>Approach: </b><br />
+					Since the data was cleaned previously, the first step involved slicing it into train and test sets.
+					Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
+					The options in the grid were selected according to the official documentation and considering
+					the balance between overfitting, performance, and training speed. Afterward, the best parameters
+					obtained from the Random Search were put in a new grid next to other values in their close vicinity.
+					The respective grid was used to optimize the hyperparameters one more time through Grid Search.
+					Using the best hyperparameters followed from Grid Search, the model was fitted another time until
+					the learning curve of the validation data reached a plateau to see after how many
+					iterations the loss converges. Finally, the model was fitted on both the train and validation data.
+					<br /><br />
 
+					<b>Results: </b><br />
+					An accuracy of 81% was observed after evaluating the predictions on the test data. However,
+					the company uses a custom, greater-is-better score for this problem called the clearance score.
+					The LightGBM achieved a clearance score of 2.08, outperforming the
+					deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
+					while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
+					faster.<br /><br />
 
-							<b>Results: </b><br />
-							An accuracy of 81% was observed after evaluating the predictions on the test data. However,
-							the company uses a custom, greater-is-better score for this problem called the clearance score.
-							The LightGBM achieved a clearance score of 2.08, outperforming the
-							deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
-							while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
-							faster.<br /><br />
+					<img src="assets/images/Fig30.jpg" alt="Benchmark Table" width="430" height="105" />
 
-							<img src="assets/images/Fig30.jpg" alt="Benchmark Table" width="430" height="105">
+				</p>
+				<ul class="actions">
+					<li><a id="prev-project" href="Dashboard Hypertension Plus.html" class="button">Previous project</a>
+					<a id="next-project" href="Ranking Hotel Listings.html" class="button">Next project</a></li>
+				</ul>
+				<ul class="actions">
+					<li><a id="home-link" href="index.html" class="button">Home</a></li>
+				</ul>
+			</section>
 
-
-						</p>
-						<ul class="actions">
-							<li><a href="Dashboard Hypertension Plus.html" class="button">Previous project</a>
-							<a href="Ranking Hotel Listings.html" class="button">Next project</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="index.html" class="button">Home</a></li>
-						</ul>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Amsterdam, the Netherlands<br />
-									</li>
-								</ul>
-							</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Dragos Pop</li>
+			<!-- Three -->
+			<section id="three">
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+							Amsterdam, the Netherlands<br />
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
 
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/dragos-pop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/dragospop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Dragos Pop</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/darkmode.js"></script>
+		<script src="assets/js/projects-data.js"></script>
+		<script src="assets/js/projectnav.js"></script>
 
 	</body>
 </html>

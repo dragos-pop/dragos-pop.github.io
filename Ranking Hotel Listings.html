@@ -6,6 +6,7 @@
 -->
 <html lang="en">
 	<head>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
 		<title>Ranking Hotel Listings</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Ranking hotel listings by booking likelihood" />
@@ -21,7 +22,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 		<script type="application/ld+json">
@@ -42,117 +42,119 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
-					<h1><strong>Dragos Pop</strong><br />
- 						Data Science & Engineering</h1>
-				</div>
-			</header>
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
 
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
+				<h1><strong>Dragos Pop</strong><br />
+				Data Science & Engineering</h1>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h1>Ranking Hotel Listings on Expedia
-								<ul class="icons"><a href="https://github.com/dragos-pop/MSc-Data-Science/tree/main/Data%20Mining%20Techniques/Assignment_2" target="_blank" class="icon brands alt fa-github">
-									<span class="label">GitHub</span></a>
-									 &nbsp; <a href="https://www.kaggle.com/competitions/2nd-assignment-dmt2022" target="_blank" class="icon brands alt fa-kaggle">
-									<span class="label">Kaggle</span></a>
-								</ul>
-							</h1>
-						</header>
-
-						<h3>May 2022 ~ MSc Course "Data Mining Techniques"<br /><br /></h3>
-						<p align="justify"><b>Length: </b> &nbsp; 1mo (at 0.25 FTE)<br /><br />
-
-							<b>Programming language: </b> &nbsp; Python (Pandas,  time, datetime, scikit-learn, LightGBM) <br /><br />
-
-							<b>Data: </b> &nbsp; Roughly five million search queries for a hotel, containing the
-							properties of the retrieved estates, details about the user, and whether the visitor clicked on
-							the hotel and booked it<br /><br />
-
-							<b>Problem description: </b><br />
-							Rank hotel listings based on their likelihood of being booked<br /><br />
-
-							<b>Approach: </b><br />
-							First, the data was explored, investigating its shape and then the types, missing values,
-							and distributions of its features. Secondly, new variables were derived, the missing entries
-							filled, and the categorical features one-hot-encoded. Next, the data was split into the
-							train (90%) and validation (10%) sets. Lastly, two LightGBM models were designed, a regressor
-							(pointwise approach) and a ranker (listwise approach).
-
-							<br /><br />
-
-							<b>Results: </b><br />
-							After testing different target variables and encoding techniques for the categorical features,
-							multiple combinations of hyperparameters were compared using a 4-fold Cross-Validation method.
-							The NDCG@5 of the regressor and ranker estimators were evaluated at 0.350 and 0.375, respectively,
-							on the validation data. Next, the models with the best hyperparameters were trained on all the
-							data (including the held-out set) and evaluated on the competition test set at 0.333 and 0.366,
-							respectively, suggesting a slight overfit on the validation data. The resulted NDCGs@5 were
-							interpreted in relation to the random baseline ranking (0.156). Accordingly, the outcomes
-							indicate that the developed models are over two times as good as listing properties randomly.
-							In other words, Expedia would satisfy their customers twice as much by using one of the two
-							models instead of randomly displaying listings.
-							<br /><br />
-
-							Finally, in the picture below, one can see the feature importance of the final LGBMRanker
-							model. The most important variable is by far the property id, implying that specific properties
-							are significantly more likely to be booked than others when retrieved after the search.
-
-							<br /><br />
-
-							<img src="assets/images/Fig32.jpg" alt="Feature importance" width="500" height="250">
-
-						</p>
-						<ul class="actions">
-							<li><a href="Caged Shipment Prediction.html" class="button">Previous project</a></li>
-							<a href="Rating Prediction.html" class="button">Next project</a></li>
+		<div id="main">
+			<!-- One -->
+			<section id="one">
+				<header class="major">
+					<h1>Ranking Hotel Listings on Expedia
+						<ul class="icons"><a href="https://github.com/dragos-pop/MSc-Data-Science/tree/main/Data%20Mining%20Techniques/Assignment_2" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github">
+							<span class="label">GitHub</span></a>
+							 &nbsp; <a href="https://www.kaggle.com/competitions/2nd-assignment-dmt2022" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-kaggle">
+							<span class="label">Kaggle</span></a>
 						</ul>
-						<ul class="actions">
-							<li><a href="index.html" class="button">Home</a></li>
-						</ul>
-					</section>
+					</h1>
+				</header>
 
-				<!-- Three -->
-					<section id="three">
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Amsterdam, the Netherlands<br />
-									</li>
-								</ul>
-							</div>
-					</section>
-			</div>
+				<h3>May 2022 ~ MSc Course "Data Mining Techniques"<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 0.25 FTE)<br /><br />
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Dragos Pop</li>
+					<b>Programming language: </b> &nbsp; Python (Pandas,  time, datetime, scikit-learn, LightGBM) <br /><br />
+
+					<b>Data: </b> &nbsp; Roughly five million search queries for a hotel, containing the
+					properties of the retrieved estates, details about the user, and whether the visitor clicked on
+					the hotel and booked it<br /><br />
+
+					<b>Problem description: </b><br />
+					Rank hotel listings based on their likelihood of being booked<br /><br />
+
+					<b>Approach: </b><br />
+					First, the data was explored, investigating its shape and then the types, missing values,
+					and distributions of its features. Secondly, new variables were derived, the missing entries
+					filled, and the categorical features one-hot-encoded. Next, the data was split into the
+					train (90%) and validation (10%) sets. Lastly, two LightGBM models were designed, a regressor
+					(pointwise approach) and a ranker (listwise approach).
+
+					<br /><br />
+
+					<b>Results: </b><br />
+					After testing different target variables and encoding techniques for the categorical features,
+					multiple combinations of hyperparameters were compared using a 4-fold Cross-Validation method.
+					The NDCG@5 of the regressor and ranker estimators were evaluated at 0.350 and 0.375, respectively,
+					on the validation data. Next, the models with the best hyperparameters were trained on all the
+					data (including the held-out set) and evaluated on the competition test set at 0.333 and 0.366,
+					respectively, suggesting a slight overfit on the validation data. The resulted NDCGs@5 were
+					interpreted in relation to the random baseline ranking (0.156). Accordingly, the outcomes
+					indicate that the developed models are over two times as good as listing properties randomly.
+					In other words, Expedia would satisfy their customers twice as much by using one of the two
+					models instead of randomly displaying listings.
+					<br /><br />
+
+					Finally, in the picture below, one can see the feature importance of the final LGBMRanker
+					model. The most important variable is by far the property id, implying that specific properties
+					are significantly more likely to be booked than others when retrieved after the search.
+
+					<br /><br />
+
+					<img src="assets/images/Fig32.jpg" alt="Feature importance" width="500" height="250" />
+
+				</p>
+				<ul class="actions">
+					<li><a id="prev-project" href="Caged Shipment Prediction.html" class="button">Previous project</a>
+					<a id="next-project" href="Rating Prediction.html" class="button">Next project</a></li>
+				</ul>
+				<ul class="actions">
+					<li><a id="home-link" href="index.html" class="button">Home</a></li>
+				</ul>
+			</section>
+
+			<!-- Three -->
+			<section id="three">
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+							Amsterdam, the Netherlands<br />
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
+		</div>
 
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/dragos-pop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/dragospop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Dragos Pop</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/darkmode.js"></script>
+		<script src="assets/js/projects-data.js"></script>
+		<script src="assets/js/projectnav.js"></script>
 
 	</body>
 </html>

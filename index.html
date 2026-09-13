@@ -7,6 +7,7 @@
 
 <html lang="en">
 	<head>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
 		<title>Portfolio - Dragos Pop</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Portfolio of Dragos Pop, Data Science & Engineering" />
@@ -22,7 +23,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 		<script type="application/ld+json">
@@ -43,204 +43,165 @@
 	</head>
 	<body class="is-preload">
 
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
+
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
-					<h1><strong>Dragos Pop</strong><br />
- 						Data Science & Engineering</h1>
-				</div>
-			</header>
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" width="376" height="544" /></a>
+				<h1><strong>Dragos Pop</strong><br />
+				Data Science & Engineering</h1>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>About me<br />
-							</h2>
-						</header>
-						<p align="justify">
- 							MSc Data Science graduate with six years of experience using data to solve real-world
-							problems and helping businesses become more profitable. On my path bridging Amsterdam,
-							Singapore, and Melbourne, I worked with cutting-edge AI and Data Engineering tools to
-							drive impact for leaders in renewable energy retailing, transportation, and healthcare.
-							<br /><br />
+		<div id="main">
+			<!-- One -->
+			<section id="one">
+				<header class="major">
+					<h2>About me<br />
+					</h2>
+				</header>
+				<p class="justify">
+					MSc Data Science graduate with six years of experience using data to solve real-world
+					problems and helping businesses become more profitable. On my path bridging Amsterdam,
+					Singapore, and Melbourne, I worked with cutting-edge AI and Data Engineering tools to
+					drive impact for leaders in renewable energy retailing, transportation, and healthcare.
+					<br /><br />
 
-							Projects I have delivered include: data pipeline orchestration, CI/CD workflow,
-							music generation (GenAI), shipment classification, sales forecasting, system automation,
-							duplicates identification, berth scheduling, recommender systems, model evaluation,
-							dashboard design, price and rating prediction, etc.
-						</p>
+					Projects I have delivered include: data pipeline orchestration, CI/CD workflow,
+					music generation (GenAI), shipment classification, sales forecasting, system automation,
+					duplicates identification, berth scheduling, recommender systems, model evaluation,
+					dashboard design, price and rating prediction, etc.
+				</p>
 
-						<ul class="actions">
-							<li><a href="Certifications.html" class="button">Certifications</a></li>
-							<li><a href="Software Toolkit.html" class="button">Software Toolkit</a></li>
-						</ul>
+				<ul class="actions">
+					<li><a href="Certifications.html" class="button">Certifications</a></li>
+					<li><a href="Software Toolkit.html" class="button">Software Toolkit</a></li>
+				</ul>
 
-						<h1>Portfolio<span style="font-size:24px"> (inverse chronological order)<br />
+				<h1>Portfolio<span class="section-subtitle"> (inverse chronological order)</span></h1>
 
-							<u>Featured projects</u></span></h1>
+				<div class="row">
+					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
+						<a href="Invoicing Pipeline Lite.html" class="image fit thumb"><img src="assets/images/thumbs/034.jpg" alt="Invoicing Pipeline Lite thumbnail" width="1000" height="666" loading="lazy" /></a>
+						<h3><a href="Invoicing Pipeline Lite.html"> Invoicing Pipeline Lite</a></h3>
+						<h5>Aug 2026</h5>
+						<p class="justify"> Built a Dagster pipeline that reads monthly contractor hours from
+							an Excel workbook, generates a branded PDF invoice, and emails it directly to
+							the client </p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
+						<a href="Grid Capacity Pipeline.html" class="image fit thumb"><img src="assets/images/thumbs/033.jpg" alt="Grid Capacity Pipeline thumbnail" width="1414" height="940" loading="lazy" /></a>
+						<h3><a href="Grid Capacity Pipeline.html"> Grid Capacity Pipeline</a></h3>
+						<h5>Aug 2025 ~ Flo Energy</h5>
+						<p class="justify"> Automated a pipeline that fetches a byte-endcoded PDF report via API,
+							parses multiple tables, loads them into Snowflake via Amazon S3, and refreshes
+							dbt models powering a Holistics dashboard </p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="CI/CD">
+						<a href="Selective CL Deployment.html" class="image fit thumb"><img src="assets/images/thumbs/032.jpg" alt="Selective Dagster Code Location Deployment with GitHub Actions thumbnail" width="1158" height="772" loading="lazy" /></a>
+						<h3><a href="Selective CL Deployment.html"> Selective Dagster Code Location Deployment
+						with GitHub Actions</a></h3>
+						<h5>Aug 2024 ~ Flo Energy</h5>
+						<p class="justify"> Expedited Dagster branch deployment CI through a GitHub Actions job
+							which dynamically selects code locations for rollout based on PR labels </p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
+						<a href="MIDIGPT.html" class="image fit thumb"><img src="assets/images/thumbs/026.jpg" alt="Generating Music from Raw MIDI thumbnail" width="941" height="618" loading="lazy" /></a>
+						<h3><a href="MIDIGPT.html">Generating Music from Raw MIDI</a></h3>
+						<h5>Aug 2023 ~ Network Institute VU</h5>
+						<p class="justify"> Developed and trained GPT-like transformers on HPC to generate music
+							from Raw MIDI</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
+						<a href="Rating Prediction.html" class="image fit thumb"><img src="assets/images/thumbs/027.jpg" alt="Goodreads Book Rating Prediction thumbnail" width="1600" height="1067" loading="lazy" /></a>
+						<h3><a href="Rating Prediction.html">Goodreads Book Rating Prediction</a></h3>
+						<h5>Apr 2023 ~ Kaggle competition</h5>
+						<p class="justify"> Predicted the review ratings of books on Goodreads</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
+						<a href="Ranking Hotel Listings.html" class="image fit thumb"><img src="assets/images/thumbs/025.jpg" alt="Ranking Hotel Listings on Expedia thumbnail" width="585" height="390" loading="lazy" /></a>
+						<h3><a href="Ranking Hotel Listings.html">Ranking Hotel Listings on Expedia</a></h3>
+						<h5>May 2022 ~ MSc Course "Data Mining Techniques"</h5>
+						<p class="justify"> Ranked hotel listings based on their likelihood of being booked, obtaining
+						an NDCG@5 over two times as good as the random baseline ranking</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
+						<a href="Caged Shipment Prediction.html" class="image fit thumb"><img src="assets/images/thumbs/023.jpg" alt="Caged Shipment Prediction thumbnail" width="1000" height="666" loading="lazy" /></a>
+						<h3><a href="Caged Shipment Prediction.html">Caged Shipment Prediction</a></h3>
+						<h5>Jan 2022 ~ FedEx Express</h5>
+						<p class="justify"> Developed a LightGBM model for classifying whether a shipment will
+							be caged (secured until the correct information is obtained)</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="BI">
+						<a href="Dashboard Hypertension Plus.html" class="image fit thumb"><img src="assets/images/thumbs/014.jpg" alt="Dashboard Hypertension Plus thumbnail" width="938" height="625" loading="lazy" /></a>
+						<h3><a href="Dashboard Hypertension Plus.html">Dashboard Hypertension Plus</a></h3>
+						<h5>Mar 2021 ~ OMRON Healthcare Europe</h5>
+						<p class="justify">Hypertension Plus is an app meant to reduce the friction between
+							patients with hypertension and their physicians with the help of blood pressure home
+							monitoring. To measure the performance of the app and gather actionable
+							insights, a dashboard depicting critical metrics was designed</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
+						<a href="Automation Engagement System.html" class="image fit thumb"><img src="assets/images/thumbs/015.jpg" alt="Automation of Engagement System thumbnail" width="368" height="245" loading="lazy" /></a>
+						<h3><a href="Automation Engagement System.html">Automation of Engagement System</a></h3>
+						<h5>Jan 2021 ~ OMRON Healthcare Europe</h5>
+						<p class="justify">With the release of the Hypertension Plus app, OMRON Healthcare wanted to
+							raise the engagement among users by keeping track of specific groups of patients,
+							such as the ones who have not accessed their account in the last week or the ones who
+							have not completed their blood pressure measurements, and targeting them with email
+							reminders</p>
+					</article>
+					<article class="col-6 col-12-xsmall actions" data-tag="Optimization">
+						<a href="BAP Port of Amsterdam.html" class="image fit thumb"><img src="assets/images/thumbs/001.jpg" alt="Berth Allocation Problem within Port of Amsterdam thumbnail" width="800" height="533" loading="lazy" /></a>
+						<h3><a href="BAP Port of Amsterdam.html">Berth Allocation Problem within Port of Amsterdam</a></h3>
+						<h5>Jun 2020 ~ Port of Amsterdam</h5>
+						<p class="justify">Port of Amsterdam demanded to know if giving up the current First Come, First Served
+							strategy of assigning vessels to berths would produce any benefits, especially after
+							the new sea lock will be ready and (more) larger ships will be allowed to moor in
+							the harbor</p>
+					</article>
+				</div>
+			</section>
 
-						<div class="row" >
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Invoicing Pipeline Lite F.html" class="image fit thumb"><img src="assets/images/thumbs/034.jpg" alt="Invoicing Pipeline Lite thumbnail" /></a>
-								<h3><a href="Invoicing Pipeline Lite F.html"> Invoicing Pipeline Lite</a></h3>
-								<h5>Aug 2026</h5>
-								<p align="justify"> Built a Dagster pipeline that reads monthly contractor hours from
-									an Excel workbook, generates a branded PDF invoice, and emails it directly to
-									the client </p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Selective CL Deployment F.html" class="image fit thumb"><img src="assets/images/thumbs/032.jpg" alt="Selective Dagster Code Location Deployment with GitHub Actions thumbnail" /></a>
-								<h3><a href="Selective CL Deployment F.html"> Selective Dagster Code Location Deployment
-								with GitHub Actions</a></h3>
-								<h5>Aug 2024 ~ Flo Energy</h5>
-								<p align="justify"> Expedited Dagster branch deployment CI through a GitHub Actions job
-									which dynamically selects code locations for rollout based on PR labels </p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="MIDIGPT F.html" class="image fit thumb"><img src="assets/images/thumbs/026.jpg" alt="Generating Music from Raw MIDI thumbnail" /></a>
-								<h3><a href="MIDIGPT F.html">Generating Music from Raw MIDI</a></h3>
-								<h5>Aug 2023 ~ Network Institute VU</h5>
-								<p align="justify"> Developed and trained GPT-like transformers on HPC to generate music
-									from Raw MIDI</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Automation Engagement System F.html" class="image fit thumb"><img src="assets/images/thumbs/015.jpg" alt="Automation of Engagement System thumbnail" /></a>
-								<h3><a href="Automation Engagement System F.html">Automation of Engagement System</a></h3>
-								<h5>Jan 2021 ~ OMRON Healthcare Europe</h5>
-								<p align="justify">With the release of the Hypertension Plus app, OMRON Healthcare wanted to
-									raise the engagement among users by keeping track of specific groups of patients,
-									such as the ones who have not accessed their account in the last week or the ones who
-									have not completed their blood pressure measurements, and targeting them with email
-									reminders</p>
-							</article>
-						</div>
-
-						<br />
-
-						<div class="row" style="background-color:#D8F7F7; padding-right:2em;">
-							<div class="col-12"><h2><u>All projects</u></h2></div>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Invoicing Pipeline Lite.html" class="image fit thumb"><img src="assets/images/thumbs/034.jpg" alt="Invoicing Pipeline Lite thumbnail" /></a>
-								<h3><a href="Invoicing Pipeline Lite.html"> Invoicing Pipeline Lite</a></h3>
-								<h5>Aug 2026</h5>
-								<p align="justify"> Built a Dagster pipeline that reads monthly contractor hours from
-									an Excel workbook, generates a branded PDF invoice, and emails it directly to
-									the client </p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Grid Capacity Pipeline.html" class="image fit thumb"><img src="assets/images/thumbs/033.jpg" alt="Grid Capacity Pipeline thumbnail" /></a>
-								<h3><a href="Grid Capacity Pipeline.html"> Grid Capacity Pipeline</a></h3>
-								<h5>Aug 2025 ~ Flo Energy</h5>
-								<p align="justify"> Automated a pipeline that fetches a byte-endcoded PDF report via API,
-									parses multiple tables, loads them into Snowflake via Amazon S3, and refreshes
-									dbt models powering a Holistics dashboard </p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Selective CL Deployment.html" class="image fit thumb"><img src="assets/images/thumbs/032.jpg" alt="Selective Dagster Code Location Deployment with GitHub Actions thumbnail" /></a>
-								<h3><a href="Selective CL Deployment.html"> Selective Dagster Code Location Deployment
-								with GitHub Actions</a></h3>
-								<h5>Aug 2024 ~ Flo Energy</h5>
-								<p align="justify"> Expedited Dagster branch deployment CI through a GitHub Actions job
-									which dynamically selects code locations for rollout based on PR labels </p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="MIDIGPT.html" class="image fit thumb"><img src="assets/images/thumbs/026.jpg" alt="Generating Music from Raw MIDI thumbnail" /></a>
-								<h3><a href="MIDIGPT.html">Generating Music from Raw MIDI</a></h3>
-								<h5>Aug 2023 ~ Network Institute VU</h5>
-								<p align="justify"> Developed and trained GPT-like transformers on HPC to generate music
-									from Raw MIDI</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Rating Prediction.html" class="image fit thumb"><img src="assets/images/thumbs/027.jpg" alt="Goodreads Book Rating Prediction thumbnail" /></a>
-								<h3><a href="Rating Prediction.html">Goodreads Book Rating Prediction</a></h3>
-								<h5>Apr 2023 ~ Kaggle competition</h5>
-								<p align="justify"> Predicted the review ratings of books on Goodreads</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Ranking Hotel Listings.html"  class="image fit thumb"><img src="assets/images/thumbs/025.jpg" alt="Ranking Hotel Listings on Expedia thumbnail" /></a>
-								<h3><a href="Ranking Hotel Listings.html">Ranking Hotel Listings on Expedia</a></h3>
-								<h5>May 2022 ~ MSc Course "Data Mining Techniques"</h5>
-								<p align="justify"> Ranked hotel listings based on their likelihood of being booked, obtaining
-								an NDCG@5 over two times as good as the random baseline ranking</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Caged Shipment Prediction.html"  class="image fit thumb"><img src="assets/images/thumbs/023.jpg" alt="Caged Shipment Prediction thumbnail" /></a>
-								<h3><a href="Caged Shipment Prediction.html">Caged Shipment Prediction</a></h3>
-								<h5>Jan 2022 ~ FedEx Express</h5>
-								<p align="justify"> Developed a LightGBM model for classifying whether a shipment will
-									be caged (secured until the correct information is obtained)</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Dashboard Hypertension Plus.html" class="image fit thumb"><img src="assets/images/thumbs/014.jpg" alt="Dashboard Hypertension Plus thumbnail" /></a>
-								<h3><a href="Dashboard Hypertension Plus.html">Dashboard Hypertension Plus</a></h3>
-								<h5>Mar 2021 ~ OMRON Healthcare Europe</h5>
-								<p align="justify">Hypertension Plus is an app meant to reduce the friction between
-									patients with hypertension and their physicians with the help of blood pressure home
-									monitoring. To measure the performance of the app and gather actionable
-									insights, a dashboard depicting critical metrics was designed</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="Automation Engagement System.html" class="image fit thumb"><img src="assets/images/thumbs/015.jpg" alt="Automation of Engagement System thumbnail" /></a>
-								<h3><a href="Automation Engagement System.html">Automation of Engagement System</a></h3>
-								<h5>Jan 2021 ~ OMRON Healthcare Europe</h5>
-								<p align="justify">With the release of the Hypertension Plus app, OMRON Healthcare wanted to
-									raise the engagement among users by keeping track of specific groups of patients,
-									such as the ones who have not accessed their account in the last week or the ones who
-									have not completed their blood pressure measurements, and targeting them with email
-									reminders</p>
-							</article>
-							<article class="col-6 col-12-xsmall actions">
-								<a href="BAP Port of Amsterdam.html" class="image fit thumb"><img src="assets/images/thumbs/001.jpg" alt="Berth Allocation Problem within Port of Amsterdam thumbnail" /></a>
-								<h3><a href="BAP Port of Amsterdam.html">Berth Allocation Problem within Port of Amsterdam</a></h3>
-								<h5>Jun 2020 ~ Port of Amsterdam</h5>
-								<p align="justify">Port of Amsterdam demanded to know if giving up the current First Come, First Served
-									strategy of assigning vessels to berths would produce any benefits, especially after
-									the new sea lock will be ready and (more) larger ships will be allowed to moor in
-									the harbor</p>
-							</article>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Amsterdam, the Netherlands<br />
-									</li>
-								</ul>
-							</div>
-					</section>
-
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Dragos Pop</li>
+			<!-- Three -->
+			<section id="three">
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+							Amsterdam, the Netherlands<br />
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
 
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/dragos-pop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/dragospop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Dragos Pop</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/darkmode.js"></script>
+		<script src="assets/js/projects-data.js"></script>
+		<script src="assets/js/filter.js"></script>
 
 	</body>
 </html>

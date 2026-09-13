@@ -6,6 +6,7 @@
 -->
 <html lang="en">
 	<head>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
 		<title>Software Toolkit</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Dragos Pop Software Toolkit" />
@@ -21,127 +22,127 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
-					<h1><strong>Dragos Pop</strong><br />
- 						Data Science & Engineering</h1>
-				</div>
-			</header>
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
 
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
+				<h1><strong>Dragos Pop</strong><br />
+				Data Science & Engineering</h1>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h1>Software Toolkit<br />
-							</h1>
-						</header>
-							<ul>
-								<h3>Programming Languages:</h3>
-									<li>Python</li>
-									<li>SQL</li>
-									<li>Bash</li>
-									<li>R</li>
-									<li>Java</li>
-									<li>C++</li>
-							<br /><br />
-								<h3>Main Python Libraries:</h3>
-									<li>Pandas</li>
-									<li>scikit-learn</li>
-									<li>PySpark</li>
-									<li>TensorFlow</li>
-									<li>PyTorch (Lightning)</li>
-									<li>WandB</li>
-									<li>Dagster</li>
-									<li>Streamlit</li>
-							<br /><br />
-								<h3>Platforms:</h3>
-								<b>BI:</b>
-									<li>Holistics</li>
-									<li>Tableau</li>
-									<li>Amazon QuickSight</li>
-									<li>Microsoft Power BI</li>
-								<b>Data Engineering:</b>
-									<li>dbt</li>
-									<li>Stitch</li>
-									<li>Airbyte</li>
-									<li>MapReduce</li>
-									<li>Spark (PySpark)</li>
-									<li>Apache Hadoop</li>
-								<b>Relational Database:</b>
-									<li>Microsoft SQL Server</li>
-									<li>PostgreSQL</li>
-									<li>MySQL</li>
-								<b>Non-Relational Database:</b>
-									<li>MongoDB (PyMongo)</li>
-									<li>Amazon DynamoDB</li>
-								<b>Data Warehouse:</b>
-									<li>Snowflake</li>
-									<li>Google BigQuery</li>
-								<b>Version Control:</b>
-									<li>GitHub</li>
-									<li>Bitbucket</li>
-								<b>Cloud:</b>
-									<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
-									<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
-								<b>Other:</b>
-									<li>Terraform</li>
-									<li>GitHub Actions (CI/CD)</li>
-									<li>Dataiku</li>
-									<li>IBM SPSS Modeler</li>
-									<li>IBM Watson Analytics</li>
-									<li>IBM CPLEX Optimizer</li>
-									<li>Docker</li>
-							</ul>
-						<ul class="actions">
-							<li><a href="index.html" class="button">Home</a></li>
-						</ul>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Amsterdam, the Netherlands<br />
-									</li>
-								</ul>
-							</div>
-					</section>
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/dragos-pop" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="https://www.kaggle.com/dragospop" target="_blank" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+		<div id="main">
+			<!-- One -->
+			<section id="one">
+				<header class="major">
+					<h1>Software Toolkit<br />
+					</h1>
+				</header>
+					<ul>
+						<h3>Programming Languages:</h3>
+							<li>Python</li>
+							<li>SQL</li>
+							<li>Bash</li>
+							<li>R</li>
+							<li>Java</li>
+							<li>C++</li>
+					<br /><br />
+						<h3>Main Python Libraries:</h3>
+							<li>Pandas</li>
+							<li>scikit-learn</li>
+							<li>PySpark</li>
+							<li>TensorFlow</li>
+							<li>PyTorch (Lightning)</li>
+							<li>WandB</li>
+							<li>Dagster</li>
+							<li>Streamlit</li>
+					<br /><br />
+						<h3>Platforms:</h3>
+						<b>BI:</b>
+							<li>Holistics</li>
+							<li>Tableau</li>
+							<li>Amazon QuickSight</li>
+							<li>Microsoft Power BI</li>
+						<b>Data Engineering:</b>
+							<li>dbt</li>
+							<li>Stitch</li>
+							<li>Airbyte</li>
+							<li>MapReduce</li>
+							<li>Spark (PySpark)</li>
+							<li>Apache Hadoop</li>
+						<b>Relational Database:</b>
+							<li>Microsoft SQL Server</li>
+							<li>PostgreSQL</li>
+							<li>MySQL</li>
+						<b>Non-Relational Database:</b>
+							<li>MongoDB (PyMongo)</li>
+							<li>Amazon DynamoDB</li>
+						<b>Data Warehouse:</b>
+							<li>Snowflake</li>
+							<li>Google BigQuery</li>
+						<b>Version Control:</b>
+							<li>GitHub</li>
+							<li>Bitbucket</li>
+						<b>Cloud:</b>
+							<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
+							<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
+						<b>Other:</b>
+							<li>Terraform</li>
+							<li>GitHub Actions (CI/CD)</li>
+							<li>Dataiku</li>
+							<li>IBM SPSS Modeler</li>
+							<li>IBM Watson Analytics</li>
+							<li>IBM CPLEX Optimizer</li>
+							<li>Docker</li>
 					</ul>
-					<ul class="copyright">
-						<li>&copy; Dragos Pop</li>
+				<ul class="actions">
+					<li><a href="index.html" class="button">Home</a></li>
+				</ul>
+			</section>
+
+			<!-- Three -->
+			<section id="three">
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+							Amsterdam, the Netherlands<br />
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</section>
+		</div>
 
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/dragos-pop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/dragospop" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Dragos Pop</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/darkmode.js"></script>
 
 	</body>
 </html>
