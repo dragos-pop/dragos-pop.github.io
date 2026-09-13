@@ -4,21 +4,48 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Invoicing Pipeline Lite</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Dagster pipeline generating and emailing invoices from contractor hours" />
+		<meta name="author" content="Dragos Pop" />
+		<meta property="og:title" content="Invoicing Pipeline Lite" />
+		<meta property="og:site_name" content="Dragos Pop Portfolio" />
+		<meta property="og:description" content="Dagster pipeline generating and emailing invoices from contractor hours" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://dragos-pop.github.io/Invoicing%20Pipeline%20Lite.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/034.jpg" />
+		<meta property="og:image:width" content="1536" />
+		<meta property="og:image:height" content="1024" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+		<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Invoicing Pipeline Lite",
+  "description": "Dagster pipeline generating and emailing invoices from contractor hours",
+  "url": "https://dragos-pop.github.io/Invoicing%20Pipeline%20Lite.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/034.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Dragos Pop",
+    "url": "https://dragos-pop.github.io/"
+  }
+}
+		</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
 					<h1><strong>Dragos Pop</strong><br />
  						Data Science & Engineering</h1>
 				</div>
@@ -56,7 +83,7 @@
 							The pipeline is built as a Dagster lineage with monthly asset partitions, so one run
 							corresponds to one billing month, as shown in the asset graph below:
 							<br /><br />
-							<img src="images/Fig53.jpg" alt="Invoicing Pipeline Lite Asset Lineage" width="840" height="296">
+							<img src="assets/images/Fig53.jpg" alt="Invoicing Pipeline Lite Asset Lineage" width="840" height="296">
 							<br /><br />
 
 							The invoice history sheet is read first to retrieve the last issued invoice number,
@@ -81,8 +108,8 @@
 							mock data:
 							<br />
 							<div style="display: flex; align-items: flex-start; gap: 20px;">
-								<img src="images/Fig54.jpg" alt="Invoicing Pipeline Lite Email Example" width="840" height="503" style="border: 3px solid #000; height: 340px; width: auto;">
-								<img src="images/Fig55.jpg" alt="Invoicing Pipeline Lite PDF Invoice" width="460" height="651" style="height: 340px; width: auto;">
+								<img src="assets/images/Fig54.jpg" alt="Invoicing Pipeline Lite Email Example" width="840" height="503" style="border: 3px solid #000; height: 340px; width: auto;">
+								<img src="assets/images/Fig55.jpg" alt="Invoicing Pipeline Lite PDF Invoice" width="460" height="651" style="height: 340px; width: auto;">
 							</div>
 							<br />
 

@@ -4,21 +4,48 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Rating Prediction</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Predicting Goodreads book ratings" />
+		<meta name="author" content="Dragos Pop" />
+		<meta property="og:title" content="Rating Prediction" />
+		<meta property="og:site_name" content="Dragos Pop Portfolio" />
+		<meta property="og:description" content="Predicting Goodreads book ratings" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://dragos-pop.github.io/Rating%20Prediction.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/027.jpg" />
+		<meta property="og:image:width" content="1600" />
+		<meta property="og:image:height" content="1067" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#00138f" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+		<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Rating Prediction",
+  "description": "Predicting Goodreads book ratings",
+  "url": "https://dragos-pop.github.io/Rating%20Prediction.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/027.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Dragos Pop",
+    "url": "https://dragos-pop.github.io/"
+  }
+}
+		</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="image avatar"><img src="images/avatar1.jpg" alt="" /></a>
+					<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
 					<h1><strong>Dragos Pop</strong><br />
  						Data Science & Engineering</h1>
 				</div>
@@ -35,7 +62,8 @@
 									<span class="label">GitHub</span></a>
 									 &nbsp; <a href="https://www.kaggle.com/competitions/goodreads-books-reviews-290312" target="_blank" class="icon brands alt fa-kaggle">
 									<span class="label">Kaggle</span></a>
-									 &nbsp;  <a href="https://wandb.ai/d-a-pop/Goodreads%20Books%20Reviews" target="_blank">
+									 &nbsp;  <a href="https://wandb.ai/d-a-pop/Goodreads%20Books%20Reviews" target="_blank" class="icon">
+									<span class="icon-wandb" aria-hidden="true"></span>
 									<span class="label">W&B</span></a>
 								</ul>
 							</h1>
@@ -62,7 +90,7 @@
 							F1 score in the competition, these variables were kept.
 
 							<br />
-							<img src="images/Fig36.jpg" alt="Rating Histograms Train vs Val" width="730" height="300">
+							<img src="assets/images/Fig36.jpg" alt="Rating Histograms Train vs Val" width="730" height="300">
 							<br /><br />
 
 							Next, the train set was explored and cleaned by filling in missing values, converting features
@@ -91,14 +119,14 @@
 							it misses the value by 1-2 points.
 
 							<br />
-							<img src="images/Fig37.jpg" alt="Confusion Matrix" width="400" height="370">
+							<img src="assets/images/Fig37.jpg" alt="Confusion Matrix" width="400" height="370">
 							<br /><br />
 
 							Not surprisingly, the two ID features reached the highest importance among all the features,
 							with a significant distance to the third most important feature.
 
 							<br /><br />
-							<img src="images/Fig38.jpg" alt="Feature Importance" width="730" height="270">
+							<img src="assets/images/Fig38.jpg" alt="Feature Importance" width="730" height="270">
 							<br /><br />
 
 						</p>

@@ -2035,6 +2035,22 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
+	.icon-wandb {
+		display: inline-block;
+		width: 0.85em;
+		height: 0.85em;
+		vertical-align: middle;
+		background-color: currentColor;
+		-webkit-mask-image: url("../images/wandb_logo.svg");
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		-webkit-mask-size: contain;
+		mask-image: url("../images/wandb_logo.svg");
+		mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: contain;
+	}
+
 /* Image */
 
 	.image {
@@ -2593,7 +2609,7 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), url("../images/bg.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
@@ -3078,7 +3094,7 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+				background-image: url("images/overlay.png"), url("../images/bg.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
