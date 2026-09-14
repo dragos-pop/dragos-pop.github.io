@@ -69,18 +69,28 @@
 
 			if (settings.parallax) {
 
+				var parallaxTicking = false;
+
 				var parallaxHandler = function() {
 					header.style.backgroundPosition = 'left ' + (-1 * (window.scrollY / settings.parallaxFactor)) + 'px';
+					parallaxTicking = false;
+				};
+
+				var parallaxScrollListener = function() {
+					if (!parallaxTicking) {
+						window.requestAnimationFrame(parallaxHandler);
+						parallaxTicking = true;
+					}
 				};
 
 				breakpoints.on('<=medium', function() {
-					window.removeEventListener('scroll', parallaxHandler);
+					window.removeEventListener('scroll', parallaxScrollListener);
 					header.style.backgroundPosition = '';
 				});
 
 				breakpoints.on('>medium', function() {
 					header.style.backgroundPosition = 'left 0px';
-					window.addEventListener('scroll', parallaxHandler);
+					window.addEventListener('scroll', parallaxScrollListener, { passive: true });
 				});
 
 				window.addEventListener('load', function() {
