@@ -7,13 +7,18 @@
 		return theme === 'dark' ? '☀' : '☾';
 	}
 
-	btn.textContent = icon(document.documentElement.getAttribute('data-theme'));
+	function update(theme) {
+		btn.textContent = icon(theme);
+		btn.setAttribute('aria-pressed', String(theme === 'dark'));
+	}
+
+	update(document.documentElement.getAttribute('data-theme'));
 
 	btn.addEventListener('click', function () {
 		var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 		document.documentElement.setAttribute('data-theme', next);
 		localStorage.setItem('theme', next);
-		btn.textContent = icon(next);
+		update(next);
 	});
 
 })();

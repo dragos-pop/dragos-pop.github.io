@@ -18,10 +18,16 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://dragos-pop.github.io/" />
 		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/avatar1.jpg" />
-		<meta property="og:image:width" content="376" />
-		<meta property="og:image:height" content="544" />
+		<meta property="og:image:width" content="200" />
+		<meta property="og:image:height" content="289" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
+		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
+		<link rel="preload" as="image" href="assets/images/bg-dark.jpg" fetchpriority="high" media="(prefers-color-scheme: dark)" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic&display=block" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
@@ -36,7 +42,8 @@
   "description": "Portfolio of Dragos Pop, Data Science & Engineering",
   "sameAs": [
     "https://www.linkedin.com/in/dragos-pop/",
-    "https://github.com/dragos-pop"
+    "https://github.com/dragos-pop",
+    "https://www.kaggle.com/dragospop"
   ]
 }
 		</script>
@@ -48,14 +55,14 @@
 		<!-- Header -->
 		<header id="header">
 			<div class="inner">
-				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" width="376" height="544" /></a>
+				<a href="index.html" class="image avatar"><picture><source srcset="assets/images/avatar1.webp" type="image/webp"><img src="assets/images/avatar1.jpg" alt="avatar" width="200" height="289" loading="lazy" /></picture></a>
 				<h1><strong>Dragos Pop</strong><br />
 				Data Science & Engineering</h1>
 			</div>
 		</header>
 
 		<!-- Main -->
-		<div id="main">
+		<main id="main">
 			<!-- One -->
 			<section id="one">
 				<header class="major">
@@ -84,69 +91,69 @@
 
 				<div class="row">
 					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
-						<a href="Invoicing Pipeline Lite.html" class="image fit thumb"><img src="assets/images/thumbs/034.jpg" alt="Invoicing Pipeline Lite thumbnail" width="1000" height="666" loading="lazy" /></a>
+						<a href="Invoicing Pipeline Lite.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/034.webp" type="image/webp"><img src="assets/images/thumbs/034.jpg" alt="Invoicing Pipeline Lite thumbnail" width="700" height="466" loading="lazy" /></picture></a>
 						<h3><a href="Invoicing Pipeline Lite.html"> Invoicing Pipeline Lite</a></h3>
-						<h5>Aug 2026</h5>
+						<h4 class="date">Aug 2026</h4>
 						<p class="justify"> Built a Dagster pipeline that reads monthly contractor hours from
 							an Excel workbook, generates a branded PDF invoice, and emails it directly to
 							the client </p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
-						<a href="Grid Capacity Pipeline.html" class="image fit thumb"><img src="assets/images/thumbs/033.jpg" alt="Grid Capacity Pipeline thumbnail" width="1414" height="940" loading="lazy" /></a>
+						<a href="Grid Capacity Pipeline.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/033.webp" type="image/webp"><img src="assets/images/thumbs/033.jpg" alt="Grid Capacity Pipeline thumbnail" width="700" height="465" loading="lazy" /></picture></a>
 						<h3><a href="Grid Capacity Pipeline.html"> Grid Capacity Pipeline</a></h3>
-						<h5>Aug 2025 ~ Flo Energy</h5>
+						<h4 class="date">Aug 2025 ~ Flo Energy</h4>
 						<p class="justify"> Automated a pipeline that fetches a byte-endcoded PDF report via API,
 							parses multiple tables, loads them into Snowflake via Amazon S3, and refreshes
 							dbt models powering a Holistics dashboard </p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="CI/CD">
-						<a href="Selective CL Deployment.html" class="image fit thumb"><img src="assets/images/thumbs/032.jpg" alt="Selective Dagster Code Location Deployment with GitHub Actions thumbnail" width="1158" height="772" loading="lazy" /></a>
+						<a href="Selective CL Deployment.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/032.webp" type="image/webp"><img src="assets/images/thumbs/032.jpg" alt="Selective Dagster Code Location Deployment with GitHub Actions thumbnail" width="700" height="467" loading="lazy" /></picture></a>
 						<h3><a href="Selective CL Deployment.html"> Selective Dagster Code Location Deployment
 						with GitHub Actions</a></h3>
-						<h5>Aug 2024 ~ Flo Energy</h5>
+						<h4 class="date">Aug 2024 ~ Flo Energy</h4>
 						<p class="justify"> Expedited Dagster branch deployment CI through a GitHub Actions job
 							which dynamically selects code locations for rollout based on PR labels </p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
-						<a href="MIDIGPT.html" class="image fit thumb"><img src="assets/images/thumbs/026.jpg" alt="Generating Music from Raw MIDI thumbnail" width="941" height="618" loading="lazy" /></a>
+						<a href="MIDIGPT.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/026.webp" type="image/webp"><img src="assets/images/thumbs/026.jpg" alt="Generating Music from Raw MIDI thumbnail" width="700" height="460" loading="lazy" /></picture></a>
 						<h3><a href="MIDIGPT.html">Generating Music from Raw MIDI</a></h3>
-						<h5>Aug 2023 ~ Network Institute VU</h5>
+						<h4 class="date">Aug 2023 ~ Network Institute VU</h4>
 						<p class="justify"> Developed and trained GPT-like transformers on HPC to generate music
 							from Raw MIDI</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
-						<a href="Rating Prediction.html" class="image fit thumb"><img src="assets/images/thumbs/027.jpg" alt="Goodreads Book Rating Prediction thumbnail" width="1600" height="1067" loading="lazy" /></a>
+						<a href="Rating Prediction.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/027.webp" type="image/webp"><img src="assets/images/thumbs/027.jpg" alt="Goodreads Book Rating Prediction thumbnail" width="700" height="467" loading="lazy" /></picture></a>
 						<h3><a href="Rating Prediction.html">Goodreads Book Rating Prediction</a></h3>
-						<h5>Apr 2023 ~ Kaggle competition</h5>
+						<h4 class="date">Apr 2023 ~ Kaggle competition</h4>
 						<p class="justify"> Predicted the review ratings of books on Goodreads</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
-						<a href="Ranking Hotel Listings.html" class="image fit thumb"><img src="assets/images/thumbs/025.jpg" alt="Ranking Hotel Listings on Expedia thumbnail" width="585" height="390" loading="lazy" /></a>
+						<a href="Ranking Hotel Listings.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/025.webp" type="image/webp"><img src="assets/images/thumbs/025.jpg" alt="Ranking Hotel Listings on Expedia thumbnail" width="585" height="390" loading="lazy" /></picture></a>
 						<h3><a href="Ranking Hotel Listings.html">Ranking Hotel Listings on Expedia</a></h3>
-						<h5>May 2022 ~ MSc Course "Data Mining Techniques"</h5>
+						<h4 class="date">May 2022 ~ MSc Course "Data Mining Techniques"</h4>
 						<p class="justify"> Ranked hotel listings based on their likelihood of being booked, obtaining
 						an NDCG@5 over two times as good as the random baseline ranking</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="ML & AI">
-						<a href="Caged Shipment Prediction.html" class="image fit thumb"><img src="assets/images/thumbs/023.jpg" alt="Caged Shipment Prediction thumbnail" width="1000" height="666" loading="lazy" /></a>
+						<a href="Caged Shipment Prediction.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/023.webp" type="image/webp"><img src="assets/images/thumbs/023.jpg" alt="Caged Shipment Prediction thumbnail" width="700" height="466" loading="lazy" /></picture></a>
 						<h3><a href="Caged Shipment Prediction.html">Caged Shipment Prediction</a></h3>
-						<h5>Jan 2022 ~ FedEx Express</h5>
+						<h4 class="date">Jan 2022 ~ FedEx Express</h4>
 						<p class="justify"> Developed a LightGBM model for classifying whether a shipment will
 							be caged (secured until the correct information is obtained)</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="BI">
-						<a href="Dashboard Hypertension Plus.html" class="image fit thumb"><img src="assets/images/thumbs/014.jpg" alt="Dashboard Hypertension Plus thumbnail" width="938" height="625" loading="lazy" /></a>
+						<a href="Dashboard Hypertension Plus.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/014.webp" type="image/webp"><img src="assets/images/thumbs/014.jpg" alt="Dashboard Hypertension Plus thumbnail" width="700" height="466" loading="lazy" /></picture></a>
 						<h3><a href="Dashboard Hypertension Plus.html">Dashboard Hypertension Plus</a></h3>
-						<h5>Mar 2021 ~ OMRON Healthcare Europe</h5>
+						<h4 class="date">Mar 2021 ~ OMRON Healthcare Europe</h4>
 						<p class="justify">Hypertension Plus is an app meant to reduce the friction between
 							patients with hypertension and their physicians with the help of blood pressure home
 							monitoring. To measure the performance of the app and gather actionable
 							insights, a dashboard depicting critical metrics was designed</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="Data Engineering">
-						<a href="Automation Engagement System.html" class="image fit thumb"><img src="assets/images/thumbs/015.jpg" alt="Automation of Engagement System thumbnail" width="368" height="245" loading="lazy" /></a>
+						<a href="Automation Engagement System.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/015.webp" type="image/webp"><img src="assets/images/thumbs/015.jpg" alt="Automation of Engagement System thumbnail" width="368" height="245" loading="lazy" /></picture></a>
 						<h3><a href="Automation Engagement System.html">Automation of Engagement System</a></h3>
-						<h5>Jan 2021 ~ OMRON Healthcare Europe</h5>
+						<h4 class="date">Jan 2021 ~ OMRON Healthcare Europe</h4>
 						<p class="justify">With the release of the Hypertension Plus app, OMRON Healthcare wanted to
 							raise the engagement among users by keeping track of specific groups of patients,
 							such as the ones who have not accessed their account in the last week or the ones who
@@ -154,9 +161,9 @@
 							reminders</p>
 					</article>
 					<article class="col-6 col-12-xsmall actions" data-tag="Optimization">
-						<a href="BAP Port of Amsterdam.html" class="image fit thumb"><img src="assets/images/thumbs/001.jpg" alt="Berth Allocation Problem within Port of Amsterdam thumbnail" width="800" height="533" loading="lazy" /></a>
+						<a href="BAP Port of Amsterdam.html" class="image fit thumb"><picture><source srcset="assets/images/thumbs/001.webp" type="image/webp"><img src="assets/images/thumbs/001.jpg" alt="Berth Allocation Problem within Port of Amsterdam thumbnail" width="700" height="466" loading="lazy" /></picture></a>
 						<h3><a href="BAP Port of Amsterdam.html">Berth Allocation Problem within Port of Amsterdam</a></h3>
-						<h5>Jun 2020 ~ Port of Amsterdam</h5>
+						<h4 class="date">Jun 2020 ~ Port of Amsterdam</h4>
 						<p class="justify">Port of Amsterdam demanded to know if giving up the current First Come, First Served
 							strategy of assigning vessels to berths would produce any benefits, especially after
 							the new sea lock will be ready and (more) larger ships will be allowed to moor in
@@ -177,7 +184,7 @@
 				</div>
 			</section>
 
-		</div>
+		</main>
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -194,14 +201,12 @@
 		</footer>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/darkmode.js"></script>
-		<script src="assets/js/projects-data.js"></script>
-		<script src="assets/js/filter.js"></script>
+		<script src="assets/js/browser.min.js" defer></script>
+		<script src="assets/js/breakpoints.min.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/darkmode.js" defer></script>
+		<script src="assets/js/projects-data.js" defer></script>
+		<script src="assets/js/filter.js" defer></script>
 
 	</body>
 </html>

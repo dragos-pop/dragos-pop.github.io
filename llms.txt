@@ -1,0 +1,30 @@
+# Dragos Pop
+
+> MSc Data Science graduate with six years of experience using data to solve real-world problems, working across Amsterdam, Singapore, and Melbourne on AI and Data Engineering projects for renewable energy retailing, transportation, and healthcare.
+
+This site is Dragos Pop's personal portfolio showcasing projects in Data Engineering, ML & AI, BI, CI/CD, and Optimization.
+
+## Pages
+
+- [Home / Portfolio overview](https://dragos-pop.github.io/index.html): Full list of projects in inverse chronological order
+- [Certifications](https://dragos-pop.github.io/Certifications.html)
+- [Software Toolkit](https://dragos-pop.github.io/Software%20Toolkit.html)
+
+## Projects
+
+- [Invoicing Pipeline Lite](https://dragos-pop.github.io/Invoicing%20Pipeline%20Lite.html): Dagster pipeline that reads monthly contractor hours from an Excel workbook, generates a branded PDF invoice, and emails it to the client
+- [Grid Capacity Pipeline](https://dragos-pop.github.io/Grid%20Capacity%20Pipeline.html): Pipeline that fetches a byte-encoded PDF report via API, parses tables, loads them into Snowflake via S3, and refreshes dbt models powering a Holistics dashboard
+- [Selective Dagster Code Location Deployment with GitHub Actions](https://dragos-pop.github.io/Selective%20CL%20Deployment.html): GitHub Actions job that dynamically selects Dagster code locations for rollout based on PR labels
+- [Generating Music from Raw MIDI](https://dragos-pop.github.io/MIDIGPT.html): GPT-like transformers trained on HPC to generate music from raw MIDI
+- [Goodreads Book Rating Prediction](https://dragos-pop.github.io/Rating%20Prediction.html): Predicting review ratings of books on Goodreads
+- [Ranking Hotel Listings on Expedia](https://dragos-pop.github.io/Ranking%20Hotel%20Listings.html): Ranking hotel listings by booking likelihood
+- [Caged Shipment Prediction](https://dragos-pop.github.io/Caged%20Shipment%20Prediction.html): LightGBM model classifying whether a shipment will be caged, built for FedEx Express
+- [Dashboard Hypertension Plus](https://dragos-pop.github.io/Dashboard%20Hypertension%20Plus.html): Dashboard tracking engagement and outcomes for OMRON Healthcare's hypertension app
+- [Automation of Engagement System](https://dragos-pop.github.io/Automation%20Engagement%20System.html): Automated email targeting system for OMRON Healthcare's Hypertension Plus app users
+- [Berth Allocation Problem within Port of Amsterdam](https://dragos-pop.github.io/BAP%20Port%20of%20Amsterdam.html): Optimization study on berth allocation strategies for the Port of Amsterdam
+
+## Socials
+
+- LinkedIn: https://www.linkedin.com/in/dragos-pop/
+- GitHub: https://github.com/dragos-pop
+- Kaggle: https://www.kaggle.com/dragospop

@@ -17,10 +17,16 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://dragos-pop.github.io/MIDIGPT.html" />
 		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/026.jpg" />
-		<meta property="og:image:width" content="941" />
-		<meta property="og:image:height" content="618" />
+		<meta property="og:image:width" content="700" />
+		<meta property="og:image:height" content="460" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
+		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
+		<link rel="preload" as="image" href="assets/images/bg-dark.jpg" fetchpriority="high" media="(prefers-color-scheme: dark)" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic&display=block" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
@@ -47,14 +53,14 @@
 		<!-- Header -->
 		<header id="header">
 			<div class="inner">
-				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
+				<a href="index.html" class="image avatar"><picture><source srcset="assets/images/avatar1.webp" type="image/webp"><img src="assets/images/avatar1.jpg" alt="avatar" width="200" height="289" loading="lazy" /></picture></a>
 				<h1><strong>Dragos Pop</strong><br />
 				Data Science & Engineering</h1>
 			</div>
 		</header>
 
 		<!-- Main -->
-		<div id="main">
+		<main id="main">
 			<!-- One -->
 			<section id="one">
 				<header class="major">
@@ -153,7 +159,7 @@
 					</ul>
 				</div>
 			</section>
-		</div>
+		</main>
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -170,14 +176,12 @@
 		</footer>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/darkmode.js"></script>
-		<script src="assets/js/projects-data.js"></script>
-		<script src="assets/js/projectnav.js"></script>
+		<script src="assets/js/browser.min.js" defer></script>
+		<script src="assets/js/breakpoints.min.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/darkmode.js" defer></script>
+		<script src="assets/js/projects-data.js" defer></script>
+		<script src="assets/js/projectnav.js" defer></script>
 
 	</body>
 </html>

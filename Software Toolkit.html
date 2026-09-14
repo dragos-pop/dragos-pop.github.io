@@ -17,13 +17,34 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://dragos-pop.github.io/Software%20Toolkit.html" />
 		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/avatar1.jpg" />
-		<meta property="og:image:width" content="376" />
-		<meta property="og:image:height" content="544" />
+		<meta property="og:image:width" content="200" />
+		<meta property="og:image:height" content="289" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
+		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
+		<link rel="preload" as="image" href="assets/images/bg-dark.jpg" fetchpriority="high" media="(prefers-color-scheme: dark)" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic&display=block" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+		<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Software Toolkit",
+  "description": "Dragos Pop Software Toolkit",
+  "url": "https://dragos-pop.github.io/Software%20Toolkit.html",
+  "image": "https://dragos-pop.github.io/assets/images/avatar1.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Dragos Pop",
+    "url": "https://dragos-pop.github.io/"
+  }
+}
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -32,76 +53,92 @@
 		<!-- Header -->
 		<header id="header">
 			<div class="inner">
-				<a href="index.html" class="image avatar"><img src="assets/images/avatar1.jpg" alt="avatar" /></a>
+				<a href="index.html" class="image avatar"><picture><source srcset="assets/images/avatar1.webp" type="image/webp"><img src="assets/images/avatar1.jpg" alt="avatar" width="200" height="289" loading="lazy" /></picture></a>
 				<h1><strong>Dragos Pop</strong><br />
 				Data Science & Engineering</h1>
 			</div>
 		</header>
 
 		<!-- Main -->
-		<div id="main">
+		<main id="main">
 			<!-- One -->
 			<section id="one">
 				<header class="major">
 					<h1>Software Toolkit<br />
 					</h1>
 				</header>
+					<h3>Programming Languages:</h3>
 					<ul>
-						<h3>Programming Languages:</h3>
-							<li>Python</li>
-							<li>SQL</li>
-							<li>Bash</li>
-							<li>R</li>
-							<li>Java</li>
-							<li>C++</li>
-					<br /><br />
-						<h3>Main Python Libraries:</h3>
-							<li>Pandas</li>
-							<li>scikit-learn</li>
-							<li>PySpark</li>
-							<li>TensorFlow</li>
-							<li>PyTorch (Lightning)</li>
-							<li>WandB</li>
-							<li>Dagster</li>
-							<li>Streamlit</li>
-					<br /><br />
-						<h3>Platforms:</h3>
-						<b>BI:</b>
-							<li>Holistics</li>
-							<li>Tableau</li>
-							<li>Amazon QuickSight</li>
-							<li>Microsoft Power BI</li>
-						<b>Data Engineering:</b>
-							<li>dbt</li>
-							<li>Stitch</li>
-							<li>Airbyte</li>
-							<li>MapReduce</li>
-							<li>Spark (PySpark)</li>
-							<li>Apache Hadoop</li>
-						<b>Relational Database:</b>
-							<li>Microsoft SQL Server</li>
-							<li>PostgreSQL</li>
-							<li>MySQL</li>
-						<b>Non-Relational Database:</b>
-							<li>MongoDB (PyMongo)</li>
-							<li>Amazon DynamoDB</li>
-						<b>Data Warehouse:</b>
-							<li>Snowflake</li>
-							<li>Google BigQuery</li>
-						<b>Version Control:</b>
-							<li>GitHub</li>
-							<li>Bitbucket</li>
-						<b>Cloud:</b>
-							<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
-							<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
-						<b>Other:</b>
-							<li>Terraform</li>
-							<li>GitHub Actions (CI/CD)</li>
-							<li>Dataiku</li>
-							<li>IBM SPSS Modeler</li>
-							<li>IBM Watson Analytics</li>
-							<li>IBM CPLEX Optimizer</li>
-							<li>Docker</li>
+						<li>Python</li>
+						<li>SQL</li>
+						<li>Bash</li>
+						<li>R</li>
+						<li>Java</li>
+						<li>C++</li>
+					</ul>
+					<h3>Main Python Libraries:</h3>
+					<ul>
+						<li>Pandas</li>
+						<li>scikit-learn</li>
+						<li>PySpark</li>
+						<li>TensorFlow</li>
+						<li>PyTorch (Lightning)</li>
+						<li>WandB</li>
+						<li>Dagster</li>
+						<li>Streamlit</li>
+					</ul>
+					<h3>Platforms:</h3>
+					<b>BI:</b>
+					<ul>
+						<li>Holistics</li>
+						<li>Tableau</li>
+						<li>Amazon QuickSight</li>
+						<li>Microsoft Power BI</li>
+					</ul>
+					<b>Data Engineering:</b>
+					<ul>
+						<li>dbt</li>
+						<li>Stitch</li>
+						<li>Airbyte</li>
+						<li>MapReduce</li>
+						<li>Spark (PySpark)</li>
+						<li>Apache Hadoop</li>
+					</ul>
+					<b>Relational Database:</b>
+					<ul>
+						<li>Microsoft SQL Server</li>
+						<li>PostgreSQL</li>
+						<li>MySQL</li>
+					</ul>
+					<b>Non-Relational Database:</b>
+					<ul>
+						<li>MongoDB (PyMongo)</li>
+						<li>Amazon DynamoDB</li>
+					</ul>
+					<b>Data Warehouse:</b>
+					<ul>
+						<li>Snowflake</li>
+						<li>Google BigQuery</li>
+					</ul>
+					<b>Version Control:</b>
+					<ul>
+						<li>GitHub</li>
+						<li>Bitbucket</li>
+					</ul>
+					<b>Cloud:</b>
+					<ul>
+						<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
+						<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
+					</ul>
+					<b>Other:</b>
+					<ul>
+						<li>Terraform</li>
+						<li>GitHub Actions (CI/CD)</li>
+						<li>Dataiku</li>
+						<li>IBM SPSS Modeler</li>
+						<li>IBM Watson Analytics</li>
+						<li>IBM CPLEX Optimizer</li>
+						<li>Docker</li>
 					</ul>
 				<ul class="actions">
 					<li><a href="index.html" class="button">Home</a></li>
@@ -119,7 +156,7 @@
 					</ul>
 				</div>
 			</section>
-		</div>
+		</main>
 
 		<!-- Footer -->
 		<footer id="footer">
@@ -136,13 +173,10 @@
 		</footer>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/darkmode.js"></script>
+		<script src="assets/js/browser.min.js" defer></script>
+		<script src="assets/js/breakpoints.min.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/darkmode.js" defer></script>
 
 	</body>
 </html>

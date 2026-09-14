@@ -19,6 +19,7 @@
 		btn.className = 'button small filter-btn';
 		btn.textContent = label;
 		btn.dataset.filter = value;
+		btn.setAttribute('aria-pressed', 'false');
 		return btn;
 	}
 
@@ -39,7 +40,9 @@
 		});
 
 		Array.prototype.forEach.call(bar.querySelectorAll('.filter-btn'), function (b) {
-			b.classList.toggle('primary', (b.dataset.filter || null) === tag);
+			var isActive = (b.dataset.filter || null) === tag;
+			b.classList.toggle('primary', isActive);
+			b.setAttribute('aria-pressed', String(isActive));
 		});
 
 		var url = new URL(window.location.href);

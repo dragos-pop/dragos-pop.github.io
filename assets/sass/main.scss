@@ -614,7 +614,7 @@ $size-header-pad: 4em;
 
 		&:before {
 			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-			background: url('images/overlay.png');
+			background: url('images/overlay.webp');
 			border-radius: _size(border-radius);
 			content: '';
 			display: block;
@@ -656,7 +656,7 @@ $size-header-pad: 4em;
 				}
 
 				&:before {
-					background: url('images/overlay.png'), url('images/overlay.png');
+					background: url('images/overlay.webp'), url('images/overlay.webp');
 					opacity: 1.0;
 				}
 			}
@@ -1090,7 +1090,7 @@ $size-header-pad: 4em;
 		@include vendor('justify-content', 'space-between');
 		background-color:		_palette(accent2, bg);
 		background-attachment:	scroll,								scroll;
-		background-image:		url('images/overlay.png'),			url('../images/bg.jpg');
+		background-image:		url('images/overlay.webp'),			url('../images/bg.jpg');
 		background-position:	top left,							top left;
 		background-repeat:		repeat,								no-repeat;
 		background-size:		auto,								150%;
@@ -1394,10 +1394,6 @@ $size-header-pad: 4em;
 
 				h1 {
 					font-size: 1.25em;
-
-					br {
-						display: none;
-					}
 				}
 
 				> .inner {
@@ -1484,7 +1480,7 @@ $size-header-pad: 4em;
 			#footer {
 				background-attachment:	scroll;
 				background-color:		_palette(accent2, bg);
-				background-image:		url('images/overlay.png'),		url('../images/bg.jpg');
+				background-image:		url('images/overlay.webp'),		url('../images/bg.jpg');
 				background-position:	top left,						bottom center;
 				background-repeat:		repeat,							no-repeat;
 				background-size:		auto,							cover;
@@ -1624,12 +1620,6 @@ $size-header-pad: 4em;
 
 			#header {
 				padding: ($size-header-pad * 3) $size-header-pad;
-
-				h1 {
-					br {
-						display: none;
-					}
-				}
 			}
 
 		/* Footer */

@@ -4,13 +4,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function() {
 
-	var $window = $(window),
-		$body = $('body'),
-		$header = $('#header'),
-		$footer = $('#footer'),
-		$main = $('#main'),
+	var body = document.body,
+		header = document.getElementById('header'),
+		footer = document.getElementById('footer'),
+		main = document.getElementById('main'),
 		settings = {
 
 			// Parallax background effect?
@@ -31,9 +30,9 @@
 		});
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
+		window.addEventListener('load', function() {
 			window.setTimeout(function() {
-				$body.removeClass('is-preload');
+				body.classList.remove('is-preload');
 			}, 100);
 		});
 
@@ -41,22 +40,22 @@
 		if (browser.mobile) {
 
 			// Turn on touch mode.
-				$body.addClass('is-touch');
+				body.classList.add('is-touch');
 
 			// Height fix (mostly for iOS).
 				window.setTimeout(function() {
-					$window.scrollTop($window.scrollTop() + 1);
+					window.scrollTo(0, window.scrollY + 1);
 				}, 0);
 
 		}
 
 	// Footer.
 		breakpoints.on('<=medium', function() {
-			$footer.insertAfter($main);
+			main.parentNode.insertBefore(footer, main.nextSibling);
 		});
 
 		breakpoints.on('>medium', function() {
-			$footer.appendTo($header);
+			header.appendChild(footer);
 		});
 
 	// Header.
@@ -70,48 +69,24 @@
 
 			if (settings.parallax) {
 
+				var parallaxHandler = function() {
+					header.style.backgroundPosition = 'left ' + (-1 * (window.scrollY / settings.parallaxFactor)) + 'px';
+				};
+
 				breakpoints.on('<=medium', function() {
-
-					$window.off('scroll.strata_parallax');
-					$header.css('background-position', '');
-
+					window.removeEventListener('scroll', parallaxHandler);
+					header.style.backgroundPosition = '';
 				});
 
 				breakpoints.on('>medium', function() {
-
-					$header.css('background-position', 'left 0px');
-
-					$window.on('scroll.strata_parallax', function() {
-						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
-					});
-
+					header.style.backgroundPosition = 'left 0px';
+					window.addEventListener('scroll', parallaxHandler);
 				});
 
-				$window.on('load', function() {
-					$window.triggerHandler('scroll');
+				window.addEventListener('load', function() {
+					parallaxHandler();
 				});
 
 			}
 
-	// Main Sections: Two.
-
-		// Lightbox gallery.
-			$window.on('load', function() {
-
-				$('#two').poptrox({
-					caption: function($a) { return $a.next('h3').text(); },
-					overlayColor: '#2c2c2c',
-					overlayOpacity: 0.85,
-					popupCloserText: '',
-					popupLoaderText: '',
-					selector: '.work-item a.image',
-					usePopupCaption: true,
-					usePopupDefaultStyling: false,
-					usePopupEasyClose: false,
-					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
-				});
-
-			});
-
-})(jQuery);
+})();
