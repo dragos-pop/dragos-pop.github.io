@@ -7,18 +7,18 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>BAP Port of Amsterdam</title>
+		<title>Classifying Held Shipments</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Berth allocation optimization for the Port of Amsterdam" />
+		<meta name="description" content="Classifying held shipments" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="BAP Port of Amsterdam" />
+		<meta property="og:title" content="Classifying Held Shipments" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Berth allocation optimization for the Port of Amsterdam" />
+		<meta property="og:description" content="Classifying held shipments" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/BAP%20Port%20of%20Amsterdam.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/001.jpg" />
-		<meta property="og:image:width" content="700" />
-		<meta property="og:image:height" content="466" />
+		<meta property="og:url" content="https://dragos-pop.github.io/classifying-held-shipments.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/023.jpg" />
+		<meta property="og:image:width" content="720" />
+		<meta property="og:image:height" content="479" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "BAP Port of Amsterdam",
-  "description": "Berth allocation optimization for the Port of Amsterdam",
-  "url": "https://dragos-pop.github.io/BAP%20Port%20of%20Amsterdam.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/001.jpg",
+  "name": "Classifying Held Shipments",
+  "description": "Classifying held shipments",
+  "url": "https://dragos-pop.github.io/classifying-held-shipments.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/023.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,57 +63,47 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Berth Allocation Problem within Port of Amsterdam<br />
-					<ul class="icons">
-					<li><a href="https://github.com/dragos-pop/BSc-Business-Analytics/tree/main/Bachelor%20Project%20-%20Business%20Case" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-github" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-github-symbol"></use></svg>
-						<span class="label">GitHub</span></a></li>
-					</ul>
+					<h2>Classifying Held Shipments
 					</h2>
 				</header>
-				<h3>Jun 2020 ~ Port of Amsterdam<br /><br /></h3>
-				<p class="justify"><b>Length: </b> &nbsp; 2mo (at 0.25 FTE) + 1mo (at 1.0 FTE) <br /><br />
 
-					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Math, GeoPandas, Matplotlib, seaborn,
-					Plotly, datetime, pytz, random, scikit-learn, LightGBM, requests, Beautiful Soup, PuLP, Flask) <br /><br />
+				<h3>Jan 2022 ~ FedEx Express<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
 
-					<b>Data: </b> <br />
-					<span class="bullet-line">AIS data (signals sent by ships at various times containing
-					their location, speed, orientation, type, size, etc)</span>
-					<span class="bullet-line">BAOR data (size requirements of the berths)</span>
-					<span class="bullet-line">Terminal Operations data (more detailed information about the operations,
-					such as the quantity of the cargo and its type, the pump start and end times, etc)</span><br />
+					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
+
+					<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
+					target variable - whether the parcel was caged<br /><br />
 
 					<b>Problem description: </b><br />
-					Port of Amsterdam demanded to know if giving up the current First Come, First Served
-					strategy of assigning vessels to berths would produce any benefits, especially after
-					the new sea lock will be ready and (more) larger ships will be allowed to moor in
-					the harbor<br /><br />
+					Develop a LightGBM model for classifying whether a shipment will be held awaiting correct information<br /><br />
 
 					<b>Approach: </b><br />
-					To answer the research question, four linear programming models were designed, namely optimal
-					FCFS, no FCFS with fixed arrival times, 48-hour arrival time relaxation, and complete arrival
-					time relaxation. Then, they were transposed to Python via the PuLP package. The comparison of
-					the model types was done using a rolling time window (of each day within the time frame, a
-					schedule was created for the following two weeks, after which the objective value was
-					calculated).<br />
-
-					<img src="assets/images/Fig17.jpg" alt="Options" /><br /><br />
+					Since the data was cleaned previously, the first step involved slicing it into train and test sets.
+					Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
+					The options in the grid were selected according to the official documentation and considering
+					the balance between overfitting, performance, and training speed. Afterward, the best parameters
+					obtained from the Random Search were put in a new grid next to other values in their close vicinity.
+					The respective grid was used to optimize the hyperparameters one more time through Grid Search.
+					Using the best hyperparameters followed from Grid Search, the model was fitted another time until
+					the learning curve of the validation data reached a plateau to see after how many
+					iterations the loss converges. Finally, the model was fitted on both the train and validation data.
+					<br /><br />
 
 					<b>Results: </b><br />
-					After comparing the averages of all completion times, it was found that the Optimal FCFS model
-					already shows an improvement compared to the historical situation. Between the Optimal FCFS and the
-					No FCFS model, there is no considerable difference because the vessels are constrained to be
-					scheduled after their arrival time at the port. When relaxation is allowed, a significant
-					efficiency gain is possible, although this case is less reasonable. Lastly, the entire analysis was performed again, this time with
-					a proportion of vessels enlarged. The results pointed out that there are improvements of up
-					to 3% on the completion time (depending on the percentage of boats enlarged) from the Optimal
-					FCFS to No FCFS, and up to 42% comparing the Optimal FCFS and the unrealistic Complete
-					Relaxation.
+					An accuracy of 81% was observed after evaluating the predictions on the test data. However,
+					the company uses a custom, greater-is-better score for this problem called the clearance score.
+					The LightGBM achieved a clearance score of 2.08, outperforming the
+					deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
+					while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
+					faster.<br /><br />
+
+					<img src="assets/images/Fig30.jpg" alt="Benchmark Table" width="430" height="105" />
+
 				</p>
-				<img src="assets/images/Fig1.jpg" alt="Dashboard" /><br /><br />
 				<ul class="actions">
-					<li><a id="prev-project" href="#" class="button" hidden>Previous project</a>
-					<a id="next-project" href="Automation Engagement System.html" class="button">Next project</a></li>
+					<li><a id="prev-project" href="patient-monitoring-dashboard.html" class="button">Previous project</a>
+					<a id="next-project" href="ranking-hotel-listings.html" class="button">Next project</a></li>
 				</ul>
 				<ul class="actions">
 					<li><a id="home-link" href="index.html" class="button">Home</a></li>

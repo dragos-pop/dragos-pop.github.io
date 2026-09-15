@@ -7,18 +7,18 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Automation Engagement System</title>
+		<title>Ranking Hotel Listings</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Automating patient engagement tracking for a healthcare app" />
+		<meta name="description" content="Ranking hotel listings by booking likelihood" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Automation Engagement System" />
+		<meta property="og:title" content="Ranking Hotel Listings" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Automating patient engagement tracking for a healthcare app" />
+		<meta property="og:description" content="Ranking hotel listings by booking likelihood" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/Automation%20Engagement%20System.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/015.jpg" />
-		<meta property="og:image:width" content="368" />
-		<meta property="og:image:height" content="245" />
+		<meta property="og:url" content="https://dragos-pop.github.io/ranking-hotel-listings.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/025.jpg" />
+		<meta property="og:image:width" content="720" />
+		<meta property="og:image:height" content="479" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Automation Engagement System",
-  "description": "Automating patient engagement tracking for a healthcare app",
-  "url": "https://dragos-pop.github.io/Automation%20Engagement%20System.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/015.jpg",
+  "name": "Ranking Hotel Listings",
+  "description": "Ranking hotel listings by booking likelihood",
+  "url": "https://dragos-pop.github.io/ranking-hotel-listings.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/025.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,41 +63,62 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Automation of Engagement System<br />
+					<h2>Ranking Hotel Listings on Expedia
+						<ul class="icons">
+					<li><a href="https://github.com/dragos-pop/MSc-Data-Science/tree/main/Data%20Mining%20Techniques/Assignment_2" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-github" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-github-symbol"></use></svg>
+							<span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/competitions/2nd-assignment-dmt2022" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-kaggle" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-kaggle-symbol"></use></svg>
+							<span class="label">Kaggle</span></a></li>
+					</ul>
 					</h2>
 				</header>
-				<h3>Jan 2021 ~ OMRON Healthcare Europe<br /><br /></h3>
-				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 1.0 FTE) <br /><br />
 
-					<b>Software: </b>   &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
+				<h3>May 2022 ~ MSc Course "Data Mining Techniques"<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 0.25 FTE)<br /><br />
 
-					<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (PyMySQL, Pandas, boto3, datetime, logging)<br />
-					&nbsp;&nbsp; - SQL<br /><br />
+					<b>Programming language: </b> &nbsp; Python (Pandas,  time, datetime, scikit-learn, LightGBM) <br /><br />
 
-					<b>Data: </b>  &nbsp;Database design consisting of tables with feature names and types <br /><br />
+					<b>Data: </b> &nbsp; Roughly five million search queries for a hotel, containing the
+					properties of the retrieved estates, details about the user, and whether the visitor clicked on
+					the hotel and booked it<br /><br />
 
 					<b>Problem description: </b><br />
-					With the release of the Hypertension Plus app, OMRON Healthcare wanted to raise the engagement among
-					users by keeping track of specific groups of patients, such as the ones who have not accessed
-					their account in the last week or the ones who have not completed their blood pressure
-					measurements, and targeting them with email reminders<br /><br />
+					Rank hotel listings by their likelihood of being booked<br /><br />
 
-					<img src="assets/images/Fig18.jpg" alt="AWS Architecture" /><br />
+					<b>Approach: </b><br />
+					First, the data was explored, investigating its shape and then the types, missing values,
+					and distributions of its features. Secondly, new variables were derived, the missing entries
+					filled, and the categorical features one-hot-encoded. Next, the data was split into the
+					train (90%) and validation (10%) sets. Lastly, two LightGBM models were designed, a regressor
+					(pointwise approach) and a ranker (listwise approach).
 
-					<b>Approach & Results: </b><br />
-					Initially, the SQL queries that retrieve the desired groups of patients were written using
-					the information provided in the database design. Next, a Python script that connects to the
-					database, performs a query, and outputs the result in the demanded format was prepared.
-					The code was later transposed into an AWS Lambda function, connecting and retrieving
-					information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
-					Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
-					frequency of the query. For instance, some are executed daily, while others are triggered
-					every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
-					manually perform the repetitive queries and eliminates the afferent chance of human error.
+					<br /><br />
+
+					<b>Results: </b><br />
+					After testing different target variables and encoding techniques for the categorical features,
+					multiple combinations of hyperparameters were compared using a 4-fold Cross-Validation method.
+					The NDCG@5 of the regressor and ranker estimators were evaluated at 0.350 and 0.375, respectively,
+					on the validation data. Next, the models with the best hyperparameters were trained on all the
+					data (including the held-out set) and evaluated on the competition test set at 0.333 and 0.366,
+					respectively, suggesting a slight overfit on the validation data. The resulted NDCGs@5 were
+					interpreted in relation to the random baseline ranking (0.156). Accordingly, the outcomes
+					indicate that the developed models are over two times as good as listing properties randomly.
+					In other words, Expedia would satisfy their customers twice as much by using one of the two
+					models instead of randomly displaying listings.
+					<br /><br />
+
+					Finally, in the picture below, one can see the feature importance of the final LGBMRanker
+					model. The most important variable is by far the property id, implying that specific properties
+					are significantly more likely to be booked than others when retrieved after the search.
+
+					<br /><br />
+
+					<img src="assets/images/Fig32.jpg" alt="Feature importance" width="500" height="250" />
+
 				</p>
 				<ul class="actions">
-					<li><a id="prev-project" href="BAP Port of Amsterdam.html" class="button">Previous project</a>
-					<a id="next-project" href="Dashboard Hypertension Plus.html" class="button">Next project</a></li>
+					<li><a id="prev-project" href="classifying-held-shipments.html" class="button">Previous project</a>
+					<a id="next-project" href="book-rating-prediction.html" class="button">Next project</a></li>
 				</ul>
 				<ul class="actions">
 					<li><a id="home-link" href="index.html" class="button">Home</a></li>
@@ -115,7 +136,6 @@
 					</ul>
 				</div>
 			</section>
-
 		</main>
 
 		<!-- Footer -->

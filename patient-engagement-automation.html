@@ -7,18 +7,18 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Selective CL Deployment</title>
+		<title>Patient Engagement Automation</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Selective Dagster code location deployment via GitHub Actions" />
+		<meta name="description" content="Automating patient engagement tracking for a healthcare app" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Selective CL Deployment" />
+		<meta property="og:title" content="Patient Engagement Automation" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Selective Dagster code location deployment via GitHub Actions" />
+		<meta property="og:description" content="Automating patient engagement tracking for a healthcare app" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/Selective%20CL%20Deployment.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/032.jpg" />
-		<meta property="og:image:width" content="700" />
-		<meta property="og:image:height" content="467" />
+		<meta property="og:url" content="https://dragos-pop.github.io/patient-engagement-automation.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/015.jpg" />
+		<meta property="og:image:width" content="720" />
+		<meta property="og:image:height" content="479" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Selective CL Deployment",
-  "description": "Selective Dagster code location deployment via GitHub Actions",
-  "url": "https://dragos-pop.github.io/Selective%20CL%20Deployment.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/032.jpg",
+  "name": "Patient Engagement Automation",
+  "description": "Automating patient engagement tracking for a healthcare app",
+  "url": "https://dragos-pop.github.io/patient-engagement-automation.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/015.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,51 +63,39 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Selective Dagster Code Location Deployment with GitHub Actions</h2>
+					<h2>Patient Engagement Automation<br />
+					</h2>
 				</header>
+				<h3>Jan 2021 ~ OMRON Healthcare<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 1.0 FTE) <br /><br />
 
-				<h3>Aug 2024 ~ Flo Energy<br /><br /></h3>
-				<p class="justify"><b>Length: </b> &nbsp; 2w (at 1.0 FTE)<br /><br />
+					<b>Software: </b>   &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
 
-					<b>Programming language: </b> &nbsp; Bash
-					<br /><br />
+					<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (PyMySQL, Pandas, boto3, datetime, logging)<br />
+					&nbsp;&nbsp; - SQL<br /><br />
 
-					<b>Data: </b> &nbsp; GitHub pull request (PR) label names <br /><br />
+					<b>Data: </b>  &nbsp;Database design consisting of tables with feature names and types <br /><br />
 
 					<b>Problem description: </b><br />
-					Expedite Dagster branch deployment CI through a GitHub Actions job which dynamically selects
-					code locations for rollout based on PR labels<br /><br />
+					Engineer a multi-service AWS solution that identifies inactive app users to target them
+					with email reminders<br /><br />
 
-					<b>Approach: </b><br />
-					The original Dagster CI workflow consisted of two parts: checking for changes in the Dagster
-					folder and provisioning all code locations to Dagster branch deployment if at least one
-					change is detected. A new job that allows for the selective deployment of individual code
-					locations was added to the CI because rolling out all code locations can be time-consuming
-					and redundant, especially since most PRs typically modify at most a few. This new job
-					executes when at least one PR label has the prefix <code>CL-</code>. If this condition is met,
-					the job retrieves all such labels, parses the code location names by removing the prefix,
-					generates a YAML configuration file containing the specified names, and publishes them to
-					Dagster cloud.
-					<br /><br />
+					<img src="assets/images/Fig18.jpg" alt="AWS Architecture" /><br />
 
-					<b>Results: </b><br />
-					According to GitHub Actions insights, the new job runs twice as fast as the job deploying
-					all code locations, saving an average of 5 minutes per run. Additionally, the failure rate
-					is significantly lower (5% vs 11%). Assuming the selective deployment job did not exist, the
-					job deploying all code locations would have been used 69 extra times in the past 30 days, as
-					the "Actions Usage Metrics" screenshot shows. Multiplying this number by the average run time
-					difference of the two jobs (approximately 5 minutes) implies nearly 6 hours of saved compute
-					and developer downtime per month.
-
-					<br /><br />
-					<img src="assets/images/Fig49.jpg" alt="GHA Performance Metrics" width="740" height="450" />
-					<img src="assets/images/Fig48.jpg" alt="GHA Usage Metrics" width="740" height="420" />
-					<br />
-
+					<b>Approach & Results: </b><br />
+					Initially, the SQL queries that retrieve the desired groups of patients were written using
+					the information provided in the database design. Next, a Python script that connects to the
+					database, performs a query, and outputs the result in the demanded format was prepared.
+					The code was later transposed into an AWS Lambda function, connecting and retrieving
+					information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
+					Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
+					frequency of the query. For instance, some are executed daily, while others are triggered
+					every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
+					manually perform the repetitive queries and eliminates the afferent chance of human error.
 				</p>
 				<ul class="actions">
-					<li><a id="prev-project" href="MIDIGPT.html" class="button">Previous project</a>
-					<a id="next-project" href="Grid Capacity Pipeline.html" class="button">Next project</a></li>
+					<li><a id="prev-project" href="berth-allocation-optimization.html" class="button">Previous project</a>
+					<a id="next-project" href="patient-monitoring-dashboard.html" class="button">Next project</a></li>
 				</ul>
 				<ul class="actions">
 					<li><a id="home-link" href="index.html" class="button">Home</a></li>

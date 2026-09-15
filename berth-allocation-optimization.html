@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+	<head>
+		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+		<title>Berth Allocation Optimization</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Berth allocation optimization for the Port of Amsterdam" />
+		<meta name="author" content="Dragos Pop" />
+		<meta property="og:title" content="Berth Allocation Optimization for Port of Amsterdam" />
+		<meta property="og:site_name" content="Dragos Pop Portfolio" />
+		<meta property="og:description" content="Berth allocation optimization for the Port of Amsterdam" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://dragos-pop.github.io/berth-allocation-optimization.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/001.jpg" />
+		<meta property="og:image:width" content="720" />
+		<meta property="og:image:height" content="479" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#00138f" />
+		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
+		<link rel="preload" as="image" href="assets/images/bg-dark.jpg" fetchpriority="high" media="(prefers-color-scheme: dark)" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic&display=block" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+		<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Berth Allocation Optimization for Port of Amsterdam",
+  "description": "Berth allocation optimization for the Port of Amsterdam",
+  "url": "https://dragos-pop.github.io/berth-allocation-optimization.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/001.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Dragos Pop",
+    "url": "https://dragos-pop.github.io/"
+  }
+}
+		</script>
+	</head>
+	<body class="is-preload">
+		
+		<button id="theme-toggle" aria-label="Toggle dark mode"></button>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><picture><source srcset="assets/images/avatar1.webp" type="image/webp"><img src="assets/images/avatar1.jpg" alt="avatar" width="200" height="289" loading="lazy" /></picture></a>
+				<h1><strong>Dragos Pop</strong><br />
+				Data Science & Engineering</h1>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<main id="main">
+			<!-- One -->
+			<section id="one">
+				<header class="major">
+					<h2>Berth Allocation Optimization for Port of Amsterdam<br />
+					<ul class="icons">
+					<li><a href="https://github.com/dragos-pop/BSc-Business-Analytics/tree/main/Bachelor%20Project%20-%20Business%20Case" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-github" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-github-symbol"></use></svg>
+						<span class="label">GitHub</span></a></li>
+					</ul>
+					</h2>
+				</header>
+				<h3>Jun 2020 ~ Port of Amsterdam<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 2mo (at 0.25 FTE) + 1mo (at 1.0 FTE) <br /><br />
+
+					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Math, GeoPandas, Matplotlib, seaborn,
+					Plotly, datetime, pytz, random, scikit-learn, LightGBM, requests, Beautiful Soup, PuLP, Flask) <br /><br />
+
+					<b>Data: </b> <br />
+					<span class="bullet-line">AIS data (signals sent by ships at various times containing
+					their location, speed, orientation, type, size, etc)</span>
+					<span class="bullet-line">BAOR data (size requirements of the berths)</span>
+					<span class="bullet-line">Terminal Operations data (more detailed information about the operations,
+					such as the quantity of the cargo and its type, the pump start and end times, etc)</span><br />
+
+					<b>Problem description: </b><br />
+					Explore berth allocation strategies using linear programming to optimize vessel scheduling
+					<br /><br />
+
+					<b>Approach: </b><br />
+					Port of Amsterdam demanded to know if giving up the current First Come, First Served
+					strategy of assigning vessels to berths would produce any benefits, especially after
+					the new sea lock will be ready and (more) larger ships will be allowed to moor in
+					the harbor. To answer the research question, four linear programming models were designed, namely optimal
+					FCFS, no FCFS with fixed arrival times, 48-hour arrival time relaxation, and complete arrival
+					time relaxation. Then, they were transposed to Python via the PuLP package. The comparison of
+					the model types was done using a rolling time window (of each day within the time frame, a
+					schedule was created for the following two weeks, after which the objective value was
+					calculated).<br />
+
+					<img src="assets/images/Fig17.jpg" alt="Options" /><br /><br />
+
+					<b>Results: </b><br />
+					After comparing the averages of all completion times, it was found that the Optimal FCFS model
+					already shows an improvement compared to the historical situation. Between the Optimal FCFS and the
+					No FCFS model, there is no considerable difference because the vessels are constrained to be
+					scheduled after their arrival time at the port. When relaxation is allowed, a significant
+					efficiency gain is possible, although this case is less reasonable. Lastly, the entire analysis was performed again, this time with
+					a proportion of vessels enlarged. The results pointed out that there are improvements of up
+					to 3% on the completion time (depending on the percentage of boats enlarged) from the Optimal
+					FCFS to No FCFS, and up to 42% comparing the Optimal FCFS and the unrealistic Complete
+					Relaxation.
+				</p>
+				<img src="assets/images/Fig1.jpg" alt="Dashboard" /><br /><br />
+				<ul class="actions">
+					<li><a id="prev-project" href="#" class="button" hidden>Previous project</a>
+					<a id="next-project" href="patient-engagement-automation.html" class="button">Next project</a></li>
+				</ul>
+				<ul class="actions">
+					<li><a id="home-link" href="index.html" class="button">Home</a></li>
+				</ul>
+			</section>
+
+			<!-- Three -->
+			<section id="three">
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon"><svg class="icon-home" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-home-symbol"></use></svg><span class="label">Address</span></h3>
+							Amsterdam, the Netherlands<br />
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		</main>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/dragos-pop/" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-linkedin-symbol"></use></svg><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/dragos-pop" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-github" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-github-symbol"></use></svg><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.kaggle.com/dragospop" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-kaggle" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-kaggle-symbol"></use></svg><span class="label">Kaggle</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Dragos Pop</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/browser.min.js" defer></script>
+		<script src="assets/js/breakpoints.min.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/darkmode.js" defer></script>
+		<script src="assets/js/projects-data.js" defer></script>
+		<script src="assets/js/projectnav.js" defer></script>
+
+	</body>
+</html>

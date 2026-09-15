@@ -7,18 +7,18 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Invoicing Pipeline Lite</title>
+		<title>Grid Capacity Pipeline</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Dagster pipeline generating and emailing invoices from contractor hours" />
+		<meta name="description" content="Grid capacity pipeline orchestration" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Invoicing Pipeline Lite" />
+		<meta property="og:title" content="Grid Capacity Pipeline" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Dagster pipeline generating and emailing invoices from contractor hours" />
+		<meta property="og:description" content="Grid capacity pipeline orchestration" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/Invoicing%20Pipeline%20Lite.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/034.jpg" />
-		<meta property="og:image:width" content="700" />
-		<meta property="og:image:height" content="466" />
+		<meta property="og:url" content="https://dragos-pop.github.io/grid-capacity-pipeline.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/033.jpg" />
+		<meta property="og:image:width" content="720" />
+		<meta property="og:image:height" content="479" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Invoicing Pipeline Lite",
-  "description": "Dagster pipeline generating and emailing invoices from contractor hours",
-  "url": "https://dragos-pop.github.io/Invoicing%20Pipeline%20Lite.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/034.jpg",
+  "name": "Grid Capacity Pipeline",
+  "description": "Grid capacity pipeline orchestration",
+  "url": "https://dragos-pop.github.io/grid-capacity-pipeline.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/033.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,74 +63,69 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Invoicing Pipeline Lite
-						<ul class="icons">
-					<li><a href="https://github.com/dragos-pop/dg-invoicing-lite" target="_blank" rel="noopener noreferrer" class="icon"><svg class="icon-github" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#icon-github-symbol"></use></svg>
-							<span class="label">GitHub</span></a></li>
-					</ul>
-					</h2>
+					<h2>Grid Capacity Pipeline</h2>
 				</header>
 
-				<h3>Aug 2026<br /><br /></h3>
-				<p class="justify"><b>Length: </b> &nbsp; 1w (at 1.0 FTE)<br /><br />
+				<h3>Aug 2025 ~ Flo Energy<br /><br /></h3>
+				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 0.75 FTE)<br /><br />
 
-					<b>Programming languages: </b> &nbsp; Python (Dagster, openpyxl, Pandas, ReportLab,
-					smtplib)<br /><br />
+					<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (requests, base64, BytesIO, pdfplumber,
+					Pandas, datetime, pytz, re, Dagster)<br />
+					&nbsp;&nbsp; - SQL (dbt)<br /><br />
 
-					<b>Data: </b> &nbsp; An Excel workbook with a sheet listing monthly service
-					hours (month, service, hours, and amount) and a sheet tracking invoice history <br /><br />
+					<b>Data: </b> &nbsp; Daily byte-encoded PDF reports from Electricity Market Company (EMC)
+					containing a table about planned and unplanned outages, alongside grid capacity tables
+					tracking supply and demand metrics at 30-minute intervals for the next two weeks <br />
+
+					<br />
+					<img src="assets/images/Fig51.jpg" alt="Report Composition" width="840" height="260" />
+					<br /><br />
 
 					<b>Problem description: </b><br />
-					Build a Dagster pipeline that reads monthly contractor hours from
-					an Excel workbook, generates a branded PDF invoice, and emails it directly to
-					the client<br /><br />
+					Automate a pipeline that fetches a byte-encoded PDF report via API, parses multiple tables,
+					loads them into Snowflake via Amazon S3, and refreshes dbt models powering a Holistics
+					dashboard <br /><br />
 
 					<b>Approach & Results: </b><br />
 
-					The pipeline is built as a Dagster lineage with monthly asset partitions, so one run
-					corresponds to one billing month, as shown in the asset graph below:
-					<br /><br />
-					<img src="assets/images/Fig53.jpg" alt="Invoicing Pipeline Lite Asset Lineage" width="840" height="296" />
-					<br /><br />
-
-					The invoice history sheet is read first to retrieve the last issued invoice number,
-					falling back to the previous year if the current one has none yet. If needed, the
-					invoice number can also be overridden manually via a runtime config. In parallel,
-					the hours sheet is read and filtered to the partition's month, returning the services
-					to bill.
+					The architecture of the pipeline is shown in the diagram below. A Dagster job with daily
+					asset partitions orchestrates the workflow, starting with a configurable Dagster resource
+					for the EMC API. This resource requests the byte-encoded PDF report via OAuth using a JWT
+					token. Next, the raw PDF is uploaded to Amazon S3 for archival, while at the same time the
+					15-page file is parsed with <code>pdfplumber</code> to extract multiple tables.
 					<br /><br />
 
-					The two assets above are then combined into the next invoice summary, deriving all
-					the invoice metadata alongside the total hours and amount. A blocking asset
-					check computes the expected working hours in the respective month
-					and compares them against the total hours logged, failing the run if the two do not
-					match, before any PDF or email is produced.<br /><br />
+					<span class="disclaimer">DISCLAIMER: </span> Asset names have been modified to be more
+					generic to comply with company confidentiality requirements. <br />
 
-					Once validated, the invoice summary is rendered into a branded PDF using
-					<code>ReportLab</code>. This contains a header with company and client details, an
-					itemized services table with a total row, a payment summary block, and a
-					contact box. The summary data is then rendered into a styled HTML email with the
-					company logo embedded inline. The email is sent over SMTP with the PDF
-					attached, to the client and any Cc addresses included, as shown below with
-					mock data:
 					<br />
-					<div class="side-by-side">
-						<img src="assets/images/Fig54.jpg" alt="Invoicing Pipeline Lite Email Example" width="840" height="503" class="fig-bordered fig-match-height" />
-						<img src="assets/images/Fig55.jpg" alt="Invoicing Pipeline Lite PDF Invoice" width="460" height="651" class="fig-match-height" />
-					</div>
-					<br />
-
-					A Dagster schedule runs the job automatically on the 1st of every month for
-					the previous month's data, replacing a manual task with an automated
-					workflow that only sends an invoice once the details have been validated. The
-					invoice and email content, styling, and logo can all be customized via
-					environment variables and constants to fit a different company and client.
+					<img src="assets/images/Fig50.jpg" alt="Grid Capacity Pipeline Diagram" width="840" height="330" />
 					<br /><br />
+
+					The three tables processed from the report are the 14-day grid capacity data at 30-minute
+					intervals, planned outages of equipment, and unplanned outages. In parallel, each table is
+					converted to a dataframe, with new features derived such as dates extracted from text
+					columns using regular expressions. Enforced checks ensure correct processing before the
+					dataframes are exported as JSON to Amazon S3 and loaded into raw Snowflake tables. These
+					tables feed downstream dbt models which refresh the Holistics dashboard powering grid analytics.
+					<br /><br />
+
+					<span class="disclaimer">DISCLAIMER: </span> Numerical values in the Holistics
+					charts have been redacted to comply with company confidentiality requirements. <br />
+
+					<br />
+					<img src="assets/images/Fig52.jpg" alt="Grid Capacity Dashboard" width="840" height="780" />
+					<br /><br />
+
+					A Dagster retry policy was implemented to handle API timeouts and parsing errors with
+					up to two retries with one-minute delays between runs. The pipeline executes daily through
+					Dagster's built-in scheduler with no manual intervention, delivering reliable grid
+					capacity data needed for energy trading.
 
 				</p>
 				<ul class="actions">
-					<li><a id="prev-project" href="Grid Capacity Pipeline.html" class="button">Previous project</a>
-					<a id="next-project" href="#" class="button" hidden>Next project</a></li>
+					<li><a id="prev-project" href="selective-dagster-cl-deployment.html" class="button">Previous project</a>
+					<a id="next-project" href="invoicing-pipeline-lite.html" class="button">Next project</a></li>
 				</ul>
 				<ul class="actions">
 					<li><a id="home-link" href="index.html" class="button">Home</a></li>

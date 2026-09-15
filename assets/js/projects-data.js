@@ -2,14 +2,14 @@
 // Used by filter.js (index page) and projectnav.js (project pages)
 // to keep Previous/Next in sync with the active filter.
 window.PROJECTS = [
-	{ file: "Invoicing Pipeline Lite.html", tag: "Data Engineering" },
-	{ file: "Grid Capacity Pipeline.html", tag: "Data Engineering" },
-	{ file: "Selective CL Deployment.html", tag: "CI/CD" },
-	{ file: "MIDIGPT.html", tag: "ML & AI" },
-	{ file: "Rating Prediction.html", tag: "ML & AI" },
-	{ file: "Ranking Hotel Listings.html", tag: "ML & AI" },
-	{ file: "Caged Shipment Prediction.html", tag: "ML & AI" },
-	{ file: "Dashboard Hypertension Plus.html", tag: "BI" },
-	{ file: "Automation Engagement System.html", tag: "Data Engineering" },
-	{ file: "BAP Port of Amsterdam.html", tag: "Optimization" }
+	{ file: "invoicing-pipeline-lite.html", tag: "Data Engineering" },
+	{ file: "grid-capacity-pipeline.html", tag: "Data Engineering" },
+	{ file: "selective-dagster-cl-deployment.html", tag: "CI/CD" },
+	{ file: "generating-music.html", tag: "ML & AI" },
+	{ file: "book-rating-prediction.html", tag: "ML & AI" },
+	{ file: "ranking-hotel-listings.html", tag: "ML & AI" },
+	{ file: "classifying-held-shipments.html", tag: "ML & AI" },
+	{ file: "patient-monitoring-dashboard.html", tag: "BI" },
+	{ file: "patient-engagement-automation.html", tag: "Data Engineering" },
+	{ file: "berth-allocation-optimization.html", tag: "Optimization" }
 ];

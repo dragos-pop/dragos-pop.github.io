@@ -7,18 +7,18 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Caged Shipment Prediction</title>
+		<title>Software Toolkit</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Classifying caged shipments" />
+		<meta name="description" content="Dragos Pop Software Toolkit" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Caged Shipment Prediction" />
+		<meta property="og:title" content="Software Toolkit" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Classifying caged shipments" />
+		<meta property="og:description" content="Dragos Pop Software Toolkit" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/Caged%20Shipment%20Prediction.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/023.jpg" />
-		<meta property="og:image:width" content="700" />
-		<meta property="og:image:height" content="466" />
+		<meta property="og:url" content="https://dragos-pop.github.io/software-toolkit.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/avatar1.jpg" />
+		<meta property="og:image:width" content="200" />
+		<meta property="og:image:height" content="289" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#00138f" />
 		<link rel="preload" as="image" href="assets/images/bg.jpg" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Caged Shipment Prediction",
-  "description": "Classifying caged shipments",
-  "url": "https://dragos-pop.github.io/Caged%20Shipment%20Prediction.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/023.jpg",
+  "name": "Software Toolkit",
+  "description": "Dragos Pop Software Toolkit",
+  "url": "https://dragos-pop.github.io/software-toolkit.html",
+  "image": "https://dragos-pop.github.io/assets/images/avatar1.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,51 +63,84 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Caged Shipment Prediction
+					<h2>Software Toolkit<br />
 					</h2>
 				</header>
-
-				<h3>Jan 2022 ~ FedEx Express<br /><br /></h3>
-				<p class="justify"><b>Length: </b> &nbsp; 2mo (at 0.5 FTE)<br /><br />
-
-					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
-
-					<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
-					target variable - whether the parcel was caged<br /><br />
-
-					<b>Problem description: </b><br />
-					Develop a LightGBM model for classifying  whether a shipment will be caged (secured until
-					the correct information is obtained)<br /><br />
-
-					<b>Approach: </b><br />
-					Since the data was cleaned previously, the first step involved slicing it into train and test sets.
-					Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
-					The options in the grid were selected according to the official documentation and considering
-					the balance between overfitting, performance, and training speed. Afterward, the best parameters
-					obtained from the Random Search were put in a new grid next to other values in their close vicinity.
-					The respective grid was used to optimize the hyperparameters one more time through Grid Search.
-					Using the best hyperparameters followed from Grid Search, the model was fitted another time until
-					the learning curve of the validation data reached a plateau to see after how many
-					iterations the loss converges. Finally, the model was fitted on both the train and validation data.
-					<br /><br />
-
-					<b>Results: </b><br />
-					An accuracy of 81% was observed after evaluating the predictions on the test data. However,
-					the company uses a custom, greater-is-better score for this problem called the clearance score.
-					The LightGBM achieved a clearance score of 2.08, outperforming the
-					deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
-					while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
-					faster.<br /><br />
-
-					<img src="assets/images/Fig30.jpg" alt="Benchmark Table" width="430" height="105" />
-
-				</p>
+					<h3>Programming Languages:</h3>
+					<ul>
+						<li>Python</li>
+						<li>SQL</li>
+						<li>Bash</li>
+						<li>R</li>
+						<li>Java</li>
+						<li>C++</li>
+					</ul>
+					<h3>Main Python Libraries:</h3>
+					<ul>
+						<li>Pandas</li>
+						<li>scikit-learn</li>
+						<li>PySpark</li>
+						<li>TensorFlow</li>
+						<li>PyTorch (Lightning)</li>
+						<li>WandB</li>
+						<li>Dagster</li>
+						<li>Streamlit</li>
+					</ul>
+					<h3>Platforms:</h3>
+					<b>BI:</b>
+					<ul>
+						<li>Holistics</li>
+						<li>Tableau</li>
+						<li>Amazon QuickSight</li>
+						<li>Microsoft Power BI</li>
+					</ul>
+					<b>Data Engineering:</b>
+					<ul>
+						<li>dbt</li>
+						<li>Stitch</li>
+						<li>Airbyte</li>
+						<li>MapReduce</li>
+						<li>Spark (PySpark)</li>
+						<li>Apache Hadoop</li>
+					</ul>
+					<b>Relational Database:</b>
+					<ul>
+						<li>Microsoft SQL Server</li>
+						<li>PostgreSQL</li>
+						<li>MySQL</li>
+					</ul>
+					<b>Non-Relational Database:</b>
+					<ul>
+						<li>MongoDB (PyMongo)</li>
+						<li>Amazon DynamoDB</li>
+					</ul>
+					<b>Data Warehouse:</b>
+					<ul>
+						<li>Snowflake</li>
+						<li>Google BigQuery</li>
+					</ul>
+					<b>Version Control:</b>
+					<ul>
+						<li>GitHub</li>
+						<li>Bitbucket</li>
+					</ul>
+					<b>Cloud:</b>
+					<ul>
+						<li>AWS (Lambda, RDS, EventBridge, VPC, S3, CLI)</li>
+						<li>Microsoft Azure (SQL Database, Storage, Synapse Analytics)</li>
+					</ul>
+					<b>Other:</b>
+					<ul>
+						<li>Terraform</li>
+						<li>GitHub Actions (CI/CD)</li>
+						<li>Dataiku</li>
+						<li>IBM SPSS Modeler</li>
+						<li>IBM Watson Analytics</li>
+						<li>IBM CPLEX Optimizer</li>
+						<li>Docker</li>
+					</ul>
 				<ul class="actions">
-					<li><a id="prev-project" href="Dashboard Hypertension Plus.html" class="button">Previous project</a>
-					<a id="next-project" href="Ranking Hotel Listings.html" class="button">Next project</a></li>
-				</ul>
-				<ul class="actions">
-					<li><a id="home-link" href="index.html" class="button">Home</a></li>
+					<li><a href="index.html" class="button">Home</a></li>
 				</ul>
 			</section>
 
@@ -122,7 +155,6 @@
 					</ul>
 				</div>
 			</section>
-
 		</main>
 
 		<!-- Footer -->
@@ -144,8 +176,6 @@
 		<script src="assets/js/breakpoints.min.js" defer></script>
 		<script src="assets/js/main.js" defer></script>
 		<script src="assets/js/darkmode.js" defer></script>
-		<script src="assets/js/projects-data.js" defer></script>
-		<script src="assets/js/projectnav.js" defer></script>
 
 	</body>
 </html>
