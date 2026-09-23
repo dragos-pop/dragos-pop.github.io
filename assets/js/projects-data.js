@@ -4,12 +4,12 @@
 window.PROJECTS = [
 	{ file: "invoicing-pipeline-lite.html", tag: "Data Engineering" },
 	{ file: "grid-capacity-pipeline.html", tag: "Data Engineering" },
-	{ file: "selective-dagster-cl-deployment.html", tag: "CI/CD" },
+	{ file: "selective-cl-deployment.html", tag: "CI/CD" },
 	{ file: "generating-music.html", tag: "ML & AI" },
 	{ file: "book-rating-prediction.html", tag: "ML & AI" },
 	{ file: "ranking-hotel-listings.html", tag: "ML & AI" },
 	{ file: "classifying-held-shipments.html", tag: "ML & AI" },
-	{ file: "patient-monitoring-dashboard.html", tag: "BI" },
-	{ file: "patient-engagement-automation.html", tag: "Data Engineering" },
+	{ file: "app-dashboard.html", tag: "BI" },
+	{ file: "engagement-automation.html", tag: "Data Engineering" },
 	{ file: "berth-allocation-optimization.html", tag: "Optimization" }
 ];

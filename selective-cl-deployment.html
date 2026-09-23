@@ -15,7 +15,7 @@
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
 		<meta property="og:description" content="Selective Dagster code location deployment via GitHub Actions" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/selective-dagster-cl-deployment.html" />
+		<meta property="og:url" content="https://dragos-pop.github.io/selective-cl-deployment.html" />
 		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/032.jpg" />
 		<meta property="og:image:width" content="720" />
 		<meta property="og:image:height" content="479" />
@@ -35,7 +35,7 @@
   "@type": "CreativeWork",
   "name": "Selective Dagster Code Location Deployment",
   "description": "Selective Dagster code location deployment via GitHub Actions",
-  "url": "https://dragos-pop.github.io/selective-dagster-cl-deployment.html",
+  "url": "https://dragos-pop.github.io/selective-cl-deployment.html",
   "image": "https://dragos-pop.github.io/assets/images/thumbs/032.jpg",
   "author": {
     "@type": "Person",
@@ -75,15 +75,15 @@
 					<b>Data: </b> &nbsp; GitHub pull request (PR) label names <br /><br />
 
 					<b>Problem description: </b><br />
-					Expedite Dagster branch deployment CI through a GitHub Actions job which dynamically selects
-					code locations for rollout based on PR labels<br /><br />
+					Expedite Dagster branch deployment CI via a GitHub Actions job that selects
+					code locations to roll out by PR labels<br /><br />
 
 					<b>Approach: </b><br />
 					The original Dagster CI workflow consisted of two parts: checking for changes in the Dagster
 					folder and provisioning all code locations to Dagster branch deployment if at least one
 					change is detected. A new job that allows for the selective deployment of individual code
 					locations was added to the CI because rolling out all code locations can be time-consuming
-					and redundant, especially since most PRs typically modify at most a few. This new job
+					and redundant, especially since most PRs typically modify a few at most. This new job
 					executes when at least one PR label has the prefix <code>CL-</code>. If this condition is met,
 					the job retrieves all such labels, parses the code location names by removing the prefix,
 					generates a YAML configuration file containing the specified names, and publishes them to

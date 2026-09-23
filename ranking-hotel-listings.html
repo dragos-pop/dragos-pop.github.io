@@ -76,19 +76,19 @@
 				<h3>May 2022 ~ MSc Course "Data Mining Techniques"<br /><br /></h3>
 				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 0.25 FTE)<br /><br />
 
-					<b>Programming language: </b> &nbsp; Python (Pandas,  time, datetime, scikit-learn, LightGBM) <br /><br />
+					<b>Programming language: </b> &nbsp; Python (Pandas, time, datetime, scikit-learn, LightGBM) <br /><br />
 
-					<b>Data: </b> &nbsp; Roughly five million search queries for a hotel, containing the
-					properties of the retrieved estates, details about the user, and whether the visitor clicked on
-					the hotel and booked it<br /><br />
+					<b>Data: </b> &nbsp; Approximately five million hotel search queries, containing the
+					attributes of the retrieved properties, user details, and whether the visitor clicked on
+					and booked the hotel<br /><br />
 
 					<b>Problem description: </b><br />
 					Rank hotel listings by their likelihood of being booked<br /><br />
 
 					<b>Approach: </b><br />
-					First, the data was explored, investigating its shape and then the types, missing values,
-					and distributions of its features. Secondly, new variables were derived, the missing entries
-					filled, and the categorical features one-hot-encoded. Next, the data was split into the
+					First, the data was explored, investigating its shape, followed by the type, missing values,
+					and distribution of its features. Secondly, the missing entries were filled in, new variables were 
+					derived, and the categorical features were one-hot-encoded. Next, the data was split into the
 					train (90%) and validation (10%) sets. Lastly, two LightGBM models were designed, a regressor
 					(pointwise approach) and a ranker (listwise approach).
 
@@ -100,7 +100,7 @@
 					The NDCG@5 of the regressor and ranker estimators were evaluated at 0.350 and 0.375, respectively,
 					on the validation data. Next, the models with the best hyperparameters were trained on all the
 					data (including the held-out set) and evaluated on the competition test set at 0.333 and 0.366,
-					respectively, suggesting a slight overfit on the validation data. The resulted NDCGs@5 were
+					respectively, suggesting a slight overfit on the validation data. The resulted NDCG@5 scores were
 					interpreted in relation to the random baseline ranking (0.156). Accordingly, the outcomes
 					indicate that the developed models are over two times as good as listing properties randomly.
 					In other words, Expedia would satisfy their customers twice as much by using one of the two
@@ -109,11 +109,27 @@
 
 					Finally, in the picture below, one can see the feature importance of the final LGBMRanker
 					model. The most important variable is by far the property id, implying that specific properties
-					are significantly more likely to be booked than others when retrieved after the search.
+					are significantly more likely to be booked than others. This also means the model would struggle to rank
+					hotels it has never seen before, hence, ranking such properties accurately would require retraining the 
+					model without the property id, relying instead on more general property attributes.
 
-					<br /><br />
+					<br />
 
-					<img src="assets/images/Fig32.jpg" alt="Feature importance" width="500" height="250" />
+					<figure id="feature-importance-chart" style="margin: 0;" aria-label="Feature importance of the final LGBMRanker model"></figure>
+					<script src="assets/js/charts.js"></script>
+					<script>
+						Charts.render(document.getElementById('feature-importance-chart'), {
+							type: 'bar',
+							title: 'Feature importance',
+							data: [
+								{ label: 'prop_id', value: 3105 },
+								{ label: 'srch_destination_id', value: 1549 },
+								{ label: 'prop_location_score2', value: 271 },
+								{ label: 'prop_price_diff', value: 186 },
+								{ label: 'prop_starrating', value: 138 }
+							]
+						});
+					</script>
 
 				</p>
 				<ul class="actions">

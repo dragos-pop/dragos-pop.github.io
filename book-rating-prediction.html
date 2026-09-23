@@ -7,11 +7,11 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Rating Prediction</title>
+		<title>Book Rating Prediction</title>
 		<meta charset="utf-8" />
 		<meta name="description" content="Predicting Goodreads book ratings" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Rating Prediction" />
+		<meta property="og:title" content="Book Rating Prediction" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
 		<meta property="og:description" content="Predicting Goodreads book ratings" />
 		<meta property="og:type" content="website" />
@@ -33,7 +33,7 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Rating Prediction",
+  "name": "Book Rating Prediction",
   "description": "Predicting Goodreads book ratings",
   "url": "https://dragos-pop.github.io/book-rating-prediction.html",
   "image": "https://dragos-pop.github.io/assets/images/thumbs/027.jpg",
@@ -82,8 +82,8 @@
 					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, datetime, Matplotlib, seaborn,
 					scikit-learn, NLTK, W&B, argparse, LightGBM, CatBoost) <br /><br />
 
-					<b>Data: </b> &nbsp; Approximately 0.9M book reviews, containing the book, the author, the review
-					text, and its stats <br /><br />
+					<b>Data: </b> &nbsp; Approximately 0.9M book reviews, containing the book, stats, author, 
+					and review text<br /><br />
 
 					<b>Problem description: </b><br />
 					Predict the review ratings of books on Goodreads<br /><br />
@@ -92,9 +92,9 @@
 					First, the data was split into the train, validation, and test sets. In order to validate the data
 					partitioning, the distributions of multiple features were compared across the sets, including
 					the target feature "rating", which can be seen in the picture below. Concerning data leakage,
-					two controversial features are "book_id" and "user_id". Depending on the goal of the project,
-					these may need to be removed because the model would not perform well on new users and books. However, given that the objective is to reach the best
-					F1 score in the competition, these variables were kept.
+					two controversial features are "book_id" and "user_id". If the project goal was performing well 
+					on new users and books, these features would be best removed. However, given that the objective
+					is to reach the best F1 score in the competition, these variables were kept.
 
 					<br />
 					<img src="assets/images/Fig36.jpg" alt="Rating Histograms Train vs Val" width="730" height="300" />
@@ -103,7 +103,7 @@
 					Next, the train set was explored and cleaned by filling in missing values, converting features
 					to the right type, dropping useless columns, and deriving additional variables, such as the
 					reading duration, the review length, and whether this is a spoiler or not. Afterward, the
-					same cleaning methods were applied to the other two sets.
+					same cleaning methods were applied to the other two sets (validation and test set).
 					<br /><br />
 
 					Finally, two tree models were designed, namely a LightGBM and a CatBoost classifier, and tuned to achieve
@@ -115,14 +115,14 @@
 					ratings of the validation reviews to 4. Accordingly, this resulted in an F1 score of 0.08.
 					<br /><br />
 
-					The best model turned out to be a LightGBM classifier, which reached a score of 0.4, a result
-					five times better than the naïve baseline. On the test data, the model scored 0.38, implying
+					The best model turned out to be a LightGBM classifier, which reached a score of 0.4 on the validation set, 
+					a result five times better than the naïve baseline. On the test data, the model scored 0.38, implying
 					no significant overfitting on the validation set.
 					<br /><br />
 
 					The confusion matrix below shows that the model does not make big mistakes, with most
 					of the predictions close to the true values of the ratings, as expressed by the lighter shades
-					on the main diagonal. Generally, when the model fails to predict the rating correctly,
+					close to the main diagonal. Generally, when the model fails to predict the rating correctly,
 					it misses the value by 1-2 points.
 
 					<br />
@@ -131,12 +131,37 @@
 
 					Not surprisingly, the two ID features reached the highest importance among all the features,
 					with a significant distance to the third most important feature.
-
-					<br /><br />
-					<img src="assets/images/Fig38.jpg" alt="Feature Importance" width="730" height="270" />
-					<br /><br />
-
 				</p>
+
+				<div class="table-wrapper">
+					<table>
+						<thead style="background: var(--border-color);">
+							<tr>
+								<th style="font-weight: 700;">Feature</th>
+								<th style="font-weight: 700;">Importance</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>book_id</td>
+								<td>34054</td>
+							</tr>
+							<tr>
+								<td>user_id</td>
+								<td>31544</td>
+							</tr>
+							<tr>
+								<td>review_length</td>
+								<td>880</td>
+							</tr>
+							<tr>
+								<td>read_duration</td>
+								<td>650</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
 				<ul class="actions">
 					<li><a id="prev-project" href="ranking-hotel-listings.html" class="button">Previous project</a>
 					<a id="next-project" href="generating-music.html" class="button">Next project</a></li>

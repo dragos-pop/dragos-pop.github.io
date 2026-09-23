@@ -7,16 +7,16 @@
 <html lang="en">
 	<head>
 		<script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
-		<title>Patient Engagement Automation</title>
+		<title>App Dashboard</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Automating patient engagement tracking for a healthcare app" />
+		<meta name="description" content="Metrics dashboard for hypertension app performance" />
 		<meta name="author" content="Dragos Pop" />
-		<meta property="og:title" content="Patient Engagement Automation" />
+		<meta property="og:title" content="Hypertension App Performance Dashboard" />
 		<meta property="og:site_name" content="Dragos Pop Portfolio" />
-		<meta property="og:description" content="Automating patient engagement tracking for a healthcare app" />
+		<meta property="og:description" content="Metrics dashboard for hypertension app performance" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://dragos-pop.github.io/patient-engagement-automation.html" />
-		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/015.jpg" />
+		<meta property="og:url" content="https://dragos-pop.github.io/app-dashboard.html" />
+		<meta property="og:image" content="https://dragos-pop.github.io/assets/images/thumbs/014.jpg" />
 		<meta property="og:image:width" content="720" />
 		<meta property="og:image:height" content="479" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Patient Engagement Automation",
-  "description": "Automating patient engagement tracking for a healthcare app",
-  "url": "https://dragos-pop.github.io/patient-engagement-automation.html",
-  "image": "https://dragos-pop.github.io/assets/images/thumbs/015.jpg",
+  "name": "Hypertension App Performance Dashboard",
+  "description": "Metrics dashboard for hypertension app performance",
+  "url": "https://dragos-pop.github.io/app-dashboard.html",
+  "image": "https://dragos-pop.github.io/assets/images/thumbs/014.jpg",
   "author": {
     "@type": "Person",
     "name": "Dragos Pop",
@@ -63,39 +63,47 @@
 			<!-- One -->
 			<section id="one">
 				<header class="major">
-					<h2>Patient Engagement Automation<br />
+					<h2>Hypertension App Performance Dashboard<br />
 					</h2>
 				</header>
-				<h3>Jan 2021 ~ OMRON Healthcare<br /><br /></h3>
+				<h3>Mar 2021 ~ OMRON Healthcare<br /><br /></h3>
 				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 1.0 FTE) <br /><br />
 
-					<b>Software: </b>   &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
+					<b>Software: </b>   &nbsp; Amazon QuickSight <br /><br />
 
-					<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (PyMySQL, Pandas, boto3, datetime, logging)<br />
-					&nbsp;&nbsp; - SQL<br /><br />
+					<b>Programming language: </b>&nbsp; SQL<br /><br />
 
-					<b>Data: </b>  &nbsp;Database design consisting of tables with feature names and types <br /><br />
+					<b>Data: </b>&nbsp;Hypertension Plus database containing details about the users of the app,
+					their blood pressure measurements and medication plan history<br /><br />
 
 					<b>Problem description: </b><br />
-					Engineer a multi-service AWS solution that identifies inactive app users to target them
-					with email reminders<br /><br />
-
-					<img src="assets/images/Fig18.jpg" alt="AWS Architecture" /><br />
+					Design an Amazon QuickSight dashboard to track the performance of a blood pressure monitoring app<br /><br />
 
 					<b>Approach & Results: </b><br />
-					Initially, the SQL queries that retrieve the desired groups of patients were written using
-					the information provided in the database design. Next, a Python script that connects to the
-					database, performs a query, and outputs the result in the demanded format was prepared.
-					The code was later transposed into an AWS Lambda function, connecting and retrieving
-					information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
-					Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
-					frequency of the query. For instance, some are executed daily, while others are triggered
-					every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
-					manually perform the repetitive queries and eliminates the afferent chance of human error.
-				</p>
+					After engaging in conversations with several managers to decide on the performance indicators
+					wanted, the data was manipulated. This phase included querying the data using SQL, joining
+					multiple tables, mapping variable codes to names (e.g. 1 to male and 2 to female), and
+					creating calculated fields, such as the age of the patients based on their date of birth
+					or the difference between their first and last blood pressure measurement. Finally,
+					the charts were represented and displayed in two sheets based on their usage purpose,
+					namely internal and external, reaching a 100% usage rate among stakeholders at the end of
+					my stage<br /><br />
+
+					<span class="disclaimer">DISCLAIMER: </span> To avoid the regulations associated with
+					sharing personal information, the following screenshots illustrate the dashboard with data
+					that was randomly generated for testing purposes. Hence, as no real data was used, the
+					insights should NOT be considered. Instead, the pictures aim to show the type of
+					visualizations designed and their potential of leading to actionable insights. <br />
+
+					<a href="fig19-full.html"><img src="assets/images/Fig19.jpg" alt="Dashboard - External sheet" /><br />
+
+					<a href="fig20-full.html"><img src="assets/images/Fig20.jpg" alt="Dashboard - Internal sheet" /><br />
+
+					</p>
+
 				<ul class="actions">
-					<li><a id="prev-project" href="berth-allocation-optimization.html" class="button">Previous project</a>
-					<a id="next-project" href="patient-monitoring-dashboard.html" class="button">Next project</a></li>
+					<li><a id="prev-project" href="engagement-automation.html" class="button">Previous project</a>
+					<a id="next-project" href="classifying-held-shipments.html" class="button">Next project</a></li>
 				</ul>
 				<ul class="actions">
 					<li><a id="home-link" href="index.html" class="button">Home</a></li>
