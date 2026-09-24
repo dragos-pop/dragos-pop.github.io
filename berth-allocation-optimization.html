@@ -77,41 +77,47 @@
 					Plotly, datetime, pytz, random, scikit-learn, LightGBM, requests, Beautiful Soup, PuLP, Flask) <br /><br />
 
 					<b>Data: </b> <br />
-					<span class="bullet-line">AIS data (signals sent by ships at various times containing
-					their location, speed, orientation, type, size, etc)</span>
-					<span class="bullet-line">BAOR data (size requirements of the berths)</span>
-					<span class="bullet-line">Terminal Operations data (more detailed information about the operations,
-					such as the quantity of the cargo and its type, the pump start and end times, etc)</span><br />
+					<span class="bullet-line">Berth size requirements</span>
+					<span class="bullet-line">Signals sent by ships at various times containing their location, speed, 
+						orientation, size, etc (AIS)</span>
+					<span class="bullet-line">Detailed operations data, such as the quantity of the cargo and its type, 
+						the pump start and end times, etc</span><br />
 
 					<b>Problem description: </b><br />
-					Explore berth allocation strategies using linear programming
+					Explore and evaluate berth allocation strategies using linear programming
 					<br /><br />
 
 					<b>Approach: </b><br />
-					Port of Amsterdam demanded to know if giving up the current First Come, First Served
-					strategy of assigning vessels to berths would produce any benefits, especially after
-					the new sea lock will be ready and (more) larger ships will be allowed to moor in
-					the harbor. To answer the research question, four linear programming models were designed, namely optimal
-					FCFS, no FCFS with fixed arrival times, 48-hour arrival time relaxation, and complete arrival
-					time relaxation. Then, they were transposed to Python via the PuLP package. The comparison of
-					the model types was done using a rolling time window (of each day within the time frame, a
-					schedule was created for the following two weeks, after which the objective value was
-					calculated).<br />
+					Port of Amsterdam wanted to assess the potential benefits of alternative berth allocation
+					strategies beyond the current First Come, First Served (FCFS) approach, especially once the
+					new sea lock allows more and larger ships to dock in the harbor. To answer the research
+					question, four linear programming models were designed, namely:
 
-					<img src="assets/images/Fig17.jpg" alt="Options" /><br /><br />
+					<span class="bullet-line">FCFS with fixed arrival times: ships arriving first are scheduled first</span>
+					<span class="bullet-line">No FCFS with fixed arrival times: ships can be scheduled in any order</span>
+					<span class="bullet-line">48 Hour Relaxation: ships can be scheduled as early as 48 hours before their ETA</span>
+					<span class="bullet-line">Complete Relaxation: ships can be scheduled at any time before their ETA</span><br />
+
+					These models were then implemented in Python using the <code>PuLP</code> package and compared
+					against each other using a rolling time window (for each day within the time range, a
+					two-week schedule was optimized and its objective value recorded).<br /><br />
 
 					<b>Results: </b><br />
-					After comparing the averages of all completion times, it was found that the Optimal FCFS model
-					already shows an improvement compared to the historical situation. Between the Optimal FCFS and the
-					No FCFS model, there is no considerable difference because the vessels are constrained to be
-					scheduled after their arrival time at the port. When relaxation is allowed, a significant
-					efficiency gain is possible, although this case is less reasonable. Lastly, the entire analysis was performed again, this time with
-					a proportion of vessels enlarged. The results pointed out that there are improvements of up
-					to 3% on the completion time (depending on the percentage of boats enlarged) from the Optimal
-					FCFS to No FCFS, and up to 42% comparing the Optimal FCFS and the unrealistic Complete
-					Relaxation.
+					After comparing average completion times, there was no substantial difference between the
+					FCFS and No FCFS models because current traffic levels are too low for scheduling to
+					have an impact. On the other hand, the models with time relaxation allowed 
+					achieved significant efficiency gains, although scheduling vessels before their ETA is not
+					realistic in practice.<br /><br />
+
+					Finally, the entire simulation was repeated with a proportion of vessels enlarged. The
+					results indicate improvements of up to 3% in completion time (depending on the percentage
+					of boats enlarged) when switching from FCFS to No FCFS, and up to 42% when comparing FCFS
+					to the unrealistic Complete Relaxation strategy.<br /><br />
+
+				<img src="assets/images/Fig1.jpg" alt="Dashboard" style="max-width: 800px; width: 100%; height: auto;" />
+
 				</p>
-				<img src="assets/images/Fig1.jpg" alt="Dashboard" /><br /><br />
+				
 				<ul class="actions">
 					<li><a id="prev-project" href="#" class="button" hidden>Previous project</a>
 					<a id="next-project" href="engagement-automation.html" class="button">Next project</a></li>

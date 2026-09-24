@@ -69,30 +69,33 @@
 				<h3>Jan 2021 ~ OMRON Healthcare<br /><br /></h3>
 				<p class="justify"><b>Length: </b> &nbsp; 1mo (at 1.0 FTE) <br /><br />
 
-					<b>Software: </b>   &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
+					<b>Software: </b> &nbsp; AWS (EventBridge, Lambda, RDS, VPC) <br /><br />
 
 					<b>Programming languages: </b> <br /> &nbsp;&nbsp; - Python (PyMySQL, Pandas, boto3, datetime, logging)<br />
 					&nbsp;&nbsp; - SQL<br /><br />
 
-					<b>Data: </b>  &nbsp;Database design consisting of tables with feature names and types <br /><br />
+					<b>Data: </b> &nbsp; Database schema <br /><br />
 
 					<b>Problem description: </b><br />
 					Engineer a multi-service AWS solution that identifies inactive app users to target them
 					with email reminders<br /><br />
 
-					<img src="assets/images/Fig18.jpg" alt="AWS Architecture" /><br />
-
 					<b>Approach & Results: </b><br />
-					Initially, the SQL queries that retrieve the desired groups of patients were written using
-					the information provided in the database design. Next, a Python script that connects to the
-					database, performs a query, and outputs the result in the demanded format was prepared.
-					The code was later transposed into an AWS Lambda function, connecting and retrieving
-					information from an Amazon RDS instance and uploading the answer to Salesforce. Lastly, the
-					Lambda functions were triggered by a particular Amazon EventBridge event, depending on the desired
-					frequency of the query. For instance, some are executed daily, while others are triggered
-					every Friday. Consequently, the system helps OMRON Healthcare save the time needed to
-					manually perform the repetitive queries and eliminates the afferent chance of human error.
+					Initially, the SQL queries that retrieve various groups of inactive patients were drafted using
+					the information in the database schema. Next, a Python script that connects to the
+					database, performs a query, and outputs the result in the correct format was written.
+					The code was later ported into an AWS Lambda function, connecting and retrieving
+					information from an Amazon RDS instance and sending the answer to Salesforce. Lastly, the
+					Lambda functions were triggered by an Amazon EventBridge event, depending on the desired
+					frequency of the query. For instance, some queries are executed daily, while others are triggered
+					every Friday. Consequently, the system saves OMRON Healthcare the time spent on manual, repetitive
+					queries and eliminates the associated risk of human error.
+					<br /><br />
+
+					<img src="assets/images/Fig18.jpg" alt="AWS Architecture" />
+
 				</p>
+
 				<ul class="actions">
 					<li><a id="prev-project" href="berth-allocation-optimization.html" class="button">Previous project</a>
 					<a id="next-project" href="app-dashboard.html" class="button">Next project</a></li>

@@ -72,33 +72,54 @@
 
 					<b>Programming language: </b> &nbsp; Python (Pandas, NumPy, Matplotlib, Plotly, scikit-learn, LightGBM) <br /><br />
 
-					<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the
-					target variable - whether the parcel was caged<br /><br />
+					<b>Data: </b> &nbsp; Over 600.000 shipped parcels having 742 features, including the target variable (whether 
+					the parcel was held awaiting correct information)<br /><br />
 
 					<b>Problem description: </b><br />
 					Develop a LightGBM model for classifying whether a shipment will be held awaiting correct information<br /><br />
 
 					<b>Approach: </b><br />
-					Since the data was cleaned previously, the first step involved slicing it into train and test sets.
+					Since the data was already cleaned previously, the first step involved slicing it into train, validation, 
+					and test sets, using the validation rows to monitor the model's performance during hyperparameter tuning.
 					Then, a LightGBM model was created, and its hyperparameters were first tuned through a Random Search.
-					The options in the grid were selected according to the official documentation and considering
+					The options in the grid were selected according to the official LightGBM documentation, considering
 					the balance between overfitting, performance, and training speed. Afterward, the best parameters
 					obtained from the Random Search were put in a new grid next to other values in their close vicinity.
-					The respective grid was used to optimize the hyperparameters one more time through Grid Search.
-					Using the best hyperparameters followed from Grid Search, the model was fitted another time until
-					the learning curve of the validation data reached a plateau to see after how many
-					iterations the loss converges. Finally, the model was fitted on both the train and validation data.
+					The respective grid was used to optimize the hyperparameters another time through Grid Search.
+					Using the best hyperparameters from Grid Search, the model was fitted again until the learning 
+					curve of the validation data plateaued, which showed the number of iterations needed for the loss
+					to converge. Finally, the model was retrained using both the train and validation data together.
 					<br /><br />
 
 					<b>Results: </b><br />
 					An accuracy of 81% was observed after evaluating the predictions on the test data. However,
-					the company uses a custom, greater-is-better score for this problem called the clearance score.
-					The LightGBM achieved a clearance score of 2.08, outperforming the
-					deployed Neural Network by 53%. Moreover, the LightGBM model was trained in only 45 seconds,
-					while the Neural Network took approximately 22 minutes. Accordingly, the former was 29 times
-					faster.<br /><br />
+					the company uses a custom, greater-is-better score for this problem called clearance score.
+					The LightGBM achieved a clearance score of 2.08, outperforming the deployed Neural Network 
+					by 53%, meaning fewer misclassified shipments. Moreover, the LightGBM model was trained in 
+					only 45 seconds, while the Neural Network took approximately 22 minutes. Accordingly, the former
+					was 29 times faster, enabling cheaper retraining once deployed.<br />
 
-					<img src="assets/images/Fig30.jpg" alt="Benchmark Table" width="430" height="105" />
+					<table>
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>Clearance score</th>
+								<th>Training time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>LightGBM</td>
+								<td>2,08</td>
+								<td>45,3s</td>
+							</tr>
+							<tr>
+								<td>Neural Network</td>
+								<td>1,36</td>
+								<td>21min 48s</td>
+							</tr>
+						</tbody>
+					</table>
 
 				</p>
 				<ul class="actions">
