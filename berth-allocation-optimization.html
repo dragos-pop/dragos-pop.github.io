@@ -100,7 +100,9 @@
 
 					These models were then implemented in Python using the <code>PuLP</code> package and compared
 					against each other using a rolling time window (for each day within the time range, a
-					two-week schedule was optimized and its objective value recorded).<br /><br />
+					two-week schedule was optimized and its objective value recorded). Besides timing, each 
+					model considers berth and vessel sizes, ensuring that a ship can only be assigned to 
+					a berth that physically fits it. <br /><br />
 
 					<b>Results: </b><br />
 					After comparing average completion times, there was no substantial difference between the
